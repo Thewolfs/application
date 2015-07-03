@@ -48,7 +48,7 @@ Rooter.preloadAll = function(handler) {
 			// {src:"sound/rub2.ogg", id:"audio_rub2"},
 			// {src:"sound/tear1.ogg", id:"audio_tear1"},
 			// {src:"sound/tear2.ogg", id:"audio_tear2"},
-			{src:"sound/ambiant.ogg", id:"audio_ambiant"}
+			// {src:"sound/ambiant.ogg", id:"audio_ambiant"}
     ];
 	
 	// createjs.Sound.registerPlugins([createjs.HTMLAudioPlugin, createjs.WebAudioPlugin, createjs.FlashPlugin]);

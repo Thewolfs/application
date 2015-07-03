@@ -3,16 +3,16 @@
 */
 
 function Sound() {
-	this.instances = [
+	/*this.instances = [
 		["cut", createjs.Sound.createInstance("audio_cut")],
 		["tear1", createjs.Sound.createInstance("audio_tear1")],
 		["tear2", createjs.Sound.createInstance("audio_tear2")],
 		["ambiant", createjs.Sound.createInstance("audio_ambiant")]
-	];
+	];*/
 }
 
 Sound.prototype.play = function(sound_name) {
-	var i=0;
+	/*var i=0;
 	var found = false;
 	while (i < this.instances.length && found==false) {
 		if (this.instances[i][0]==sound_name) {
@@ -20,11 +20,11 @@ Sound.prototype.play = function(sound_name) {
 			this.instances[i][1].play();
 		}
 		i++;
-	}
+	}*/
 }
 
 Sound.prototype.stop = function(sound_name) {
-	var i=0;
+	/*var i=0;
 	var found = false;
 	while (i < this.instances.length && found==false) {
 		if (this.instances[i][0]==sound_name) {
@@ -32,11 +32,11 @@ Sound.prototype.stop = function(sound_name) {
 			this.instances[i][1].stop();
 		}
 		i++;
-	}
+	}*/
 }
 
 Sound.prototype.police_begin = function(police, dir) {
-	if (Word_polices[police] == "coupable_haut" || Word_polices[police] == "coupable_bas") {
+	/*if (Word_polices[police] == "coupable_haut" || Word_polices[police] == "coupable_bas") {
 		this.stop("cut");
 		this.play("cut");
 	}
@@ -49,11 +49,11 @@ Sound.prototype.police_begin = function(police, dir) {
 			this.stop("tear2");
 			this.play("tear2");
 		}
-	}
+	}*/
 }
 
 Sound.prototype.police_abort = function(police, dir) {
-	if (Word_polices[police] == "coupable_haut" || Word_polices[police] == "coupable_bas") {
+	/*if (Word_polices[police] == "coupable_haut" || Word_polices[police] == "coupable_bas") {
 		this.stop("cut");
 	}
 	else if (Word_polices[police] == "centrale") {
@@ -63,7 +63,7 @@ Sound.prototype.police_abort = function(police, dir) {
 		else if (dir == -1){
 			this.stop("tear2");
 		}
-	}
+	}*/
 }
 
 scriptLoaded('src/lib_separation/event/sound.js');
