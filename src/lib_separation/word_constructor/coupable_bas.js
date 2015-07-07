@@ -5,9 +5,13 @@ function Word_coupable_bas(data) {
 	// this.next_up = new WordLetters(data.next_value, data.police, 'demibash').getBmp();
 
 	//// EASELJS BITMAP TEXT
-	this.up = new createjs.BitmapText(data.value, SS['demibash']);
-	this.down = new createjs.BitmapText(data.code, SS['demibasb']);
-	this.next_up = new createjs.BitmapText(data.next_value, SS['demibash']);
+	console.log(data.value + ' ' + data.code + ' ' + data.next_value);
+	this.up = new createjs.Text(data.value, "256px demibash", "#fff");
+	this.down = new createjs.Text(data.code, "256px demibasb", "#fff");
+	this.next_up = new createjs.Text(data.next_value, "256px demibash", "#fff");
+	// this.up = new createjs.BitmapText(data.value, SS['demibash']);
+	// this.down = new createjs.BitmapText(data.code, SS['demibasb']);
+	// this.next_up = new createjs.BitmapText(data.next_value, SS['demibash']);
 
 	this.up.y = fontConst.police[data.police].offsetY['demibash'];
 	this.down.y = fontConst.police[data.police].offsetY['demibasb'];

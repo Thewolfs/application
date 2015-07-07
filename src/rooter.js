@@ -22,12 +22,12 @@ Rooter.preloadAll = function(handler) {
 			{src:"img/gui/cross.png", id:"gui_clear"},
 			{src:"img/gui/hand.png", id:"help_hand"},
 			// Fonts
-			{src:"img/font/demihaut.png", id:"font_demihaut"},
-			{src:"img/font/demihaut_h.png", id:"font_demihauth"},
-			{src:"img/font/demihaut_b.png", id:"font_demihautb"},
-			{src:"img/font/demibas_h.png", id:"font_demibash"},
-			{src:"img/font/demibas_b.png", id:"font_demibasb"},
-			{src:"img/font/centrale_h.png", id:"font_centraleh"},
+			{src:"fonts/FINEMIHAUT2.ttf", id:"font_demihaut"},
+			{src:"fonts/FINEMIHAUT2H.ttf", id:"font_demihauth"},
+			{src:"fonts/FINEMIHAUT2B.ttf", id:"font_demihautb"},
+			{src:"fonts/FINEMIBAS2.ttf", id:"font_demibash"},
+			{src:"fonts/FINEMIBAS2B.ttf", id:"font_demibasb"},
+			{src:"fonts/FINEMIBAS2H.ttf", id:"font_centraleh"},
 			{src:"img/font/centrale_c.png", id:"font_centralec"},
 			{src:"img/font/centrale_b.png", id:"font_centraleb"},
 			// Menu labo

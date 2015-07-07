@@ -68,14 +68,14 @@ function convertValue(value, code, police) {
 						if(code[i_code].toLowerCase() == 'i') i_code++;
 					break;
 					case 'C': // Le C peut être rond ('C') ou carré ('L')
-						new_value += (code[i_code] == 'O') ? 'C' : 'L';
+						new_value += (code[i_code] == 'O') ? 'C' : '¢';
 					break;
 					case 'E': // Le E peut être rond ('') ou carré ('E')
-						new_value += (code[i_code] == 'O') ? '€' : 'E';
+						new_value += (code[i_code] == 'O') ? 'Ê' : 'E';
 					break;
 					case 'N': // Le N peut être rond ('^') ou normal ('N')
 						if(code[i_code] == 'O') new_value += 'II';
-						else { new_value += 'N'; i_code++; } // N a une largeur 2 quand son code est 'II'
+						else { new_value += 'ı'; i_code++; } // N a une largeur 2 quand son code est 'II'
 					break;
 					default:
 						new_value += value[i];
@@ -94,15 +94,15 @@ function convertValue(value, code, police) {
 					break;
 					case 'i': case 't': // Lettres de largeur 1 à transformer en largeur 2 (ajout espace ' ')
 						// if(code[i_code] != 'o') log(value + ' ' + code);
-						new_value += (code[i_code] == 'o') ? (value[i] + '_') : value[i];
+						new_value += (code[i_code] == 'o') ? (value[i] + ' ') : value[i];
 					break;
 					case 'y': // Si le 'y' a le code 'i', le haut doit être en V (provisoirement 'Y')
 						new_value += (code[i_code] == 'l') ? 'y' : 'y';
 					break;
 					case 'C': // Le C peut être rond ('C') ou carré ('[')
-						new_value += (code[i_code] == 'O') ? 'C' : '[';
+						new_value += (code[i_code] == 'O') ? 'C' : '¢';
 					break;
-					case 'E': // Le E peut être rond ('') ou carré ('E')
+					case 'E': // Le E peut être rond ('Ê') ou carré ('E')
 						new_value += (code[i_code] == 'O') ? 'Ê' : 'E';
 					break;
 					default:
