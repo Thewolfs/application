@@ -92,9 +92,12 @@ function convertValue(value, code, police) {
 						new_value += value[i];
 						if(code[i_code] == 'l' || code[i_code] == 'I') i_code++;
 					break;
-					case 'i': case 't': // Lettres de largeur 1 à transformer en largeur 2 (ajout espace ' ')
-						// if(code[i_code] != 'o') log(value + ' ' + code);
-						new_value += (code[i_code] == 'o') ? (value[i] + ' ') : value[i];
+					case 'i':  // Lettres de largeur 1 à transformer en largeur 2 (ajout espace ' ')
+						// if(code[i_code] != 'o') log(value + ' ' + code);†
+						new_value += (code[i_code] == 'o') ? 'i' : 'î';
+					break;
+					case 't':
+						new_value += (code[i_code] == 'o') ? 't' : '†';
 					break;
 					case 'y': // Si le 'y' a le code 'i', le haut doit être en V (provisoirement 'Y')
 						new_value += (code[i_code] == 'l') ? 'y' : 'y';

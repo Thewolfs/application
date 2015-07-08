@@ -25,9 +25,9 @@ Rooter.preloadAll = function(handler) {
 			{src:"fonts/FINEMIHAUT2.ttf", id:"font_demihaut"},
 			{src:"fonts/FINEMIHAUT2H.ttf", id:"font_demihauth"},
 			{src:"fonts/FINEMIHAUT2B.ttf", id:"font_demihautb"},
-			{src:"fonts/FINEMIBAS2.ttf", id:"font_demibash"},
+			{src:"fonts/FINEMIBAS2H.ttf", id:"font_demibash"},
 			{src:"fonts/FINEMIBAS2B.ttf", id:"font_demibasb"},
-			{src:"fonts/FINEMIBAS2H.ttf", id:"font_centraleh"},
+			{src:"img/font/centrale_h.png", id:"font_centraleh"},
 			{src:"img/font/centrale_c.png", id:"font_centralec"},
 			{src:"img/font/centrale_b.png", id:"font_centraleb"},
 			// Menu labo
