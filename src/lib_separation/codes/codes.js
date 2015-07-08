@@ -100,7 +100,10 @@ function convertValue(value, code, police) {
 						new_value += (code[i_code] == 'o') ? 't' : '†';
 					break;
 					case 'y': // Si le 'y' a le code 'i', le haut doit être en V (provisoirement 'Y')
-						new_value += (code[i_code] == 'l') ? 'y' : 'y';
+						new_value += (code[i_code] == 'l') ? 'y' : ((code[i_code] == 'g') ? 'Ú' : '‡');
+					break;
+					case 'd':
+						new_value += (code[i_code] == 'o') ? '∂' : 'd';
 					break;
 					case 'C': // Le C peut être rond ('C') ou carré ('[')
 						new_value += (code[i_code] == 'O') ? 'C' : '¢';

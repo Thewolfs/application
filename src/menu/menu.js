@@ -15,7 +15,9 @@ Menu.start = function() {
 	
 	Menu.recit();
 	Menu.labo();
-	//Menu.aide();
+	Menu.aide();
+	Menu.mentions_legales();
+	Menu.contacts();
 	Menu.editeur();
 	Menu.lang();
 
@@ -76,9 +78,9 @@ Menu.aide = function() {
 	if (language == 'fr')
 		Menu.words['aide'] = new Word('aide', null, 0);
 	else
-		Menu.words['aide'] = new Word('help', null, 0);
+		Menu.words['aide'] = new Word('aide', null, 0);
 
-	Menu.words['aide'].setCenterXY(W / 2, H * 10/12);
+	Menu.words['aide'].setCenterXY(W / 2, H * 7/12);
 	Menu.words['aide'].getNode().alpha = 0;
 	Menu.words['aide'].display();
 
@@ -87,7 +89,45 @@ Menu.aide = function() {
 		}, Menu.anim_duration, Ease.sineIn);
 	
 	Event.onTap('Menu.aide', Menu.words['aide'], function() {
-		Aide.start();
+		document.location.href = "aide.html";
+	}, true);
+}
+
+Menu.mentions_legales = function() {
+	if (language == 'fr')
+		Menu.words['mentions_legales'] = new Word('mentions_legales', null, 0);
+	else
+		Menu.words['mentions_legales'] = new Word('mentions_legales', null, 0);
+
+	Menu.words['mentions_legales'].setCenterXY(W / 2, H * 9/12);
+	Menu.words['mentions_legales'].getNode().alpha = 0;
+	Menu.words['mentions_legales'].display()
+
+	Tween.get(Menu.words['mentions_legales'].getNode()).to({
+			alpha: Menu.opacity,
+		}, Menu.anim_duration, Ease.sineIn);
+	
+	Event.onTap('Menu.mentions_legales', Menu.words['mentions_legales'], function() {
+		document.location.href = "mentions_legales.html";
+	}, true);
+}
+
+Menu.contacts = function() {
+	if (language == 'fr')
+		Menu.words['contacts'] = new Word('contacts', null, 0);
+	else
+		Menu.words['contacts'] = new Word('contacts', null, 0);
+
+	Menu.words['contacts'].setCenterXY(W / 2, H * 11/12);
+	Menu.words['contacts'].getNode().alpha = 0;
+	Menu.words['contacts'].display()
+
+	Tween.get(Menu.words['contacts'].getNode()).to({
+			alpha: Menu.opacity,
+		}, Menu.anim_duration, Ease.sineIn);
+	
+	Event.onTap('Menu.contacts', Menu.words['contacts'], function() {
+		document.location.href = "contacts.html";
 	}, true);
 }
 
@@ -96,7 +136,7 @@ Menu.editeur = function() {
 		Menu.words['editeur'] = new Word('editeur', null, 0);
 	else 
 		Menu.words['editeur'] = new Word('editor', null, 0);
-	Menu.words['editeur'].setCenterXY(W / 2, H * 8/12);
+	Menu.words['editeur'].setCenterXY(W / 2, H * 5/12);
 	Menu.words['editeur'].getNode().alpha = 0;
 	Menu.words['editeur'].display();
 	
