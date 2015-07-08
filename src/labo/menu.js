@@ -28,12 +28,12 @@ Labo_Menu.prototype.generate = function() {
 	else
 		this.word_valid = new Word('Search');
 	this.word_valid.setCenterX(W/2);
-	this.word_valid.setY(H-margin-this.word_valid.getHeight());
+	this.word_valid.setY(H-margin-2*this.word_valid.getHeight());
 	this.word_valid.display();
 	Event.onTap('word_valid', this.word_valid, function() {
 		this.valid();
 	}.bind(this), true);
-
+/*
 	// Word choices
 	if (language == 'fr') 
 		this.word_choices_ask = new Word('Choisissez un mode de transformation');
@@ -87,11 +87,11 @@ Labo_Menu.prototype.generate = function() {
 			return function() { r.changeCheckbox(i); };
 		}(this, i), true);
 	}
-	
+	*/
 	// Input text
 	this.input_text = new Image(res('menu_labo_input_text'));
 	this.input_text.setScaleX(getScale(this.input_text.w, W/2));
-	this.input_text.setScaleY(getScale(this.input_text.h, H/7));
+	this.input_text.setScaleY(getScale(this.input_text.h, 2*H/7));
 	this.input_text.setX((W/2) - (this.input_text.getWidth()/2));
 	this.input_text.setY(15);
 	this.input_text.display();
@@ -162,7 +162,7 @@ Labo_Menu.prototype.textInputWord = function() {
 	Destroy.objet(this.word_searched);
 	this.word_searched = new Word(this.word_searched_value);
 	this.word_searched.setZoom(getMinScale(this.word_searched.getHeight(), 0.9*this.input_text.getHeight(), this.word_searched.getWidth(), 0.8*this.input_text.getWidth()));
-	this.word_searched.setCenterXY(W/2, this.input_text.getY()+this.input_text.getHeight() / 2);
+	this.word_searched.setCenterXY(W/2, this.input_text.getY()+this.input_text.getHeight()/2);
 	this.word_searched.display();
 };
 
@@ -173,13 +173,13 @@ Labo_Menu.prototype.onValid = function(handler) {
 
 Labo_Menu.prototype.valid = function() {
 	this.police_searched = [];
-	if(this.choices[0]) { // Police coupable
+	//if(this.choices[0]) { // Police coupable
 		this.police_searched.push(0);
 		this.police_searched.push(1);
-	}
-	if(this.choices[1]) { // Police central
-		this.police_searched.push(2);
-	}
+	//}
+	//if(this.choices[1]) { // Police central
+	//	this.police_searched.push(2);
+	//}
 	/*if(!this.choices[0] && ! this.choices[1]) {
 		this.police_searched.push(0);
 		this.police_searched.push(1);
