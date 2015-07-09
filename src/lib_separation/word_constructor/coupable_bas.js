@@ -5,7 +5,6 @@ function Word_coupable_bas(data) {
 	// this.next_up = new WordLetters(data.next_value, data.police, 'demibash').getBmp();
 
 	//// EASELJS BITMAP TEXT
-	console.log(data.value + ' ' + data.code + ' ' + data.next_value);
 	this.up = new createjs.Text(data.value, "256px demibash", "#fff");
 	this.down = new createjs.Text(data.code, "256px demibasb", "#fff");
 	this.next_up = new createjs.Text(data.next_value, "256px demibash", "#fff");

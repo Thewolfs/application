@@ -11,5 +11,4 @@ StoriesDb.en_stories = [
 	'{"isStatic":true, "name":"Translation", "type":"one_page", "pages":[{"lines":[{"words":[{"value":"Translation", "zoom":1}]}, {"words":[{"value":"english", "next_value":"french", "police":0, "code":"CAAIIAII", "zoom":2}]}, {"words":[{"value":" "}]}]}]}',
 	];
 
-
 scriptLoaded('res/story/stories.js');

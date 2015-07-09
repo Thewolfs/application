@@ -79,8 +79,9 @@ Menu.aide = function() {
 		Menu.words['aide'] = new Word('aide', null, 0);
 	else
 		Menu.words['aide'] = new Word('aide', null, 0);
+	Menu.words['aide'].setZoom(0.7);
 
-	Menu.words['aide'].setCenterXY(W / 2, H * 7/12);
+	Menu.words['aide'].setCenterXY(W / 2, H * 9/12);
 	Menu.words['aide'].getNode().alpha = 0;
 	Menu.words['aide'].display();
 
@@ -98,8 +99,9 @@ Menu.mentions_legales = function() {
 		Menu.words['mentions_legales'] = new Word('mentions_legales', null, 0);
 	else
 		Menu.words['mentions_legales'] = new Word('mentions_legales', null, 0);
+	Menu.words['mentions_legales'].setZoom(0.7);
 
-	Menu.words['mentions_legales'].setCenterXY(W / 2, H * 9/12);
+	Menu.words['mentions_legales'].setCenterXY(W / 2, H * 10/12);
 	Menu.words['mentions_legales'].getNode().alpha = 0;
 	Menu.words['mentions_legales'].display()
 
@@ -117,6 +119,7 @@ Menu.contacts = function() {
 		Menu.words['contacts'] = new Word('contacts', null, 0);
 	else
 		Menu.words['contacts'] = new Word('contacts', null, 0);
+	Menu.words['contacts'].setZoom(0.7);
 
 	Menu.words['contacts'].setCenterXY(W / 2, H * 11/12);
 	Menu.words['contacts'].getNode().alpha = 0;
@@ -136,7 +139,8 @@ Menu.editeur = function() {
 		Menu.words['editeur'] = new Word('editeur', null, 0);
 	else 
 		Menu.words['editeur'] = new Word('editor', null, 0);
-	Menu.words['editeur'].setCenterXY(W / 2, H * 5/12);
+	Menu.words['editeur'].setZoom(1.3);
+	Menu.words['editeur'].setCenterXY(W / 2, H * 7.5/12);
 	Menu.words['editeur'].getNode().alpha = 0;
 	Menu.words['editeur'].display();
 	
