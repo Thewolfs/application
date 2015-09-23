@@ -172,8 +172,14 @@ ButtonPlus.prototype.onTap = function () {
 	gui.Editeur_returnMain();
 	var new_word;
 
-	this.word_active = new Word("add active word");
-	this.word_classic = new Word("add classic word");
+	if (language == 'fr') {
+		this.word_active = new Word("ajouter un mot actif");
+		this.word_classic = new Word("ajouter un mot simple");
+	} else {
+		this.word_active = new Word("add active word");
+		this.word_classic = new Word("add classic word");
+	}
+	
 	this.word_active.setCenterXY(W/2,H/3);
 	this.word_classic.setCenterXY(W/2,2*H/3);
 	this.word_active.display();

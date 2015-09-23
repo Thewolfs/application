@@ -5,14 +5,14 @@ function Word_ombre(data) {
 	if(language == 'fr') {
 		this.CYGNE = new createjs.Bitmap(res('CYGNE'));
 		this.OMBRE = new createjs.Bitmap(res('OMBRE'));
-		var scale = 1.2;
+		var scale = 0.95;
 	} else {
 		this.CYGNE = new createjs.Bitmap(res('SLICING'));
 		this.OMBRE = new createjs.Bitmap(res('SHADING'));
-		var scale = 1;
+		var scale = 0.8;
 	}
-	var offsetX = 40;
-	var offsetY = -20;
+	var offsetX = 25;
+	var offsetY = -0;
 	this.OMBRE.scaleX = scale;
 	this.OMBRE.scaleY = scale;
 	this.CYGNE.scaleX = scale;

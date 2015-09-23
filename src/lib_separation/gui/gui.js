@@ -160,14 +160,22 @@ Gui.prototype.Editeur_classic_button_down = function() {
 };
 
 Gui.prototype.Editeur_multilignes_save = function() {
-	this.editeur_multilignes_save = new Word('save');
+	if (language == 'fr') {
+		this.editeur_multilignes_save = new Word('sauver');
+	} else {
+		this.editeur_multilignes_save = new Word('save');
+	}
 	this.editeur_multilignes_save.setCenterXY(2*W/3, H-this.margin-size_icon/2);
 	this.editeur_multilignes_save.display();
 	
 	this.editeur_multilignes_save.onTap(Editeur.multilignes.save);
 };
 Gui.prototype.Editeur_multilignes_erase = function() {
-	this.editeur_multilignes_erase = new Word('erase');
+	if (language == 'fr') {
+		this.editeur_multilignes_erase = new Word('effacer');
+	} else {
+		this.editeur_multilignes_erase = new Word('erase');
+	}
 	this.editeur_multilignes_erase.setCenterXY(W/3, H-this.margin-size_icon/2);
 	this.editeur_multilignes_erase.display();
 	
