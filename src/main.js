@@ -19,7 +19,19 @@ App.init = function() {
 	// GUIcanvas.height = H;// * window.devicePixelRatio;
 
 	document.body.appendChild(canvas);
-
+	
+	//Initialisation de l'inputbox
+	inputbox = document.getElementsByClassName('inputbox')[0];
+	inputboxcontainer = document.getElementsByClassName('inputboxcontainer')[0];
+	inputboxbuttoncontainer = document.getElementsByClassName('inputboxbuttoncontainer')[0];
+	
+	inputbox.style.width = W * 40/100 + "px";
+	inputbox.style.height = H * 50/100 + "px";
+	inputbox.style.opacity = 0;
+	
+	//Positionnement de la boite
+	inputbox.style.left = (W - W * 40/100)/2 + "px";
+	inputbox.style.top = (H - H * 50/100)/2 + "px";
 	// Initialisation du stage
 	stage = new createjs.Stage(canvas);
 	ctx = stage.canvas.getContext('2d');
