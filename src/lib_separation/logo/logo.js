@@ -65,7 +65,7 @@ Logo.prototype.destroy = function() {
 }
 
 Logo.prototype.animateIntro = function(handler) {
-	var anim_duration = 2000;
+	var anim_duration = 1750;
 	var logo = this;
 	
 	rotation90(this);
