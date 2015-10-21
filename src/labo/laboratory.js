@@ -69,7 +69,7 @@ Labo.generateRecherche = function(word_searched, police) {
 				if (language == 'fr') 
 					Inputbox.alert({message : "Aucune correspondance.", confirmText: "Ok"});
 				else
-					Inputbox.alert({message : "No match found.", confirmText: "Ok");
+					Inputbox.alert({message : "No match found.", confirmText: "Ok"});
 				Labo.menu();
 			}
 		}
