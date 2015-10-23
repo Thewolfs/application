@@ -51,7 +51,7 @@ RechercheEditeur.start = function(fct) {
 	});
 	if (this.possibilities.length <= 0) {
 		if (language == 'fr')
-			Inpubtox.alert({message : 'Aucun mot enregistré, allez dans le Labo !', confirmText: "Ok"});
+			Inputbox.alert({message : 'Aucun mot enregistré, allez dans le Labo !', confirmText: "Ok"});
 		else 
 			Inputbox.alert({message : 'No words saved, let\'s go to the Lab !', confirmText: "Ok"});
 		Labo.start();
@@ -230,7 +230,7 @@ RechercheEditeur.generate = function(mot_act) {
 	this.erase.setX(this.coords_erase.x);
 	Event.onTap('erase_word', this.erase, function() {
 		MyStorage.removeWord(this.words[this.nb_side]);
-		Editeur.classic_changeWord(this.mot_act);
+		Editeur.classic.changeWord(this.mot_act);
 	}.bind(this), true);
 
 	if (language == 'fr') 

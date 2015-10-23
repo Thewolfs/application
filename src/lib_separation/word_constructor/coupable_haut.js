@@ -5,9 +5,9 @@ function Word_coupable_haut(data) {
 	// this.next_down = new WordLetters(data.next_value, data.police, 'demihautb').getBmp();
 
 	//// EASELJS BITMAP TEXT
-	this.up = new createjs.Text(data.code, "256px demihauth", "#fff");
-	this.down = new createjs.Text(data.value, "256px demihautb", "#fff");
-	this.next_down = new createjs.Text(data.next_value, "256px demihautb", "#fff");
+	this.up = new createjs.Text(data.code, "256px demihauth", data.color);
+	this.down = new createjs.Text(data.value, "256px demihautb",  data.color);
+	this.next_down = new createjs.Text(data.next_value, "256px demihautb",  data.color);
 	if(data.value == '+')
 		this.up = new createjs.Text(data.value, "256px Arial", "#fff");
 	// this.up = new createjs.BitmapText(data.code, SS['demihauth']);

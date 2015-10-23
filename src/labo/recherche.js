@@ -211,9 +211,9 @@ Recherche.prototype.transform = function() { if(!this.inTransform) { this.inTran
 			Labo.saveWord(); 
 			o.word_save.destroy(); 
 			if (language == 'fr')
-				o.word_save = new Word('Sauve'); 
+				o.word_save = new Word('Sauve', null, null, null, null, "#3299CC"); 
 			else
-				o.word_save = new Word('Saved'); 
+				o.word_save = new Word('Saved', null, null, null, null, "#3299CC"); 
 			o.word_save.setCenterX(W/4);
 			o.word_save.setY(H-margin-o.word_save.getHeight());
 			o.word_save.generate(); 

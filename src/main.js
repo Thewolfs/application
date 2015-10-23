@@ -9,6 +9,10 @@
 var App = App || {};
 
 App.init = function() {
+	//Fix du gitan pour le centrage
+	var gitan = new createjs.Text("gitant", "256px demihauth", "#fff");
+	gitan.getBounds();
+	
 	// Initialisation du canvas
 	canvas = document.createElement('canvas');
 	// GUIcanvas = document.createElement('canvas');
@@ -32,6 +36,7 @@ App.init = function() {
 	//Positionnement de la boite
 	inputbox.style.left = (W - W * 40/100)/2 + "px";
 	inputbox.style.top = (H - H * 50/100)/2 + "px";
+	
 	// Initialisation du stage
 	stage = new createjs.Stage(canvas);
 	ctx = stage.canvas.getContext('2d');

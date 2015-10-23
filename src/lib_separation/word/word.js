@@ -3,7 +3,7 @@
 */
 var word_active = false;
 
-function Word(value, next_value, police, code, autoAddGesture) {
+function Word(value, next_value, police, code, autoAddGesture, color) {
 	this.id = ''; // Id unique
 	
 	this.x = 0; // Position x en pixel
@@ -13,7 +13,7 @@ function Word(value, next_value, police, code, autoAddGesture) {
 	this.cst = fontConst; // Constantes en fonction de la taille
 
 	this.police = police || this.cst.police.name; // Police
-	this.color = this.cst.car.color; // Couleur
+	this.color = color || this.cst.car.color; // Couleur
 	
 	this.value = value; // Valeur du mot actuel
 	this.next_value = next_value || value; // Valeur du mot après transformation

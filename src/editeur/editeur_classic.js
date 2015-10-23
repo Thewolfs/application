@@ -59,9 +59,9 @@ Editeur.classic.display = function() {
 			Editeur.saveStory();
 			o.word_save.destroy(); 
 			if (language == 'fr') 
-				o.word_save = new Word('Sauve'); 
+				o.word_save = new Word('Sauve', null, null, null, null, "#3299CC"); 
 			else 
-				o.word_save = new Word('Saved'); 
+				o.word_save = new Word('Saved', null, null, null, null, "#3299CC"); 
 			o.word_save.setCenterX(W/2);
 			o.word_save.setY(H-margin-o.word_save.getHeight());
 			o.word_save.generate(); 
@@ -76,10 +76,9 @@ Editeur.classic.changeWord = function(offset) {
 	var known_words = MyStorage.listWords().map(function(x) {return JsonHandler.wordFromJson(JSON.parse(MyStorage.getWord(x)));});
 	if (known_words.length <= 0) {
 		if (language == 'fr')
-			Inputbox.alert({message : 'Aucun mot enregistré, allez dans le Labo !', confirmText: "Ok"});
+			Inputbox.alert({message : 'Aucun mot enregistré, allez dans le Labo !', confirmText: "Ok"}, { success: Labo.start});
 		else 
-			Inputbox.alert({message : 'No words saved, let\'s go to the Lab !', confirmText: "Ok"});
-		Labo.start();
+			Inputbox.alert({message : 'No words saved, let\'s go to the Lab !', confirmText: "Ok"}, { success: Labo.start});
 	} else {
 		this.recherche = new RechercheEditeur(this.recherche_result);
 		Destroy.all();

@@ -20,7 +20,7 @@ var Intro = Intro || {};
 		Destroy.all();
 		logo = new Logo();
 		logo.display();
-		gui.menuButton();
+		//gui.menuButton();
 		
 		Effects.respire('logo', logo.getNode(), 0.2, 1);
 		//Event.onTap('logo', logo, function() {

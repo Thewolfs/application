@@ -65,7 +65,7 @@ Gui.prototype.Labo_menu_displayAll = function() {
 Gui.prototype.menuButton = function(handler) {
 	this.logo_min = new Image(res('gui_logo'));
 	this.logo_min.setSizeWH(size_icon, size_icon);
-	this.logo_min.setXY(this.margin, H - this.logo_min.getHeight() - this.margin);
+	this.logo_min.setXY(this.margin,this.margin);
 	this.logo_min.display();
 	
 	if (handler === undefined) {
@@ -78,7 +78,7 @@ Gui.prototype.menuButton = function(handler) {
 Gui.prototype.backButton = function(handler) {
 	this.arrow_back = new Image(res('gui_arrow_back'));
 	this.arrow_back.setSizeWH(size_icon, size_icon);
-	this.arrow_back.setXY(this.margin, H - this.arrow_back.getHeight() - this.margin);
+	this.arrow_back.setXY(this.margin,this.margin);
 	this.arrow_back.display();
 	
 	Event.onTap('arrow_back', this.arrow_back, handler, false);
