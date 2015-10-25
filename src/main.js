@@ -10,7 +10,7 @@ var App = App || {};
 
 App.init = function() {
 	//Fix du gitan pour le centrage
-	var gitan = new createjs.Text("gitant", "256px demihauth", "#fff");
+	var gitan = new createjs.Text("gitan", "256px demihauth", "#fff");
 	gitan.getBounds();
 	
 	// Initialisation du canvas
@@ -52,6 +52,15 @@ App.init = function() {
 	window.addEventListener('resize', function () { 
 		if(can_reload)
 			window.location.reload();
+		
+		W = window.innerWidth;
+		H = window.innerHeight;
+		
+		canvas.width = W;
+		canvas.height = H;
+		
+		Destroy.all();
+		state.start();
 	});
 	
 	// Initialisation des FPS

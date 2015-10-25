@@ -7,6 +7,7 @@ var ask_to_scroll_down = 0;
 Editeur.start = function() {
 	this.type = "multilignes";
 	Editeur.multilignes.start();
+	state = Editeur;
 	// Editeur.displayMenu();
 }.bind(Editeur);
 

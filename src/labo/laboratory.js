@@ -14,6 +14,8 @@ var ask_to_scroll_down = 0;
 
 Labo.start = function() {	
 	Labo.menu();
+	
+	state = Labo;
 };
 
 Labo.menu = function() {

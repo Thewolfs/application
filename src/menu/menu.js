@@ -10,6 +10,7 @@ Menu.high_alpha_lang = Menu.opacity;
 Menu.lang_anim_duration = 500;
 
 Menu.start = function() {
+	state = Menu;
 	can_reload = false;
 	Destroy.all();
 	

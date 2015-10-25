@@ -17,6 +17,8 @@ Recit.start = function() {
 	Recit.computeSizes();
 
 	Recit.displayStoriesMenu();
+	
+	state = Recit;
 }
 
 Recit.destroy = function() {
