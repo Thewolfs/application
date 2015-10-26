@@ -59,6 +59,11 @@ App.init = function() {
 		canvas.width = W;
 		canvas.height = H;
 		
+		inputbox.style.width = W * 40/100 + "px";
+		inputbox.style.height = H * 50/100 + "px";
+		inputbox.style.left = (W - W * 40/100)/2 + "px";
+		inputbox.style.top = (H - H * 50/100)/2 + "px";
+		
 		Destroy.all();
 		state.start();
 	});
