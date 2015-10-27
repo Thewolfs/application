@@ -8,6 +8,7 @@ Menu.opacity = 0.5;
 Menu.low_alpha_lang = 0.4;
 Menu.high_alpha_lang = Menu.opacity;
 Menu.lang_anim_duration = 500;
+Menu.margin = W * 7/100;
 
 Menu.start = function() {
 	state = Menu;
@@ -41,7 +42,7 @@ Menu.recit = function() {
 	Menu.words['recit'].setCenterY(H * 1/2);
 	Menu.words['recit'].display();
 	
-	Menu.words['recit'].setCenterX(W * 1/5);
+	Menu.words['recit'].setCenterX(this.margin + Menu.words['recit'].getWidth()/2);
 	
 	Tween.get(Menu.words['recit'].getNode()).to({
 			x: Menu.words['recit'].getX(),
@@ -64,7 +65,7 @@ Menu.labo = function() {
 	Menu.words['labo'].setCenterY(H * 1/2);
 	Menu.words['labo'].display();
 
-	Menu.words['labo'].setCenterX(W * 4/5);
+	Menu.words['labo'].setCenterX(W - (this.margin + Menu.words['labo'].getWidth()/2));
 	
 	Tween.get(Menu.words['labo'].getNode()).to({
 			x: Menu.words['labo'].getX(),
@@ -83,7 +84,7 @@ Menu.editeur = function() {
 		Menu.words['editeur'] = new Word('editor', null, 5);
 	Menu.words['editeur'].setZoom(zoom);
 	//Menu.words['editeur'].setCenterXY(W / 2, H * 7.5/12);
-	Menu.words['editeur'].setCenterXY(W / 2, H * 1/2);
+	Menu.words['editeur'].setCenterXY(this.margin + Menu.words['recit'].getWidth() + (W - (this.margin * 2 + Menu.words['recit'].getWidth() + Menu.words['labo'].getWidth()))/2, H * 1/2);
 	Menu.words['editeur'].getNode().alpha = 0;
 	Menu.words['editeur'].display();
 	
