@@ -5,6 +5,8 @@
 	<head>
 		<title>La Séparation</title>
 		<meta charset="UTF-8" />
+		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+		<link rel="icon" href="favicon.ico" type="image/x-icon">
 		<style>
 			@font-face {
 				font-family: demihauth;
@@ -22,11 +24,15 @@
 				font-family: demibasb;
 				src: url(res/fonts/FINEMIBAS2B.ttf);
 			}
+			@font-face {
+				font-family: Rounded_Elegance;
+				src: url(res/fonts/Rounded_Elegance.ttf);
+			}
 		</style>
 		
 		<script type="text/javascript">
 			var loaded_scripts = 0;
-			var n_scripts = 58;
+			var n_scripts = 59;
 			function scriptLoaded(script_path) {
 				loaded_scripts++;
 				console.debug(loaded_scripts + '/' + n_scripts + " : " + script_path);
@@ -84,6 +90,7 @@
 				<script type="text/javascript" src="src/lib_separation/word_constructor/coupable_bas.js"></script>
 				<script type="text/javascript" src="src/lib_separation/word_constructor/coupable_entier.js"></script>
 				<script type="text/javascript" src="src/lib_separation/word_constructor/centrale.js"></script>
+				<script type="text/javascript" src="src/lib_separation/word_constructor/rounded_elegance.js"></script>
 				<script type="text/javascript" src="src/lib_separation/word_constructor/ombre.js"></script>
 				<script type="text/javascript" src="src/lib_separation/word_constructor/spritesheets.js"></script>
 				<script type="text/javascript" src="src/lib_separation/word_constructor/letter.js"></script>

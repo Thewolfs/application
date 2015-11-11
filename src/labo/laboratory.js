@@ -156,9 +156,9 @@ function loadingImg() {
 
 	gui.menuButton();
 	if (language == 'fr') 
-		loading = new Word("Chargement");
+		loading = new Word("Chargement", null, 6, null, null, null, 180);
 	else
-		loading = new Word("Loading");
+		loading = new Word("Loading", null, 6, null, null, null, 180);
 	
 	loading.setCenterX(W/2);
 	loading.setCenterY(H/2);

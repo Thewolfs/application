@@ -24,9 +24,9 @@ function Labo_MenuConstruct(l) {
 Labo_Menu.prototype.generate = function() {
 	// Bouton Valider
 	if (language == 'fr') 
-		this.word_valid = new Word('Chercher');
+		this.word_valid = new Word('Chercher', null, 6, null, null, null, 180);
 	else
-		this.word_valid = new Word('Search');
+		this.word_valid = new Word('Search', null, 6, null, null, null, 180);
 	this.word_valid.setCenterX(W/2);
 	this.word_valid.setY(H-margin-2*this.word_valid.getHeight());
 	this.word_valid.display();

@@ -32,6 +32,7 @@ var Word_polices = {
 	3 : 'ombre',
 	4 : 'coupable_entier',
 	5 : 'coupable_haut',
+	6 : 'rounded_elegance',
 }
 
 function Word_getNormalizedPolice(police) {

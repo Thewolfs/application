@@ -30,6 +30,7 @@ Rooter.preloadAll = function(handler) {
 			{src:"img/font/centrale_h.png", id:"font_centraleh"},
 			{src:"img/font/centrale_c.png", id:"font_centralec"},
 			{src:"img/font/centrale_b.png", id:"font_centraleb"},
+			{src:"fonts/Rounded_Elegance.ttf", id:"font_roundedElegance"},
 			// Menu labo
 			{src:"img/menu_labo/input_text.png", id:"menu_labo_input_text"},
 			{src:"img/menu_labo/checkbox.png", id:"menu_labo_checkbox"},

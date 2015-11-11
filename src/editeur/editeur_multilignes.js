@@ -173,11 +173,11 @@ ButtonPlus.prototype.onTap = function () {
 	var new_word;
 
 	if (language == 'fr') {
-		this.word_active = new Word("ajouter un mot actif");
-		this.word_classic = new Word("ajouter un mot simple");
+		this.word_active = new Word("Ajouter un mot actif", null, 6, null, null, null, 180);
+		this.word_classic = new Word("Ajouter un mot simple", null, 6, null, null, null, 180);
 	} else {
-		this.word_active = new Word("add active word");
-		this.word_classic = new Word("add classic word");
+		this.word_active = new Word("Add active word", null, 6, null, null, null, 180);
+		this.word_classic = new Word("Add classic word", null, 6, null, null, null, 180);
 	}
 	
 	this.word_active.setCenterXY(W/2,H/3);

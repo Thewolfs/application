@@ -35,7 +35,10 @@ Menu.destroy = function() {
 Menu.recit = function() {
 	var zoom = 2;
 
-	Menu.words['recit'] = new Word('salon', null, 5);
+	if (language == 'fr')
+		Menu.words['recit'] = new Word('Salon', null, 6, null, null, null, 208);
+	else
+		Menu.words['recit'] = new Word('Salon', null, 6, null, null, null, 208);
 	
 	Menu.words['recit'].setZoom(zoom);
 	Menu.words['recit'].setX(-Menu.words['recit'].getWidth());
@@ -57,9 +60,9 @@ Menu.labo = function() {
 	var zoom = 2;
 
 	if (language == 'fr')
-		Menu.words['labo'] = new Word('labo', null, 5);
+		Menu.words['labo'] = new Word('Labo', null, 6, null, null, null, 208);
 	else
-		Menu.words['labo'] = new Word('lab', null, 5);
+		Menu.words['labo'] = new Word('Lab', null, 6, null, null, null, 208);
 	Menu.words['labo'].setZoom(zoom);
 	Menu.words['labo'].setX(W);
 	Menu.words['labo'].setCenterY(H * 1/2);
@@ -79,9 +82,9 @@ Menu.labo = function() {
 Menu.editeur = function() {
 	var zoom = 2;
 	if (language == 'fr') 
-		Menu.words['editeur'] = new Word('editeur', null, 5);
+		Menu.words['editeur'] = new Word('Éditeur', null, 6, null, null, null, 208);
 	else 
-		Menu.words['editeur'] = new Word('editor', null, 5);
+		Menu.words['editeur'] = new Word('Editor', null, 6, null, null, null, 208);
 	Menu.words['editeur'].setZoom(zoom);
 	//Menu.words['editeur'].setCenterXY(W / 2, H * 7.5/12);
 	Menu.words['editeur'].setCenterXY(this.margin + Menu.words['recit'].getWidth() + (W - (this.margin * 2 + Menu.words['recit'].getWidth() + Menu.words['labo'].getWidth()))/2, H * 1/2);
@@ -97,9 +100,9 @@ Menu.editeur = function() {
 
 Menu.aide = function() {
 	if (language == 'fr')
-		Menu.words['aide'] = new Word('aide', null, 0);
+		Menu.words['aide'] = new Word('Aide', null, 6, null, null, null, 190);
 	else
-		Menu.words['aide'] = new Word('aide', null, 0);
+		Menu.words['aide'] = new Word('Help', null, 6, null, null, null, 190);
 	Menu.words['aide'].setZoom(0.7);
 
 	Menu.words['aide'].setCenterXY(W / 2, H * 9/12);
@@ -117,9 +120,9 @@ Menu.aide = function() {
 
 Menu.mentions_legales = function() {
 	if (language == 'fr')
-		Menu.words['mentions_legales'] = new Word('mentions_legales', null, 0);
+		Menu.words['mentions_legales'] = new Word('Mentions légales', null, 6, null, null, null, 190);
 	else
-		Menu.words['mentions_legales'] = new Word('mentions_legales', null, 0);
+		Menu.words['mentions_legales'] = new Word('Legal Notice', null, 6, null, null, null, 190);
 	Menu.words['mentions_legales'].setZoom(0.7);
 
 	Menu.words['mentions_legales'].setCenterXY(W / 2, H * 10/12);
@@ -137,9 +140,9 @@ Menu.mentions_legales = function() {
 
 Menu.contacts = function() {
 	if (language == 'fr')
-		Menu.words['contacts'] = new Word('contacts', null, 0);
+		Menu.words['contacts'] = new Word('Contacts', null, 6, null, null, null, 190);
 	else
-		Menu.words['contacts'] = new Word('contacts', null, 0);
+		Menu.words['contacts'] = new Word('Contacts', null, 6, null, null, null, 190);
 	Menu.words['contacts'].setZoom(0.7);
 
 	Menu.words['contacts'].setCenterXY(W / 2, H * 11/12);
@@ -158,13 +161,13 @@ Menu.contacts = function() {
 
 
 Menu.lang = function() {
-	Menu.words['lang_EN'] = new Word('en', null, 0);
+	Menu.words['lang_EN'] = new Word('En', null, 6, null, null, null, 190);
 	var width = Menu.words['lang_EN'].getWidth();
 	Menu.words['lang_EN'].setCenterXY(W / 2 - width, H * 2/12);
 	Menu.words['lang_EN'].setAlpha(0);
 	Menu.words['lang_EN'].display();
 
-	Menu.words['lang_FR'] = new Word('fr', null, 0);
+	Menu.words['lang_FR'] = new Word('Fr', null, 6, null, null, null, 190);
 	Menu.words['lang_FR'].setCenterXY(W / 2 + width, H * 2/12);
 	Menu.words['lang_FR'].setAlpha(0);
 	Menu.words['lang_FR'].display();

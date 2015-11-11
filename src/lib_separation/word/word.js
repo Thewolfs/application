@@ -3,13 +3,13 @@
 */
 var word_active = false;
 
-function Word(value, next_value, police, code, autoAddGesture, color) {
+function Word(value, next_value, police, code, autoAddGesture, color, size) {
 	this.id = ''; // Id unique
 	
 	this.x = 0; // Position x en pixel
 	this.y = 0; // Position y en pixel
 	
-	this.size = fontSize; // Taille de la police en pixel
+	this.size = size || fontSize; // Taille de la police en pixel
 	this.cst = fontConst; // Constantes en fonction de la taille
 
 	this.police = police || this.cst.police.name; // Police
@@ -81,11 +81,12 @@ Word.prototype.generate = function() {
 		case 3:
 		case 4:
 		case 5:
+		case 6:
 			this.font = new window['Word_' + Word_polices[this.police]]({
 				'value': new_value,
 				'next_value': new_next_value,
 				'code': new_code,
-				'fontSize': fontSize,
+				'fontSize': this.size,
 				'police': this.police,
 				'color': this.color,
 				'cst': this.cst,

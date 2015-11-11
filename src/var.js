@@ -52,6 +52,6 @@ code_polices["coupable_haut_min"] = [["o"],["h"],["o"],["d"],["o"],["f"],["o"],[
 code_polices["coupable_haut_maj"] = [["A"],["A"],["A","C"],["A"],["A","C"],["C"],["A"],["II"],["I"],["I","T"],["II"],["I"],["M"],["A","II"],["A"],["A"],["A"],["A"],["A"],["T"],["II"],["II"],["III"],["II"],["II"],["Z"]];
 code_polices["centrale"] = [["A"],["B"],["B"],["B"],["B"],["F"],["B"],["H"],["I"],["J"],["H"],["L"],["M"],["A"],["B"],["P"],["Q"],["A"],["B"],["T"],["U"],["V"],["W"],["H"],["Y"],["Z"]];
  
-police_list=["coupable_bas_min","coupable_bas_maj","coupable_haut_min","coupable_haut_maj","centrale"];
+police_list=["coupable_bas_min","coupable_bas_maj","coupable_haut_min","coupable_haut_maj","centrale","rounded_elegance"];
 
 scriptLoaded('src/var.js');
