@@ -140,15 +140,47 @@
 			-webkit-transform-style: preserve-3d; 
 			-moz-transform-style: preserve-3d; 
 			transform-style: preserve-3d; 
-			width: 50%; 
-			height: 50%;
+			/*width: 30%; 
+			height: 30%;*/
 			z-index: 2;
+			font-family: Rounded_Elegance;
+			font-size: 1.5em;
 		}
 		.inputboxcontainer { position: relative; top: 50%; -webkit-transform: translateY(-50%); -ms-transform: translateY(-50%); transform: translateY(-50%);}
 		canvas { position: absolute; top: 0; left: 0;}
 		input { width: 98%; height: 25px; }
-		.inputboxbuttoncontainer { text-align: right; }
-		.inputbox > .inputboxcontainer > .inputboxbuttoncontainer > button { border-radius: 5px; width: 75px; height: 25px; border: none; margin: 5px; }
+		/*.inputboxbuttoncontainer { text-align: right; }*/
+		.inputbox > .inputboxcontainer > .inputboxbuttoncontainer > button 
+		{    
+			width: 5em;
+			height: 5em;
+			display: inline-block;
+			border-radius: 50%;
+			background: black;
+			color: white;
+			font-family: Rounded_Elegance;
+			font-size: 1em;
+			margin: 1em;
+			border:none;
+     	}
+     	.inputbox > .inputboxcontainer > .inputboxbuttoncontainer > button:hover{
+     		cursor:pointer;
+     		background: grey;
+     	}
+		.inputbox > .inputboxcontainer > input 
+		{
+			display: inline-block;
+			border-radius: 2em;
+			padding: 0.7em 0.1em;
+			margin-top: 2em;
+			background: black;
+			border: none;
+			color: white;
+			padding-left: 2em;
+			width: 95%;
+			font-family: Rounded_Elegance;
+			font-size: 0.7em;
+		}
 	</style>
 	</head>
 	<body>

@@ -135,7 +135,7 @@ Labo_Menu.prototype.textInput = function() {
 
 	if (language == 'fr') {
 		Inputbox.prompt({
-			message : "Tapez un mot a transformer :",
+			message : "Entrez un mot à transformer",
 			type : "text",
 			confirmText : "Ok",
 			cancelText : "Annuler"
