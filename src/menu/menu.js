@@ -121,6 +121,8 @@ Menu.aide = function() {
 	Event.onTap('Menu.aide', Menu.words['aide'], function() {
 		document.location.href = "aide.html";
 	}, true);
+	
+	Event.onHover('Menu.aide', Menu.words['aide'], pointer, cancelPointer);
 }
 
 Menu.mentions_legales = function() {
@@ -142,7 +144,7 @@ Menu.mentions_legales = function() {
 		document.location.href = "mentions_legales.html";
 	}, true);
 	
-	
+	Event.onHover('Menu.mentions_legales', Menu.words['mentions_legales'], pointer, cancelPointer);
 }
 
 Menu.contacts = function() {
@@ -163,6 +165,8 @@ Menu.contacts = function() {
 	Event.onTap('Menu.contacts', Menu.words['contacts'], function() {
 		document.location.href = "contacts.html";
 	}, true);
+	
+	Event.onHover('Menu.contacts', Menu.words['contacts'], pointer, cancelPointer);
 }
 
 
@@ -190,6 +194,7 @@ Menu.lang = function() {
 
 		Event.onTap('Menu.lang_EN', Menu.words['lang_EN'], function() {
 			language = 'en';
+			cancelPointer();
 			Menu.start();
 			/*
 			Tween.get(Menu.words['lang_EN'].getNode()).to({
@@ -199,6 +204,8 @@ Menu.lang = function() {
 					alpha: Menu.low_alpha_lang,
 				}, Menu.lang_anim_duration, Ease.sineIn);*/
 		}, true);
+		
+		Event.onHover('Menu.lang_EN', Menu.words['lang_EN'], pointer, cancelPointer);
 	}
 	else {
 		log('English version');
@@ -211,6 +218,7 @@ Menu.lang = function() {
 
 		Event.onTap('Menu.lang_FR', Menu.words['lang_FR'], function() {
 			language = 'fr';
+			cancelPointer();
 			Menu.start();
 			/*
 			Tween.get(Menu.words['lang_EN'].getNode()).to({
@@ -220,6 +228,8 @@ Menu.lang = function() {
 					alpha: Menu.high_alpha_lang,
 				}, Menu.lang_anim_duration, Ease.sineIn);*/
 		}, true);
+		
+		Event.onHover('Menu.lang_FR', Menu.words['lang_FR'], pointer, cancelPointer);
 	}
 }
 
