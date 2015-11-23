@@ -54,12 +54,7 @@ Menu.recit = function() {
 		Recit.start();
 	}, true);
 	
-	Event.onHover('Menu.recit', Menu.words['recit'], function() {
-		document.getElementsByTagName("body")[0].style.cursor = "pointer";
-	},
-	function () {
-		document.getElementsByTagName("body")[0].style.cursor = "default";
-	});
+	Event.onHover('Menu.recit', Menu.words['recit'], pointer, cancelPointer);
 }
 
 Menu.labo = function() {
@@ -83,6 +78,8 @@ Menu.labo = function() {
 	Event.onTap('Menu.labo', Menu.words['labo'], function() {
 		Labo.start();
 	}, true);
+	
+	Event.onHover('Menu.labo', Menu.words['labo'], pointer, cancelPointer);
 }
 
 Menu.editeur = function() {
@@ -102,6 +99,8 @@ Menu.editeur = function() {
 		}, Menu.anim_duration, Ease.sineIn);*/
 	
 	Event.onTap('Menu.editeur', Menu.words['editeur'], Editeur.start, true);
+	
+	Event.onHover('Menu.editeur', Menu.words['editeur'], pointer, cancelPointer);
 }
 
 Menu.aide = function() {
@@ -142,6 +141,8 @@ Menu.mentions_legales = function() {
 	Event.onTap('Menu.mentions_legales', Menu.words['mentions_legales'], function() {
 		document.location.href = "mentions_legales.html";
 	}, true);
+	
+	
 }
 
 Menu.contacts = function() {

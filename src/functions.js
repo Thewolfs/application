@@ -49,6 +49,14 @@ function randArray(array) {
 	return array;
 }
 
+
+function pointer () {
+	document.getElementsByTagName("body")[0].style.cursor = "pointer";
+}
+function cancelPointer() {
+	document.getElementsByTagName("body")[0].style.cursor = "default";
+}
+
 function getWordCodes(word, police)
 {
 	// Initialisation

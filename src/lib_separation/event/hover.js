@@ -4,6 +4,8 @@
 
 Event.hover_obj = {};
 
+Event.triggered = null;
+
 Event.onHover = function (id, object, callbackOnEvent, callbackOnAbort) {
 	this.hover_obj[id] = {
 		x1: object.getX(),
@@ -27,11 +29,13 @@ Event.hover = function(event) {
 		if((obj.y1 <= coords.y) && (coords.y <= obj.y2) &&
 			(obj.x1 <= coords.x) && (coords.x <= obj.x2)) {
 			obj.onEvent();
+			this.triggered = i;
 		}
-		else
+		else if(this.triggered == i)
 		{
 			if(typeof obj.onAbort() != "undefined") {
 				obj.onAbort();
+				this.triggered = null;
 			}
 		}
 	}
