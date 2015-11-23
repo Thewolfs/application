@@ -9,6 +9,7 @@ Event.events = {
 	touchmove : (appOnDevice_real() ? 'touchmove' : 'mousemove'),
 	touchend : (appOnDevice_real() ? 'touchend' : 'mouseleave'),
 	dbltap : (appOnDevice_real() ? 'dblclick' : 'dblclick'),
+	hover : (appOnDevice_real() ? '' : 'mousemove'),
 };
 
 Event.getMousePos = function(event) {
@@ -77,6 +78,10 @@ Event.touchend = function(event) {
 	Event.touchMoveAbortAll(Event.open_obj);
 };
 
+Event.mousehover = function(event) {
+	Event.hover(event);
+}
+
 Event.destroy = function(id, type) {
 	if(type !== undefined) {
 		switch(type) {
@@ -85,6 +90,7 @@ Event.destroy = function(id, type) {
 			case 'cut' : Event.destroyCut(id); break;
 			case 'erase' : Event.destroyErase(id); break;
 			case 'open' : Event.destroyOpen(id); break;
+			case 'hover' : Event.destroyHover(id); break;
 			default: alert('"' + type + '" inconnu dans Event.destroy()');
 		}
 	}
@@ -94,6 +100,7 @@ Event.destroy = function(id, type) {
 		Event.destroyCut(id);
 		Event.destroyErase(id);
 		Event.destroyOpen(id);
+		Event.destroyHover(id);
 	}
 };
 
@@ -103,6 +110,7 @@ Event.destroyAll = function() {
 	Destroy.list(Event.cut_obj);
 	Destroy.list(Event.erase_obj);
 	Destroy.list(Event.open_obj);
+	Destroy.list(Event.hover_obj);
 };
 
 scriptLoaded('scripts/libs/separation_toolkit/event/event.js');

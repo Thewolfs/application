@@ -63,6 +63,7 @@ module.exports = function(grunt) {
                             '../src/lib_separation/word_constructor/spritesheets.js',
                             '../src/lib_separation/word_constructor/letter.js',
                             '../src/lib_separation/word_constructor/word_letters.js',
+                            '../src/lib_separation/word_constructor/rounded_elegance.js',
                             // Word_animation 
                             '../src/lib_separation/word_animation/animation.js',
                             '../src/lib_separation/word_animation/coupable_haut.js',
@@ -89,6 +90,7 @@ module.exports = function(grunt) {
                             '../src/lib_separation/image/image.js',
                             // GUI 
                             '../src/lib_separation/gui/gui.js',
+                            '../src/lib_separation/gui/inputbox.js',
                             // Json 
                             '../src/lib_separation/json/json.js',
                             // STorage 

@@ -47,6 +47,8 @@ App.init = function() {
 	
 	// Initialisation des events
 	stage.on(Event.events.tap, Event.tap);
+	stage.enableMouseOver(20);
+	canvas.addEventListener(Event.events.hover, Event.mousehover);
 	canvas.addEventListener(Event.events.touchmove, Event.touchmove);
 	document.addEventListener(Event.events.touchend, Event.touchend);
 	window.addEventListener('resize', function () { 

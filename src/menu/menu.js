@@ -46,7 +46,6 @@ Menu.recit = function() {
 	Menu.words['recit'].display();
 	
 	Menu.words['recit'].setCenterX(this.margin + Menu.words['recit'].getWidth()/2);
-	
 	Tween.get(Menu.words['recit'].getNode()).to({
 			x: Menu.words['recit'].getX(),
 		}, Menu.anim_duration, Ease.sineOut);	
@@ -54,6 +53,13 @@ Menu.recit = function() {
 	Event.onTap('Menu.recit', Menu.words['recit'], function() {
 		Recit.start();
 	}, true);
+	
+	Event.onHover('Menu.recit', Menu.words['recit'], function() {
+		document.getElementsByTagName("body")[0].style.cursor = "pointer";
+	},
+	function () {
+		document.getElementsByTagName("body")[0].style.cursor = "default";
+	});
 }
 
 Menu.labo = function() {
