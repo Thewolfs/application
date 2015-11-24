@@ -54,7 +54,17 @@ Menu.recit = function() {
 		Recit.start();
 	}, true);
 	
-	Event.onHover('Menu.recit', Menu.words['recit'], pointer, cancelPointer);
+	function hover() {
+		pointer();
+		Hoverbox.display(event, null, "C'est ici que vous retrouverez vos créations et des exemples de poèmes.");
+	}
+	
+	function cancelHover() {
+		cancelPointer();
+		Hoverbox.hide();
+	}
+	
+	Event.onHover('Menu.recit', Menu.words['recit'], hover, cancelHover);
 }
 
 Menu.labo = function() {
@@ -79,7 +89,17 @@ Menu.labo = function() {
 		Labo.start();
 	}, true);
 	
-	Event.onHover('Menu.labo', Menu.words['labo'], pointer, cancelPointer);
+	function hover() {
+		pointer();
+		Hoverbox.display(event, null, "Le labo permet de découvrir la poésie à deux mi-mots et de créer ses propres combinaisons.");
+	}
+	
+	function cancelHover() {
+		cancelPointer();
+		Hoverbox.hide();
+	}
+	
+	Event.onHover('Menu.labo', Menu.words['labo'], hover, cancelHover);
 }
 
 Menu.editeur = function() {
@@ -98,9 +118,22 @@ Menu.editeur = function() {
 			alpha: Menu.opacity,
 		}, Menu.anim_duration, Ease.sineIn);*/
 	
-	Event.onTap('Menu.editeur', Menu.words['editeur'], Editeur.start, true);
+	Event.onTap('Menu.editeur', Menu.words['editeur'], function () {
+		Editeur.start(); 
+		cancelHover();
+	}, true);
 	
-	Event.onHover('Menu.editeur', Menu.words['editeur'], pointer, cancelPointer);
+	function hover() {
+		pointer();
+		Hoverbox.display(event, null, "L'éditeur permet de créer ses propres poèmes à deux mi-mots et de les sauvegarder pour les redécouvrir par la suite.");
+	}
+	
+	function cancelHover() {
+		cancelPointer();
+		Hoverbox.hide();
+	}
+	
+	Event.onHover('Menu.editeur', Menu.words['editeur'], hover, cancelHover);
 }
 
 Menu.aide = function() {

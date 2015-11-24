@@ -33,7 +33,7 @@
 		
 		<script type="text/javascript">
 			var loaded_scripts = 0;
-			var n_scripts = 60;
+			var n_scripts = 61;
 			function scriptLoaded(script_path) {
 				loaded_scripts++;
 				console.debug(loaded_scripts + '/' + n_scripts + " : " + script_path);
@@ -124,6 +124,7 @@
 				<!-- GUI -->
 				<script type="text/javascript" src="src/lib_separation/gui/gui.js"></script>
 				<script type="text/javascript" src="src/lib_separation/gui/inputbox.js"></script>
+				<script type="text/javascript" src="src/lib_separation/gui/hoverbox.js"></script>
 				<!-- Json -->
 				<script type="text/javascript" src="src/lib_separation/json/json.js"></script>
 				<!-- STorage -->
@@ -165,7 +166,7 @@
 			margin: 1em;
 			border:none;
      	}
-     	.inputbox > .inputboxcontainer > .inputboxbuttoncontainer > button:hover{
+     	.inputbox > .inputboxcontainer > .inputboxbuttoncontainer > button:hover {
      		cursor:pointer;
      		background: grey;
      	}
@@ -183,13 +184,35 @@
 			font-family: Rounded_Elegance;
 			font-size: 0.7em;
 		}
+		#hoverbox {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 20vw;
+			max-height: 15vh;
+			z-index: 3;
+			background-color: white;
+			display: none;
+			border-radius: 5px;
+			border: 1px solid black;
+			font-family: Rounded_Elegance;
+			font-size: 1.5vw;
+			padding: 2px;
+		}
+		#hoverbox > p{
+			text-align: justify;
+		}
 	</style>
 	</head>
 	<body>
+		<div id="hoverbox">
+				<h2 id="hovertitle"></h2>
+				<p></p>
+		</div>
 		<div class="inputbox">
 			<div class="inputboxcontainer">
 				<h2 id="message"></h2>
-				<input id="" />				
+				<input id="" autofocus/>				
 				<div class="inputboxbuttoncontainer">
 					<button id="confirm"></button>
 					<button id="cancel"></button>

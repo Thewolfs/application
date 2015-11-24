@@ -28,7 +28,7 @@ Event.hover = function(event) {
 		// On regarde si le curseur est dans le cadre
 		if((obj.y1 <= coords.y) && (coords.y <= obj.y2) &&
 			(obj.x1 <= coords.x) && (coords.x <= obj.x2)) {
-			obj.onEvent();
+			obj.onEvent(event);
 			this.triggered = i;
 		}
 		else if(this.triggered == i)
