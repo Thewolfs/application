@@ -52,11 +52,12 @@ Menu.recit = function() {
 	
 	Event.onTap('Menu.recit', Menu.words['recit'], function() {
 		Recit.start();
+		cancelHover();
 	}, true);
 	
 	function hover() {
 		pointer();
-		Hoverbox.display(event, null, "C'est ici que vous retrouverez vos créations et des exemples de poèmes.");
+		Hoverbox.display(event, null, "C'est ici que vous retrouverez vos créations et des exemples de poèmes");
 	}
 	
 	function cancelHover() {
@@ -87,11 +88,12 @@ Menu.labo = function() {
 	
 	Event.onTap('Menu.labo', Menu.words['labo'], function() {
 		Labo.start();
+		cancelHover();
 	}, true);
 	
 	function hover() {
 		pointer();
-		Hoverbox.display(event, null, "Le labo permet de découvrir la poésie à deux mi-mots et de créer ses propres combinaisons.");
+		Hoverbox.display(event, null, "Le labo permet de découvrir la poésie à 2 mi-mots et de créer ses propres combinaisons");
 	}
 	
 	function cancelHover() {
@@ -125,7 +127,7 @@ Menu.editeur = function() {
 	
 	function hover() {
 		pointer();
-		Hoverbox.display(event, null, "L'éditeur permet de créer ses propres poèmes à deux mi-mots et de les sauvegarder pour les redécouvrir par la suite.");
+		Hoverbox.display(event, null, "L'éditeur permet de créer ses propres poèmes à 2 mi-mots et de les sauvegarder pour les redécouvrir par la suite");
 	}
 	
 	function cancelHover() {

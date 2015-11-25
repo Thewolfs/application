@@ -121,7 +121,6 @@ Labo_Menu.prototype.changeCheckbox = function(i) {
 /* Text input */
 Labo_Menu.prototype.textInput = function() {
 	var callback_success = function (text){
-		console.log(text);
 		if (text !== "" && text !== null) {
 			this.word_searched_value = text;
 			this.textInputWord();
