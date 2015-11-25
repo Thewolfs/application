@@ -29,8 +29,6 @@ App.init = function() {
 	inputboxcontainer = document.getElementsByClassName('inputboxcontainer')[0];
 	inputboxbuttoncontainer = document.getElementsByClassName('inputboxbuttoncontainer')[0];
 	
-	inputbox.style.width = W * 40/100 + "px";
-	inputbox.style.height = H * 50/100 + "px";
 	inputbox.style.opacity = 0;
 	
 	//Positionnement de la boite
@@ -59,9 +57,8 @@ App.init = function() {
 		
 		canvas.width = W;
 		canvas.height = H;
+		canvas.style.zIndex = "1";
 		
-		inputbox.style.width = W * 40/100 + "px";
-		inputbox.style.height = H * 50/100 + "px";
 		inputbox.style.left = (W - W * 40/100)/2 + "px";
 		inputbox.style.top = (H - H * 50/100)/2 + "px";
 		

@@ -167,9 +167,9 @@ Recherche.prototype.generate = function(mot_act) {
 	}
 	
 	if (language == 'fr') 
-		this.word_try = new Word('Transformer', null, 6, null, null, null, 180);
+		this.word_try = new Word('Transformer', null, 6, null, null, null, 13.7 * W/100);
 	else
-		this.word_try = new Word('Transform', null, 6, null, null, null, 180);
+		this.word_try = new Word('Transform', null, 6, null, null, null, 13.7 * W/100);
 	this.word_try.setZoom(0.6);
 	this.word_try.setCenterXY(this.coords_word_try.x, this.coords_word_try.y);
 	this.word_try.onTap(function() { Labo.transform(); });
@@ -198,9 +198,9 @@ Recherche.prototype.transform = function() { if(!this.inTransform) { this.inTran
 	createjs.Tween.get(this.word_try.getNode()).to({'alpha': 0,}, 500);
 	
 	if (language == 'fr') 
-		this.word_save = new Word('Sauver', null, 6, null, null, null, 180);
+		this.word_save = new Word('Sauver', null, 6, null, null, null, 13.7 * W/100);
 	else
-		this.word_save = new Word('Save', null, 6, null, null, null, 180);
+		this.word_save = new Word('Save', null, 6, null, null, null, 13.7 * W/100);
 	this.word_save.setCenterX(W/4);
 	this.word_save.setY(H-margin-this.word_save.getHeight());
 	this.word_save.generate();
@@ -211,9 +211,9 @@ Recherche.prototype.transform = function() { if(!this.inTransform) { this.inTran
 			Labo.saveWord(); 
 			o.word_save.destroy(); 
 			if (language == 'fr')
-				o.word_save = new Word('Sauvé', null, 6, null, null, "#3299CC", 180); 
+				o.word_save = new Word('Sauvé', null, 6, null, null, "#3299CC", 13.7 * W/100); 
 			else
-				o.word_save = new Word('Saved', null, 6, null, null, "#3299CC", 180); 
+				o.word_save = new Word('Saved', null, 6, null, null, "#3299CC", 13.7 * W/100); 
 			o.word_save.setCenterX(W/4);
 			o.word_save.setY(H-margin-o.word_save.getHeight());
 			o.word_save.generate(); 
@@ -223,9 +223,9 @@ Recherche.prototype.transform = function() { if(!this.inTransform) { this.inTran
 	
 	// Bouton Editeur
 	if (language == 'fr')
-		this.start_edit = new Word('Editeur', null, 6, null, null, null, 180);
+		this.start_edit = new Word('Editeur', null, 6, null, null, null, 13.7 * W/100);
 	else
-		this.start_edit = new Word('Story', null, 6, null, null, null, 180);
+		this.start_edit = new Word('Story', null, 6, null, null, null, 13.7 * W/100);
 	this.start_edit.setCenterX(W/2);
 	this.start_edit.setY(H-margin-this.start_edit.getHeight());
 	this.start_edit.setAlpha(0);
@@ -240,9 +240,9 @@ Recherche.prototype.transform = function() { if(!this.inTransform) { this.inTran
 		(this), true);
 
 	if (language == 'fr')
-		this.back_to_recherche = new Word('Retour', null, 6, null, null, null, 180);
+		this.back_to_recherche = new Word('Retour', null, 6, null, null, null, 13.7 * W/100);
 	else
-		this.back_to_recherche = new Word('Go back', null, 6, null, null, null, 180);
+		this.back_to_recherche = new Word('Go back', null, 6, null, null, null, 13.7 * W/100);
 	this.back_to_recherche.setCenterX(3*W/4);
 	this.back_to_recherche.setY(H-margin-this.back_to_recherche.getHeight());
 	this.back_to_recherche.setAlpha(0);

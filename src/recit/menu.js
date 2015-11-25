@@ -40,9 +40,9 @@ function Recit_MenuConstruct(r) {
 Recit_Menu.prototype.generate = function() {
 
 	if (language == 'fr') 
-		this.delete_all_words = new Word("Supprimer tout", null, 6, null, null, null, 180);
+		this.delete_all_words = new Word("Supprimer tout", null, 6, null, null, null, 13.7 * W/100);
 	else
-		this.delete_all_words = new Word("Erase all", null, 6, null, null, null, 180);
+		this.delete_all_words = new Word("Erase all", null, 6, null, null, null, 13.7 * W/100);
 	this.delete_all_words.setZoom(0.6);
 	this.delete_all_words.setX(W - this.delete_all_words.getWidth() - margin);
 	this.delete_all_words.setY(H-margin-this.delete_all_words.getHeight());

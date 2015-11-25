@@ -234,9 +234,9 @@ RechercheEditeur.generate = function(mot_act) {
 	}.bind(this), true);
 
 	if (language == 'fr') 
-		this.word_try = new Word('Valider', null, 6, null, null, null, 180);
+		this.word_try = new Word('Valider', null, 6, null, null, null, 13.7 * W/100);
 	else
-		this.word_try = new Word('Ok', null, 6, null, null, null, 180);
+		this.word_try = new Word('Ok', null, 6, null, null, null, 13.7 * W/100);
 	this.word_try.setZoom(0.6);
 	this.word_try.setCenterXY(W/2, H - this.word_try.getHeight());
 	this.word_try.onTap(function() { Editeur.handle_recherche();});

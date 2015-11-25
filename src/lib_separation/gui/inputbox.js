@@ -64,10 +64,13 @@ Inputbox.prompt = function (options, callbacks) {
 			
 	cancel.addEventListener("click", cancel_callback);
 	
-	canvas.addEventListener("click", cancel_callback);
+	setTimeout(function () {
+		canvas.addEventListener("click", cancel_callback);
+	}, 0);
 	
 	function cancel_callback() {
 		canvas.removeEventListener("click", cancel_callback);
+		console.log("test");
 		Inputbox.hide();
 		if(typeof callbacks != "undefined" && typeof callbacks.cancel == "function")
 		{
@@ -112,7 +115,9 @@ Inputbox.alert = function (options, callbacks) {
 		}
 	}.bind(this));
 	
-	canvas.addEventListener("click", cancel_callback);
+	setTimeout(function () {
+		canvas.addEventListener("click", cancel_callback);
+	}, 0);
 	
 	function cancel_callback() {
 		canvas.removeEventListener("click", cancel_callback);
@@ -164,7 +169,9 @@ Inputbox.confirm = function (options, callbacks) {
 	
 	cancel.addEventListener("click", cancel_callback);
 	
-	canvas.addEventListener("click", cancel_callback);
+	setTimeout(function () {
+		canvas.addEventListener("click", cancel_callback);
+	}, 0);
 	
 	function cancel_callback() {
 		canvas.removeEventListener("click", cancel_callback);

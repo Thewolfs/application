@@ -161,9 +161,9 @@ Gui.prototype.Editeur_classic_button_down = function() {
 
 Gui.prototype.Editeur_multilignes_save = function() {
 	if (language == 'fr') {
-		this.editeur_multilignes_save = new Word('Sauver', null, 6, null, null, null, 180);
+		this.editeur_multilignes_save = new Word('Sauver', null, 6, null, null, null, 13.7 * W/100);
 	} else {
-		this.editeur_multilignes_save = new Word('Save', null, 6, null, null, null, 180);
+		this.editeur_multilignes_save = new Word('Save', null, 6, null, null, null, 13.7 * W/100);
 	}
 	this.editeur_multilignes_save.setCenterXY(2*W/3, H-this.margin-size_icon/2);
 	this.editeur_multilignes_save.display();
@@ -172,9 +172,9 @@ Gui.prototype.Editeur_multilignes_save = function() {
 };
 Gui.prototype.Editeur_multilignes_erase = function() {
 	if (language == 'fr') {
-		this.editeur_multilignes_erase = new Word('Effacer', null, 6, null, null, null, 180);
+		this.editeur_multilignes_erase = new Word('Effacer', null, 6, null, null, null, 13.7 * W/100);
 	} else {
-		this.editeur_multilignes_erase = new Word('Erase', null, 6, null, null, null, 180);
+		this.editeur_multilignes_erase = new Word('Erase', null, 6, null, null, null, 13.7 * W/100);
 	}
 	this.editeur_multilignes_erase.setCenterXY(W/3, H-this.margin-size_icon/2);
 	this.editeur_multilignes_erase.display();
