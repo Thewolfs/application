@@ -232,12 +232,12 @@ Recherche.prototype.transform = function() { if(!this.inTransform) { this.inTran
 	this.start_edit.generate();
 	this.start_edit.display();
 	createjs.Tween.get(this.start_edit.getNode()).to({'alpha': 1,}, 500);
-	Event.onTap('start_edit', this.start_edit, function() { return function() 
-		{ 
-			Labo.saveWord; 
-			Editeur.start(); 
-		}
-	}(this), true);
+	Event.onTap('start_edit', this.start_edit, function() { 
+			return function() { 
+				Labo.saveWord(); 
+				Editeur.start(); }
+			}
+		(this), true);
 
 	if (language == 'fr')
 		this.back_to_recherche = new Word('Retour', null, 6, null, null, null, 180);
