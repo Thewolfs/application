@@ -70,7 +70,6 @@ Inputbox.prompt = function (options, callbacks) {
 	
 	function cancel_callback() {
 		canvas.removeEventListener("click", cancel_callback);
-		console.log("test");
 		Inputbox.hide();
 		if(typeof callbacks != "undefined" && typeof callbacks.cancel == "function")
 		{
