@@ -6,7 +6,7 @@ var last_time = new Date();
 Event.scroll = function (e) {
 
 	var now = new Date();
-	if(state == Labo && (now - last_time) >= 100){
+	if(state == Labo && (now - last_time) >= 32){
 		var delta = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)));
 		switch(delta)
 		{
