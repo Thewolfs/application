@@ -1,9 +1,12 @@
 /*
 	Event scroll
 */
+var last_time = new Date(); 
 
 Event.scroll = function (e) {
-	if(state == Labo){
+
+	var now = new Date();
+	if(state == Labo && (now - last_time) >= 100){
 		var delta = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)));
 		switch(delta)
 		{
@@ -14,8 +17,7 @@ Event.scroll = function (e) {
 				Labo.scrollDown();
 		}
 	}
-	else
-		return false;
+	last_time = new Date();
 };
 
 

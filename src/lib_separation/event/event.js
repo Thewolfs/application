@@ -12,14 +12,6 @@ Event.events = {
 	dbltap : (appOnDevice_real() ? 'dblclick' : 'dblclick'),
 	hover : (appOnDevice_real() ? '' : 'mousemove'),
 	scroll : (appOnDevice_real() ? '' : (isFirefox)? 'DOMMouseScroll' : 'mousewheel')
-	/*scroll: ( if (appOnDevice_real())
-			 	'' ;
-			 else
-			 	if(isFirefox)
-			 		'DOMMouseScroll';
-			 	else 
-			 		'mousewheel';
-			 )*/
 	}
 
 Event.getMousePos = function(event) {
