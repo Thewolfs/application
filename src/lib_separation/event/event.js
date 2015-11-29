@@ -2,15 +2,25 @@
 	Namespace Event
 */
 var Event = {};
-
+var isFirefox = typeof InstallTrigger !== 'undefined'; 
 var old_touch_move = {x:-1, y:-1};
+
 Event.events = {
 	tap : (appOnDevice_real() ? 'click' : 'click'),
 	touchmove : (appOnDevice_real() ? 'touchmove' : 'mousemove'),
 	touchend : (appOnDevice_real() ? 'touchend' : 'mouseleave'),
 	dbltap : (appOnDevice_real() ? 'dblclick' : 'dblclick'),
 	hover : (appOnDevice_real() ? '' : 'mousemove'),
-};
+	scroll : (appOnDevice_real() ? '' : 'mousewheel')
+	/*scroll: ( if (appOnDevice_real())
+			 	'' ;
+			 else
+			 	if(isFirefox)
+			 		'DOMMouseScroll';
+			 	else 
+			 		'mousewheel';
+			 )*/
+	}
 
 Event.getMousePos = function(event) {
 	// event de createJS 'click'
@@ -91,6 +101,7 @@ Event.destroy = function(id, type) {
 			case 'erase' : Event.destroyErase(id); break;
 			case 'open' : Event.destroyOpen(id); break;
 			case 'hover' : Event.destroyHover(id); break;
+			//case 'scroll' : Event.destroyScroll(id); break;
 			default: alert('"' + type + '" inconnu dans Event.destroy()');
 		}
 	}
@@ -100,6 +111,7 @@ Event.destroy = function(id, type) {
 		Event.destroyCut(id);
 		Event.destroyErase(id);
 		Event.destroyOpen(id);
+		//Event.destroyScroll(id);
 		Event.destroyHover(id);
 	}
 };

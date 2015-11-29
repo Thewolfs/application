@@ -14,7 +14,6 @@ var ask_to_scroll_down = 0;
 
 Labo.start = function() {	
 	Labo.menu();
-	
 	state = Labo;
 };
 
@@ -48,7 +47,6 @@ function inArray(array, p_val) {
 
 Labo.generateRecherche = function(word_searched, police) {
 	Destroy.all();
-	
 	recherche = new Recherche();
 	recherche.addCentralWord(new Word(word_searched));
 

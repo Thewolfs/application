@@ -155,6 +155,9 @@ Recherche.prototype.generate = function(mot_act) {
 	this.resetWords();
 	this.mot_act = mot_act;
 	var j = 0;
+	/*var hover = function(){
+		console.log("on survole un mot de la recherche")
+	}	*/
 	for (var i = mot_act - this.nb_side; i <= mot_act + this.nb_side; i++) {
 		var ind = this.getValidId(i);
 		var p = this.possibilities[ind];
@@ -162,6 +165,7 @@ Recherche.prototype.generate = function(mot_act) {
 		this.words[j].setAlpha(this.coords_word[j].alpha);
 		this.words[j].setZoom(this.coords_word[j].zoom);
 		this.words[j].setCenterXY(this.coords_word[j].x, this.coords_word[j].y);
+		//Event.onHover(p.getValue, Recherche.words[j], hover);
 
 		j++;
 	}

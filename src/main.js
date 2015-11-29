@@ -47,6 +47,7 @@ App.init = function() {
 	stage.on(Event.events.tap, Event.tap);
 	canvas.addEventListener(Event.events.hover, Event.mousehover);
 	canvas.addEventListener(Event.events.touchmove, Event.touchmove);
+	canvas.addEventListener(Event.events.scroll, Event.scroll);
 	document.addEventListener(Event.events.touchend, Event.touchend);
 	window.addEventListener('resize', function () { 
 		if(can_reload)
