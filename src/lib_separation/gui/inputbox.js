@@ -173,7 +173,7 @@ Inputbox.confirm = function (options, callbacks) {
 		event.stopPropagation();
 	});
 	
-	confirm.addEventListener("click", .bind(this));
+	confirm.addEventListener("click", confirm_callback);
 	
 	cancel.addEventListener("click", cancel_callback);
 	
