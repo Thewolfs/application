@@ -193,7 +193,7 @@ Inputbox.confirm = function (options, callbacks) {
 	};
 	
 	function confirm_callback() {
-		this.hide();
+		Inputbox.hide();
 		if(typeof callbacks != "undefined" && typeof callbacks.success == "function") {
 			callbacks.success();
 			canvas.removeEventListener("click", cancel_callback);
