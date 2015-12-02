@@ -41,11 +41,10 @@ Menu.recit = function() {
 		Menu.words['recit'] = new Word('Salon', null, 6, null, null, null, 15.8 * W/100);
 	
 	Menu.words['recit'].setZoom(zoom);
-	Menu.words['recit'].setX(-Menu.words['recit'].getWidth());
+	Menu.words['recit'].setX(W);
 	Menu.words['recit'].setCenterY(H * 1/2);
 	Menu.words['recit'].display();
-	
-	Menu.words['recit'].setCenterX(this.margin + Menu.words['recit'].getWidth()/2);
+	Menu.words['recit'].setCenterX(W - (this.margin + Menu.words['recit'].getWidth()/2));
 	Tween.get(Menu.words['recit'].getNode()).to({
 			x: Menu.words['recit'].getX(),
 		}, Menu.anim_duration, Ease.sineOut);	
@@ -76,11 +75,11 @@ Menu.labo = function() {
 	else
 		Menu.words['labo'] = new Word('Lab', null, 6, null, null, null, 15.8 * W/100);
 	Menu.words['labo'].setZoom(zoom);
-	Menu.words['labo'].setX(W);
+	Menu.words['labo'].setX(-Menu.words['labo'].getWidth());
 	Menu.words['labo'].setCenterY(H * 1/2);
 	Menu.words['labo'].display();
 
-	Menu.words['labo'].setCenterX(W - (this.margin + Menu.words['labo'].getWidth()/2));
+	Menu.words['labo'].setCenterX(this.margin + Menu.words['labo'].getWidth()/2);
 	
 	Tween.get(Menu.words['labo'].getNode()).to({
 			x: Menu.words['labo'].getX(),
