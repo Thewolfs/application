@@ -232,6 +232,13 @@ RechercheEditeur.generate = function(mot_act) {
 		MyStorage.removeWord(this.words[this.nb_side]);
 		Editeur.classic.changeWord(this.mot_act);
 	}.bind(this), true);
+	
+	Event.onHover('erase_word', this.erase, function (event) {
+		pointer();
+	},
+	function(event) {
+		cancelPointer();
+	});
 
 	if (language == 'fr') 
 		this.word_try = new Word('Valider', null, 6, null, null, null, 13.7 * W/100);
@@ -239,7 +246,14 @@ RechercheEditeur.generate = function(mot_act) {
 		this.word_try = new Word('Ok', null, 6, null, null, null, 13.7 * W/100);
 	this.word_try.setZoom(0.6);
 	this.word_try.setCenterXY(W/2, H - this.word_try.getHeight());
-	this.word_try.onTap(function() { Editeur.handle_recherche();});
+	this.word_try.onTap(function() { cancelPointer(); Editeur.handle_recherche();});
+	
+	Event.onHover('word_try', this.word_try, function (event) {
+		pointer();
+	},
+	function(event) {
+		cancelPointer();
+	});
 
 	this.central_word = new Word(this.words[this.nb_side].getValue());
 	this.central_word.setZoom(2);

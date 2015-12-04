@@ -176,9 +176,18 @@ Recherche.prototype.generate = function(mot_act) {
 		this.word_try = new Word('Transformer', null, 6, null, null, null, 13.7 * W/100);
 	else
 		this.word_try = new Word('Transform', null, 6, null, null, null, 13.7 * W/100);
+	
 	this.word_try.setZoom(0.6);
 	this.word_try.setCenterXY(this.coords_word_try.x, this.coords_word_try.y);
-	this.word_try.onTap(function() { Labo.transform(); });
+	this.word_try.onTap(function() { cancelPointer(); Labo.transform(); });
+
+		
+	Event.onHover('word_try', this.word_try, function (event) {
+		pointer();
+	},
+	function(event) {
+		cancelPointer();
+	});
 
 	this.central_word = new Word(this.central_word_value);
 	this.central_word.setZoom(2);
@@ -216,11 +225,19 @@ Recherche.prototype.transform = function() { if(!this.inTransform) { this.inTran
 	createjs.Tween.get(this.start_edit.getNode()).to({'alpha': 1,}, 500);
 	Event.onTap('start_edit', this.start_edit, function() { 
 			return function() { 
+				cancelPointer();
 				Labo.saveWord(); 
 				Editeur.start(); }
 			}
 		(this), true);
-
+	
+	Event.onHover('start_edit', this.start_edit, function (event) {
+		pointer();
+	},
+	function(event) {
+		cancelPointer();
+	});
+	
 	if (language == 'fr')
 		this.back_to_recherche = new Word('Retour', null, 6, null, null, null, 13.7 * W/100);
 	else
@@ -247,7 +264,14 @@ Recherche.prototype.transform = function() { if(!this.inTransform) { this.inTran
 				r.transformFinish();
 			}
 		})	
-	}, true); 
+	}, true);
+	
+	Event.onHover('back_to_recherche', this.back_to_recherche, function (event) {
+		pointer();
+	},
+	function(event) {
+		cancelPointer();
+	}); 
 
 	// Modification du mot central
 	this.central_word.setNextValue(this.words[this.nb_side].getValue());
@@ -277,6 +301,8 @@ Recherche.prototype.transformFinish = function() {
 
 	createjs.Tween.get(this.back_to_recherche.getNode()).to({'alpha': 0,}, 500)
 	Event.onTap('back_to_recherche', this.back_to_recherche, function() {}, true);
+	Event.destroyHover('back_to_recherche');
+	
 	// Affichage du mot centrale
 	this.central_word.setValue(this.baseValue);
 	this.central_word.generate();
