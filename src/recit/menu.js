@@ -20,7 +20,7 @@ function Recit_Menu(titles_value) {
 
 function Recit_MenuConstruct(r) {
 	var w = W - 200;
-	var offsetX = 110;
+	var offsetX = 120;
 	
 	r.h_vignette = Math.ceil((H-(r.nb_h+1)*margin)/r.nb_h);
 	// r.nb_w = Math.floor(w / r.h_vignette);
