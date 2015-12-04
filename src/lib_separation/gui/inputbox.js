@@ -133,7 +133,7 @@ Inputbox.alert = function (options, callbacks) {
 	};
 	
 	function confirm_callback() {
-		this.hide();
+		Inputbox.hide();
 		if(typeof callbacks != "undefined" && typeof callbacks.success == "function") {
 			confirm.removeEventListener("click", confirm_callback); 
 			cancel.removeEventListener("click", cancel_callback);
