@@ -230,7 +230,7 @@ RechercheEditeur.generate = function(mot_act) {
 	this.erase.setX(this.coords_erase.x);
 	Event.onTap('erase_word', this.erase, function() {
 		MyStorage.removeWord(this.words[this.nb_side]);
-		Editeur.classic.changeWord(this.mot_act);
+		RechercheEditeur.start(this.callback);
 	}.bind(this), true);
 	
 	Event.onHover('erase_word', this.erase, function (event) {
