@@ -304,6 +304,7 @@ Recherche.prototype.transformFinish = function() {
 	Event.destroyHover('back_to_recherche');
 	
 	// Affichage du mot centrale
+	this.central_word.removeGesture();
 	this.central_word.setValue(this.baseValue);
 	this.central_word.generate();
 	this.central_word.display();
