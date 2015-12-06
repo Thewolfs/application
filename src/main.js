@@ -49,6 +49,7 @@ App.init = function() {
 	canvas.addEventListener(Event.events.touchmove, Event.touchmove);
 	canvas.addEventListener(Event.events.scroll, Event.scroll);
 	document.addEventListener(Event.events.touchend, Event.touchend);
+	document.addEventListener(Event.events.keydown, Event.keydown);
 	window.addEventListener('resize', function () { 
 		if(can_reload)
 			window.location.reload();
