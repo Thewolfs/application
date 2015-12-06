@@ -7,7 +7,7 @@ function Word_rounded_elegance(data) {
 	this.word.y = 0;
 	this.container = new createjs.Container()
 	this.container.width = this.word.getBounds().width;
-	this.container.height = fontConst.car.height_img;
+	this.container.height = data.fontSize;
 	
 	// var temp = new createjs.Shape();
 	// temp.graphics.beginFill("#ff0000").drawRect(0, 0, this.container.width, this.container.height);

@@ -83,8 +83,15 @@ App.mainLoop = function() {
 App.start = function() {
 	sound_manager = new Sound();
 	// sound_manager.play("ambiant");
-	Intro.start();
-	// Menu.start();
+	
+	var url = window.location.search.replace("?", "").split("=");
+	if(url[0] == "intro" && url[1] == "skip")
+	{
+		Menu.start();
+	}
+	else {
+		Intro.start();
+	}
 };
 
 // Démarrage de l'application

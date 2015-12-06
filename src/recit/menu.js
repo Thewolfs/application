@@ -20,7 +20,7 @@ function Recit_Menu(titles_value) {
 
 function Recit_MenuConstruct(r) {
 	var w = W - 200;
-	var offsetX = 100;
+	var offsetX = 120;
 	
 	r.h_vignette = Math.ceil((H-(r.nb_h+1)*margin)/r.nb_h);
 	// r.nb_w = Math.floor(w / r.h_vignette);
@@ -51,6 +51,12 @@ Recit_Menu.prototype.generate = function() {
 	var w = this.delete_all_words;
 	Event.onTap('delete_all_words', this.delete_all_words, function() { MyStorage.clearStories(); Recit.start(); }, true);
 
+	Event.onHover('delete_all_words', this.delete_all_words, function (event) {
+		pointer();
+	},
+	function(event) {
+		cancelPointer();
+	});
 	
 	var k = 0;
 	for(var i = 0; i < this.nb_h; i++) {
@@ -86,7 +92,14 @@ Recit_Menu.prototype.generate = function() {
 				this.vignettes[i][j].display();
 				this.titles[i][j].display();
 				var name = this.titles_value[k];
-				Event.onTap('vignettes_'+k, this.titles[i][j], function(name) { return function() { Recit.openStory(name); }}(name), true);
+				Event.onTap('vignettes_'+k, this.titles[i][j], function(name) { cancelPointer(); return function() { Recit.openStory(name); }}(name), true);
+				
+				Event.onHover('vignettes_'+k, this.titles[i][j], function (event) {
+					pointer();
+				},
+				function(event) {
+					cancelPointer();
+				});
 				
 				if (!MyStorage.getStory(name).isStatic) {
 					//Affichage des croix d'effacement

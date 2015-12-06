@@ -31,8 +31,16 @@ Labo_Menu.prototype.generate = function() {
 	this.word_valid.setY(H-margin-2*this.word_valid.getHeight());
 	this.word_valid.display();
 	Event.onTap('word_valid', this.word_valid, function() {
+		cancelPointer();
 		this.valid();
 	}.bind(this), true);
+	
+	Event.onHover('word_valid', this.word_valid, function (event) {
+		pointer();
+	},
+	function(event) {
+		cancelPointer();
+	});
 /*
 	// Word choices
 	if (language == 'fr') 

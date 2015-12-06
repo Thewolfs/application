@@ -28,7 +28,7 @@ Editeur.multilignes.generate = function () {
 		new_button = new ButtonPlus(i, false);
 		line.addAtBegin(new_button.word);
 		this.button_plus.push(new_button);
-
+		
 		if(line.words.length > 1) {
 			new_button = new ButtonPlus(i, true);
 			line.add(new_button.word);
@@ -163,8 +163,16 @@ function ButtonPlus(line_id, addAtEnd) {
 
 ButtonPlus.prototype.generate = function () {
 	this.word.onTap(function () {
+		cancelPointer();
 		this.onTap();
 	}.bind(this));
+	
+	Event.onHover('button_plus' + randRange(0,100), this.word, function (event) {
+		pointer();
+	},
+	function(event) {
+		cancelPointer();
+	});
 };
 
 ButtonPlus.prototype.onTap = function () {
@@ -185,6 +193,7 @@ ButtonPlus.prototype.onTap = function () {
 	this.word_active.display();
 	this.word_classic.display();
 	this.word_active.onTap(function () {
+		cancelPointer();
 		RechercheEditeur.start(function (new_word) {
 			Editeur.multilignes.addWordToLine(this.line_id, new_word, this.addAtBegin);
 			Editeur.start();
@@ -196,6 +205,20 @@ ButtonPlus.prototype.onTap = function () {
 			Editeur.start();
 		}.bind(this));
 	}.bind(this));
+	
+	Event.onHover('word_active', this.word_active, function (event) {
+		pointer();
+	},
+	function(event) {
+		cancelPointer();
+	});
+	
+	Event.onHover('word_classic', this.word_classic, function (event) {
+		pointer();
+	},
+	function(event) {
+		cancelPointer();
+	});
 };
 
 ButtonPlus.prototype.textInputWord = function(callback_success) {

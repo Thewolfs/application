@@ -6,6 +6,7 @@ var Inputbox = {}
 
 Inputbox.show = function() {
 	inputbox.style.display = 'block';
+	inputboxcontainer.children[1].focus();
 	
 	inputbox.style.opacity = parseFloat(inputbox.style.opacity) + 0.1;
 	if(inputbox.style.opacity < 1) {
@@ -20,6 +21,7 @@ Inputbox.hide = function() {
 	}
 	else {
 		inputbox.style.display = 'none';
+		inputboxcontainer.children[1].value = "";
 	}
 	
 };
@@ -53,14 +55,7 @@ Inputbox.prompt = function (options, callbacks) {
 		event.stopPropagation();
 	});
 	
-	confirm.addEventListener("click", function () {
-		var text = input.value;
-		this.hide();
-		if(typeof callbacks != "undefined" && typeof callbacks.success == "function") {
-			canvas.removeEventListener("click", cancel_callback);
-			callbacks.success(text);
-		}
-	}.bind(this));
+	confirm.addEventListener("click", confirm_callback);
 			
 	cancel.addEventListener("click", cancel_callback);
 	
@@ -70,12 +65,25 @@ Inputbox.prompt = function (options, callbacks) {
 	
 	function cancel_callback() {
 		canvas.removeEventListener("click", cancel_callback);
+		confirm.removeEventListener("click", confirm_callback); 
+		cancel.removeEventListener("click", cancel_callback);
 		Inputbox.hide();
 		if(typeof callbacks != "undefined" && typeof callbacks.cancel == "function")
 		{
 			callbacks.cancel();
 		}
 	};
+	
+	function confirm_callback() {
+		var text = input.value;
+		Inputbox.hide();
+		if(typeof callbacks != "undefined" && typeof callbacks.success == "function") {
+			canvas.removeEventListener("click", cancel_callback);
+			confirm.removeEventListener("click", confirm_callback); 
+			cancel.removeEventListener("click", cancel_callback);
+			callbacks.success(text);
+		}
+	}
 	
 	Inputbox.show();
 };
@@ -107,12 +115,7 @@ Inputbox.alert = function (options, callbacks) {
 		event.stopPropagation();
 	});
 	
-	confirm.addEventListener("click", function () {
-		this.hide();
-		if(typeof callbacks != "undefined" && typeof callbacks.success == "function") {
-			callbacks.success();
-		}
-	}.bind(this));
+	confirm.addEventListener("click", confirm_callback);
 	
 	setTimeout(function () {
 		canvas.addEventListener("click", cancel_callback);
@@ -120,6 +123,8 @@ Inputbox.alert = function (options, callbacks) {
 	
 	function cancel_callback() {
 		canvas.removeEventListener("click", cancel_callback);
+		confirm.removeEventListener("click", confirm_callback); 
+		cancel.removeEventListener("click", cancel_callback);
 		Inputbox.hide();
 		if(typeof callbacks != "undefined" && typeof callbacks.cancel == "function")
 		{
@@ -127,6 +132,15 @@ Inputbox.alert = function (options, callbacks) {
 		}
 	};
 	
+	function confirm_callback() {
+		Inputbox.hide();
+		if(typeof callbacks != "undefined" && typeof callbacks.success == "function") {
+			confirm.removeEventListener("click", confirm_callback); 
+			cancel.removeEventListener("click", cancel_callback);
+			canvas.removeEventListener("click", cancel_callback);
+			callbacks.success();
+		}
+	}
 	
 	this.show();
 };
@@ -159,12 +173,7 @@ Inputbox.confirm = function (options, callbacks) {
 		event.stopPropagation();
 	});
 	
-	confirm.addEventListener("click", function () {
-		this.hide();
-		if(typeof callbacks != "undefined" && typeof callbacks.success == "function") {
-			callbacks.success();
-		}
-	}.bind(this));
+	confirm.addEventListener("click", confirm_callback);
 	
 	cancel.addEventListener("click", cancel_callback);
 	
@@ -174,12 +183,24 @@ Inputbox.confirm = function (options, callbacks) {
 	
 	function cancel_callback() {
 		canvas.removeEventListener("click", cancel_callback);
+		confirm.removeEventListener("click", confirm_callback); 
+		cancel.removeEventListener("click", cancel_callback);
 		Inputbox.hide();
 		if(typeof callbacks != "undefined" && typeof callbacks.cancel == "function")
 		{
 			callbacks.cancel();
 		}
 	};
+	
+	function confirm_callback() {
+		Inputbox.hide();
+		if(typeof callbacks != "undefined" && typeof callbacks.success == "function") {
+			callbacks.success();
+			canvas.removeEventListener("click", cancel_callback);
+			confirm.removeEventListener("click", confirm_callback); 
+			cancel.removeEventListener("click", cancel_callback);
+		}
+	}
 	
 	this.show();
 };

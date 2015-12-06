@@ -70,8 +70,22 @@ Gui.prototype.menuButton = function(handler) {
 	
 	if (handler === undefined) {
 		Event.onTap('logo_min_to_menu', this.logo_min, Menu.start, false);
+		
+		Event.onHover('labo_min_to_menu', this.logo_min, function (event) {
+			pointer();
+		},
+		function(event) {
+			cancelPointer();
+		});
 	} else {
 		Event.onTap('logo_sep_generic', this.logo_min, handler, false);
+		
+		Event.onHover('labo_sep_generic', this.logo_min, function (event) {
+			pointer();
+		},
+		function(event) {
+			cancelPointer();
+		});
 	}
 };
 
@@ -82,6 +96,13 @@ Gui.prototype.backButton = function(handler) {
 	this.arrow_back.display();
 	
 	Event.onTap('arrow_back', this.arrow_back, handler, false);
+	
+	Event.onHover('arrow_back', this.arrow_back, function (event) {
+		pointer();
+	},
+	function(event) {
+		cancelPointer();
+	});
 };
 
 // LABO
@@ -92,6 +113,13 @@ Gui.prototype.Labo_nextButton = function() {
 	this.labo_next_button.display();
 	
 	Event.onTap('labo_next_button', this.labo_next_button, function() { Labo.nextPage(); }, true);
+	
+	Event.onHover('labo_next_button', this.labo_next_button, function (event) {
+		pointer();
+	},
+	function(event) {
+		cancelPointer();
+	});
 };
 
 Gui.prototype.Labo_previousButton = function() {
@@ -101,6 +129,13 @@ Gui.prototype.Labo_previousButton = function() {
 	this.labo_previous_button.display();
 	
 	Event.onTap('labo_previous_button', this.labo_previous_button, function() { Labo.previousPage(); }, true);
+	
+	Event.onHover('labo_previous_button', this.labo_previous_button, function (event) {
+		pointer();
+	},
+	function(event) {
+		cancelPointer();
+	});
 };
 
 Gui.prototype.Labo_button_up = function() {
@@ -111,6 +146,13 @@ Gui.prototype.Labo_button_up = function() {
 	this.labo_button_up.display();
 	
 	Event.onTap('labo_button_up', this.labo_button_up, function() { Labo.scrollUp(); }, true);
+	
+	Event.onHover('labo_button_up', this.labo_button_up, function (event) {
+		pointer();
+	},
+	function(event) {
+		cancelPointer();
+	});
 };
 
 Gui.prototype.Labo_button_down = function() {
@@ -121,6 +163,13 @@ Gui.prototype.Labo_button_down = function() {
 	this.labo_button_down.display();
 	
 	Event.onTap('labo_button_down', this.labo_button_down, function() { Labo.scrollDown(); }, true);
+	
+	Event.onHover('labo_button_down', this.labo_button_down, function (event) {
+		pointer();
+	},
+	function(event) {
+		cancelPointer();
+	});
 };
 
 // Gui.prototype.Labo_button_clear = function() {
@@ -147,6 +196,13 @@ Gui.prototype.Editeur_classic_button_up = function() {
 	this.editeur_classic_button_up.display();
 	
 	Event.onTap('editeur_classic_button_up', this.editeur_classic_button_up, Editeur.scrollUp, true);
+	
+	Event.onHover('editeur_classic_button_up', this.editeur_classic_button_up, function (event) {
+		pointer();
+	},
+	function(event) {
+		cancelPointer();
+	});
 };
 
 Gui.prototype.Editeur_classic_button_down = function() {
@@ -157,11 +213,18 @@ Gui.prototype.Editeur_classic_button_down = function() {
 	this.editeur_classic_button_down.display();
 	
 	Event.onTap('editeur_classic_button_down', this.editeur_classic_button_down, Editeur.scrollDown, true);
+	
+	Event.onHover('editeur_classic_button_down', this.editeur_classic_button_down, function (event) {
+		pointer();
+	},
+	function(event) {
+		cancelPointer();
+	});
 };
 
 Gui.prototype.Editeur_multilignes_save = function() {
 	if (language == 'fr') {
-		this.editeur_multilignes_save = new Word('Sauver', null, 6, null, null, null, 13.7 * W/100);
+		this.editeur_multilignes_save = new Word('Sauvegarder', null, 6, null, null, null, 13.7 * W/100);
 	} else {
 		this.editeur_multilignes_save = new Word('Save', null, 6, null, null, null, 13.7 * W/100);
 	}
@@ -169,6 +232,13 @@ Gui.prototype.Editeur_multilignes_save = function() {
 	this.editeur_multilignes_save.display();
 	
 	this.editeur_multilignes_save.onTap(Editeur.multilignes.save);
+	
+	Event.onHover('editeur_multilignes_save', this.editeur_multilignes_save, function (event) {
+		pointer();
+	},
+	function(event) {
+		cancelPointer();
+	});
 };
 Gui.prototype.Editeur_multilignes_erase = function() {
 	if (language == 'fr') {
@@ -180,6 +250,13 @@ Gui.prototype.Editeur_multilignes_erase = function() {
 	this.editeur_multilignes_erase.display();
 	
 	this.editeur_multilignes_erase.onTap(Editeur.multilignes.erase);
+	
+	Event.onHover('editeur_multilignes_erase', this.editeur_multilignes_erase, function (event) {
+		pointer();
+	},
+	function(event) {
+		cancelPointer();
+	});
 };
 
 // Aide visuelle

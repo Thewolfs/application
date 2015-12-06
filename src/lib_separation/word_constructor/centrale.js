@@ -27,7 +27,7 @@ function Word_centrale(data) {
 	this.up.y = fontConst.police[data.police].offsetY['centraleh'];
 	this.central.y = fontConst.police[data.police].offsetY['centralec'];
 	this.next_central.y = fontConst.police[data.police].offsetY['centralec'];
-	this.down.y = fontConst.police[data.police].offsetY['centraleb'];
+	this.down.y = fontConst.police[data.police].offsetY['centraleb'] - 2;
 
 	this.next_central.alpha = 0;
 	

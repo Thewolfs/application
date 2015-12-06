@@ -9,9 +9,9 @@ Event.triggered = null;
 Event.onHover = function (id, object, callbackOnEvent, callbackOnAbort) {
 	this.hover_obj[id] = {
 		x1: object.getX(),
-		y1: object.getY() + Math.floor(object.getHeight() * 0.1),
-		x2: object.getX() + Math.floor(object.getWidth() * 0.95),
-		y2: object.getY() + Math.floor(object.getHeight() * 0.7),
+		y1: object.getY(),
+		x2: object.getX() + object.getWidth(),
+		y2: object.getY() + object.getHeight(),
 		onEvent: callbackOnEvent,
 		onAbort: callbackOnAbort,
 	}

@@ -41,11 +41,10 @@ Menu.recit = function() {
 		Menu.words['recit'] = new Word('Salon', null, 6, null, null, null, 15.8 * W/100);
 	
 	Menu.words['recit'].setZoom(zoom);
-	Menu.words['recit'].setX(-Menu.words['recit'].getWidth());
+	Menu.words['recit'].setX(W);
 	Menu.words['recit'].setCenterY(H * 1/2);
 	Menu.words['recit'].display();
-	
-	Menu.words['recit'].setCenterX(this.margin + Menu.words['recit'].getWidth()/2);
+	Menu.words['recit'].setCenterX(W - (this.margin + Menu.words['recit'].getWidth()/2));
 	Tween.get(Menu.words['recit'].getNode()).to({
 			x: Menu.words['recit'].getX(),
 		}, Menu.anim_duration, Ease.sineOut);	
@@ -55,7 +54,7 @@ Menu.recit = function() {
 		cancelHover();
 	}, true);
 	
-	function hover() {
+	function hover(event) {
 		pointer();
 		Hoverbox.display(event, null, "C'est ici que vous retrouverez vos créations et des exemples de poèmes");
 	}
@@ -76,11 +75,11 @@ Menu.labo = function() {
 	else
 		Menu.words['labo'] = new Word('Lab', null, 6, null, null, null, 15.8 * W/100);
 	Menu.words['labo'].setZoom(zoom);
-	Menu.words['labo'].setX(W);
+	Menu.words['labo'].setX(-Menu.words['labo'].getWidth());
 	Menu.words['labo'].setCenterY(H * 1/2);
 	Menu.words['labo'].display();
 
-	Menu.words['labo'].setCenterX(W - (this.margin + Menu.words['labo'].getWidth()/2));
+	Menu.words['labo'].setCenterX(this.margin + Menu.words['labo'].getWidth()/2);
 	
 	Tween.get(Menu.words['labo'].getNode()).to({
 			x: Menu.words['labo'].getX(),
@@ -91,7 +90,7 @@ Menu.labo = function() {
 		cancelHover();
 	}, true);
 	
-	function hover() {
+	function hover(event) {
 		pointer();
 		Hoverbox.display(event, null, "Le labo permet de découvrir la poésie à 2 mi-mots et de créer ses propres combinaisons");
 	}
@@ -125,7 +124,7 @@ Menu.editeur = function() {
 		cancelHover();
 	}, true);
 	
-	function hover() {
+	function hover(event) {
 		pointer();
 		Hoverbox.display(event, null, "L'éditeur permet de créer ses propres poèmes à 2 mi-mots et de les sauvegarder pour les redécouvrir par la suite");
 	}
