@@ -21,4 +21,4 @@ Word_rounded_elegance.prototype.destroy = function() {
 	stage.removeChild(this.container);
 }
 
-scriptLoaded('src/lib_separation/word_constructor/coupable_bas.js');
+scriptLoaded('src/lib_separation/word_constructor/rounded_elegance.js');
