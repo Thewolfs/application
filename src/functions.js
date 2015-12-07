@@ -136,4 +136,22 @@ function randTrue()
 	return Math.random() >= 0.5;
 }
 
+function removeAccent(text) {
+	var rege = /(é|è|ë|ê)/gi
+	var rega = /(à|â|ä)/gi
+	var rego = /(ô|ö)/gi
+	var regi = /(î|ï)/gi
+	var regu = /(û|ü)/gi
+	var regy = /(ÿ|ŷ)/gi
+
+	text = text.replace(rege, "e");
+	text = text.replace(rega, "a");
+	text = text.replace(rego, "o");
+	text = text.replace(regi, "i");
+	text = text.replace(regu, "u");
+	text = text.replace(regy, "y");
+	
+	return text;
+}
+
 scriptLoaded('src/functions.js');

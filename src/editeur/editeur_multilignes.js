@@ -117,7 +117,7 @@ Editeur.multilignes.addWordToLine = function (line_id, word, addAtBegin) {
 
 Editeur.multilignes.save = function () {
 	this.textInputTitle(function (text) {
-		this.story.name = text;
+		this.story.name = removeAccent(text);
 		MyStorage.addStory(this.story.name, this.getJSON());
 		Recit.start();
 	}.bind(this));
@@ -201,7 +201,7 @@ ButtonPlus.prototype.onTap = function () {
 	}.bind(this));
 	this.word_classic.onTap(function () {
 		this.textInputWord(function (text) {
-			Editeur.multilignes.addWordToLine(this.line_id, new Word(text), this.addAtBegin);
+			Editeur.multilignes.addWordToLine(this.line_id, new Word(text.removeAccent()), this.addAtBegin);
 			Editeur.start();
 		}.bind(this));
 	}.bind(this));

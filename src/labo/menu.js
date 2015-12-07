@@ -130,7 +130,7 @@ Labo_Menu.prototype.changeCheckbox = function(i) {
 Labo_Menu.prototype.textInput = function() {
 	var callback_success = function (text){
 		if (text !== "" && text !== null) {
-			this.word_searched_value = text;
+			this.word_searched_value = removeAccent(text).toLowerCase();
 			this.textInputWord();
 		} else {
 			this.textInput();
