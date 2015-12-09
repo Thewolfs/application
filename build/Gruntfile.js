@@ -80,6 +80,9 @@ module.exports = function(grunt) {
                             '../src/lib_separation/event/open.js',
                             '../src/lib_separation/event/sound.js',
                             '../src/lib_separation/event/word.js',
+                            '../src/lib_separation/event/hover.js',
+                            '../src/lib_separation/event/scroll.js',
+                            '../src/lib_separation/event/keydown.js',
                             // Destroy 
                             '../src/lib_separation/destroy/destroy.js',
                             // XML 
@@ -91,6 +94,7 @@ module.exports = function(grunt) {
                             // GUI 
                             '../src/lib_separation/gui/gui.js',
                             '../src/lib_separation/gui/inputbox.js',
+                            '../src/lib_separation/gui/hoverbox.js',
                             // Json 
                             '../src/lib_separation/json/json.js',
                             // STorage 
