@@ -26,6 +26,8 @@ Menu.start = function() {
 	show_err_message_too_many_stories = true;
 
 	gui.MenuPrincipal();
+	
+	Tutoriel.start();
 }
 
 Menu.destroy = function() {
