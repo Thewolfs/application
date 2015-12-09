@@ -29,11 +29,15 @@
 				font-family: Rounded_Elegance;
 				src: url(res/fonts/Rounded_Elegance.ttf);
 			}
+			@font-face {
+				font-family: Icons;
+				src: url(res/fonts/icon-works-webfont.ttf)
+			}
 		</style>
 		
 		<script type="text/javascript">
 			var loaded_scripts = 0;
-			var n_scripts = 62;
+			var n_scripts = 65;
 			function scriptLoaded(script_path) {
 				loaded_scripts++;
 				console.debug(loaded_scripts + '/' + n_scripts + " : " + script_path);
@@ -77,7 +81,9 @@
 			<script type="text/javascript" src="res/db/local_db.js"></script>
 			<!-- StoriesDb -->
 			<script type="text/javascript" src="res/story/stories.js"></script>
-			
+			<!--Tutoriel -->
+			<script type="text/javascript" src="src/tutoriel/tutoriel.js"></script>
+			<script type="text/javascript" src="src/tutoriel/navigateur/navigateur.js"></script>
 			<!-- lib_separation -->
 				<!-- Logo -->
 				<script type="text/javascript" src="src/lib_separation/logo/logo.js"></script>
@@ -92,6 +98,7 @@
 				<script type="text/javascript" src="src/lib_separation/word_constructor/coupable_entier.js"></script>
 				<script type="text/javascript" src="src/lib_separation/word_constructor/centrale.js"></script>
 				<script type="text/javascript" src="src/lib_separation/word_constructor/rounded_elegance.js"></script>
+				<script type="text/javascript" src="src/lib_separation/word_constructor/icons.js"></script>
 				<script type="text/javascript" src="src/lib_separation/word_constructor/ombre.js"></script>
 				<script type="text/javascript" src="src/lib_separation/word_constructor/spritesheets.js"></script>
 				<script type="text/javascript" src="src/lib_separation/word_constructor/letter.js"></script>
@@ -153,7 +160,7 @@
 			font-size: 1.5vw;
 		}
 		.inputboxcontainer { padding-top: 1em; position: relative; top: 50%; -webkit-transform: translateY(-50%); -ms-transform: translateY(-50%); transform: translateY(-50%); text-align: center;}
-		canvas { position: absolute; top: 0; left: 0;}
+		canvas { position: absolute; top: 0; left: 0; z-index: 0;}
 		input { width: 98%; height: 25px; }
 		.inputbox > .inputboxcontainer > .inputboxbuttoncontainer > button 
 		{    
@@ -200,12 +207,28 @@
 			font-size: 1.2vw;
 			padding: 2px;
 		}
-		#hoverbox > p{
+		#hoverbox > p {
 			text-align: left;
+		}
+		#tutoriel {
+			display: none;
+			background-color: rgb(255,255,255);
+			opacity: 0.6;
+			position: absolute;
+			z-index: 50;			
 		}
 	</style>
 	</head>
 	<body>
+		<div id="tutoriel">
+			
+		</div>
+		<div id="parameter">
+			<ul>
+				<li><a href="">Désactiver les infobulles</a></li>
+				<li><a href="">Relancer le tutoriel</a></li>
+			</ul>
+		</div>
 		<div id="hoverbox">
 				<h2 id="hovertitle"></h2>
 				<p></p>

@@ -7,6 +7,7 @@ function Gui() {
 
 Gui.prototype.MenuPrincipal = function() {
 	this.menuButton(function() { Intro.start(); });
+	this.parameter();
 };
 
 Gui.prototype.Editeur_classic_displayRecherche = function() {
@@ -88,6 +89,19 @@ Gui.prototype.menuButton = function(handler) {
 		});
 	}
 };
+
+Gui.prototype.parameter = function () {
+	this.logo_para = new Word("j", null, 7, null, null, null, 13.7 * W/100);
+	this.logo_para.setXY(this.margin,H - this.logo_para.getHeight() - this.margin);
+	this.logo_para.display();
+	
+	Event.onHover('logo_para', this.logo_para, function (event) {
+		pointer();
+	},
+	function(event) {
+		cancelPointer();
+	});
+}
 
 Gui.prototype.backButton = function(handler) {
 	this.arrow_back = new Image(res('gui_arrow_back'));

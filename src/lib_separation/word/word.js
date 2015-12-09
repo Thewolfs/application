@@ -82,6 +82,7 @@ Word.prototype.generate = function() {
 		case 4:
 		case 5:
 		case 6:
+		case 7:
 			this.font = new window['Word_' + Word_polices[this.police]]({
 				'value': new_value,
 				'next_value': new_next_value,

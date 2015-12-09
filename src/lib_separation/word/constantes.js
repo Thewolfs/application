@@ -33,6 +33,7 @@ var Word_polices = {
 	4 : 'coupable_entier',
 	5 : 'coupable_haut',
 	6 : 'rounded_elegance',
+	7 : 'icons',
 }
 
 function Word_getNormalizedPolice(police) {
