@@ -201,7 +201,7 @@ ButtonPlus.prototype.onTap = function () {
 	}.bind(this));
 	this.word_classic.onTap(function () {
 		this.textInputWord(function (text) {
-			Editeur.multilignes.addWordToLine(this.line_id, new Word(text.removeAccent()), this.addAtBegin);
+			Editeur.multilignes.addWordToLine(this.line_id, new Word(removeAccent(text)), this.addAtBegin);
 			Editeur.start();
 		}.bind(this));
 	}.bind(this));
