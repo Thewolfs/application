@@ -4,7 +4,12 @@
 
 var Hoverbox = {};
 
+Hoverbox.toggle = true
+
 Hoverbox.display = function (event, title, message) {
+	if(!Hoverbox.toggle) {
+		return;
+	}
 	var position = {
 		x: event.clientX,
 		y: event.clientY,
@@ -32,6 +37,9 @@ Hoverbox.display = function (event, title, message) {
 }
 
 Hoverbox.hide = function () {
+	if(!Hoverbox.toggle) {
+		return;
+	}
 	var hoverbox = document.getElementById("hoverbox");
 	var hovertitle = document.getElementById("hovertitle");
 	var hovertext = hoverbox.children[1];

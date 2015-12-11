@@ -37,7 +37,7 @@
 		
 		<script type="text/javascript">
 			var loaded_scripts = 0;
-			var n_scripts = 66;
+			var n_scripts = 67;
 			function scriptLoaded(script_path) {
 				loaded_scripts++;
 				console.debug(loaded_scripts + '/' + n_scripts + " : " + script_path);
@@ -134,6 +134,7 @@
 				<script type="text/javascript" src="src/lib_separation/gui/gui.js"></script>
 				<script type="text/javascript" src="src/lib_separation/gui/inputbox.js"></script>
 				<script type="text/javascript" src="src/lib_separation/gui/hoverbox.js"></script>
+				<script type="text/javascript" src="src/lib_separation/gui/parameterbox.js"></script>
 				<!-- Json -->
 				<script type="text/javascript" src="src/lib_separation/json/json.js"></script>
 				<!-- STorage -->
@@ -218,6 +219,33 @@
 			position: absolute;
 			z-index: 50;			
 		}
+		#parameter {
+			display: none;
+			position: absolute;
+			z-index: 5;
+			background-color: white;
+			font-family: Rounded_Elegance;
+			font-size: 1.3vw;
+			list-style: none;
+			padding: 2px;
+			border-radius: 5px;
+		}
+		#parameter > ul > li > a {
+			color: black;
+			font-style: none;
+			text-decoration: none;
+		}
+		#parameter > ul > li > a:hover {
+			color: black;
+			font-style: none;
+			text-decoration: none;
+			cursor: pointer;
+		}
+		#parameter > ul > li > a:visited {
+			color: black;
+			font-style: none;
+			text-decoration: none;
+		}
 	</style>
 	</head>
 	<body>
@@ -226,8 +254,8 @@
 		</div>
 		<div id="parameter">
 			<ul>
-				<li><a href="">Désactiver les infobulles</a></li>
-				<li><a href="">Relancer le tutoriel</a></li>
+				<li><a id="toggleInfo">Désactiver les infobulles</a></li>
+				<li><a id="toggleTuto">Relancer le tutoriel</a></li>
 			</ul>
 		</div>
 		<div id="hoverbox">

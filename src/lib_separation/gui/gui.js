@@ -94,6 +94,9 @@ Gui.prototype.parameter = function () {
 	this.logo_para = new Word("j", null, 7, null, null, null, 13.7 * W/100);
 	this.logo_para.setXY(this.margin,H - this.logo_para.getHeight() - this.margin);
 	this.logo_para.display();
+	Parameterbox.start(this.logo_para);
+	
+	Event.onTap('logo_para', this.logo_para, Parameterbox.toggle, true);
 	
 	Event.onHover('logo_para', this.logo_para, function (event) {
 		pointer();
