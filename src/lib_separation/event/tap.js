@@ -26,7 +26,7 @@ Event.tap = function(event) {
 		var obj = Event.tap_obj[i];
 		if(obj == undefined) alert('undefined : ' + i); else {
 			if((obj.x1 <= coord.x) && (coord.x <= obj.x2)) {
-			if((obj.y1 <= coord.y) && (coord.y <= obj.y2)) {
+			if((obj.y1 <= coord.y) && (coord.y <= obj.y2) && (!Tutoriel_navigateur.state || Tutoriel_navigateur.state == i)) {
 				obj.onTap();
 				if(!obj.restart) {
 					Event.destroy(obj.id, 'tap');

@@ -217,7 +217,14 @@
 			background-color: rgb(255,255,255);
 			opacity: 0.6;
 			position: absolute;
-			z-index: 50;			
+			z-index: 5;
+			pointer-events: none;			
+		}
+		#tutoriel > a {
+			position: absolute;
+			right: 5px;
+			bottom: 5px;
+			pointer-events: auto;
 		}
 		#parameter {
 			display: none;
@@ -230,18 +237,18 @@
 			padding: 2px;
 			border-radius: 5px;
 		}
-		#parameter > ul > li > a {
+		a {
 			color: black;
 			font-style: none;
 			text-decoration: none;
 		}
-		#parameter > ul > li > a:hover {
+		a:hover {
 			color: black;
 			font-style: none;
 			text-decoration: none;
 			cursor: pointer;
 		}
-		#parameter > ul > li > a:visited {
+		a:visited {
 			color: black;
 			font-style: none;
 			text-decoration: none;
@@ -250,7 +257,7 @@
 	</head>
 	<body>
 		<div id="tutoriel">
-			
+			<a>Quitter le tutoriel</a>
 		</div>
 		<div id="parameter">
 			<ul>

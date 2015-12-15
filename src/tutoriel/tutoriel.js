@@ -14,4 +14,13 @@ Tutoriel.start = function () {
 	
 };
 
+Tutoriel.restart = function() {
+	if(appOnDevice_real()) {
+			Tutoriel_mobile.start();
+		}
+		else {
+			Tutoriel_navigateur.start();
+		}
+};
+
 scriptLoaded('src/tutoriel/tutoriel.js');

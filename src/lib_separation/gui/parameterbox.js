@@ -28,7 +28,7 @@ Parameterbox.start = function(logo) {
 	
 	toggleTuto.addEventListener("click", function(e) {
 		e.preventDefault();
-		Tutoriel.start();
+		Tutoriel.restart();
 		Parameterbox.hide();
 	});
 	
