@@ -1,5 +1,4 @@
 Event.keydown = function (e) {
-	console.log('on rentre');
 	switch (state){
 		case Labo: 
 			if (e.keyCode == '38')
