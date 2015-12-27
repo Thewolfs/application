@@ -33,6 +33,10 @@
 				font-family: Icons;
 				src: url(res/fonts/icon-works-webfont.ttf)
 			}
+			@font-face {
+				font-family: Gilles_Handwriting;
+				src: url(res/fonts/Gilles_Handwriting.ttf)
+			}
 		</style>
 		
 		<script type="text/javascript">
@@ -216,27 +220,18 @@
 			display: none;
 			position: absolute;
 			z-index: 5;
-			pointer-events: none;			
+			pointer-events: none;
+			width: 100%;
+			height: 100%;			
 		}
 		#tutoriel > a {
 			position: absolute;
-			right: 5px;
+			left: 5px;
 			bottom: 5px;
 			pointer-events: auto;
-		}
-		#textTuto {
-			width: 40vw;
-			position: absolute;
+			font-family: Gilles_Handwriting;
+			font-size: 2vw;
 			color: white;
-			z-index: 6;
-		}
-		.tutoOverlayPiece {
-			position: absolute;
-			background-color: rgba(62,62,62,0.7);
-		}
-		#tutoCenter {
-			-webkit-mask-box-image: url(res/img/gui/rond.png);
-			mask: url(res/img/gui/rond.png);
 		}
 		#parameter {
 			display: none;
@@ -268,9 +263,8 @@
 	</style>
 	</head>
 	<body>
-		
 		<div id="tutoriel">
-			<svg width="100%" height="100%">
+			<svg width="100%" height="100%" viewBox="0 0 1920 1080" preserveAspectRatio="none">
 				<defs>
 					<mask id="tutoMask">
 						<rect width="100%" height="100%" x="0" y ="0" style="fill:white"></rect>
@@ -278,10 +272,11 @@
 					</mask>
 				</defs>
 				
-				<rect width="100%" height="100%" x="0" y ="0" style="fill:rgba(255,255,255,0.2)" mask="url(#tutoMask)"></rect> 
+				<rect width="100%" height="100%" x="0" y ="0" style="fill:rgba(62,62,62,0.7);" mask="url(#tutoMask)"></rect>
+				<path id="arrow" d="" style="fill: rgb(255,255,255)"></path>
+				<text id="textTuto" fill="white" style="font-size: 60px; font-family: Gilles_Handwriting;"></text>
 			</svg>
 			<a>Quitter le tutoriel</a>
-			<div id="textTuto"></div>
 		</div>
 		<div id="parameter">
 			<ul>

@@ -50,6 +50,9 @@ Gui.prototype.Labo_displayAll = function() {
 	// this.Labo_nextButton();
 	// this.Labo_previousButton();
 	// Gui.Labo.policeBtn();
+	if(Tutoriel_navigateur.currentState == "inputWord") {
+		canvas.dispatchEvent(Tutoriel_navigateur.event);
+	}
 };
 
 Gui.prototype.Labo_menu_displayAll = function() {
@@ -60,6 +63,9 @@ Gui.prototype.Labo_menu_displayAll = function() {
 	// this.Labo_nextButton();
 	// this.Labo_previousButton();
 	// Gui.Labo.policeBtn();
+	if(Tutoriel_navigateur.currentState == "menu") {
+		canvas.dispatchEvent(Tutoriel_navigateur.event);
+	}
 };
 
 // COMMUNS
@@ -156,6 +162,7 @@ Gui.prototype.Labo_previousButton = function() {
 };
 
 Gui.prototype.Labo_button_up = function() {
+	console.log(this);
 	this.labo_button_up = new Image(res('gui_roll_up'));
 	this.labo_button_up.setSizeWH(size_icon, size_icon);
 	this.labo_button_up.setX(W-this.labo_button_up.getWidth()-this.margin);

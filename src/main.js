@@ -13,6 +13,9 @@ App.init = function() {
 	var gitan = new createjs.Text("gitan", "256px demihauth", "#fff");
 	gitan.getBounds();
 	
+	//Chargement des divs
+	Tutoriel_navigateur.loadAssets();
+	
 	// Initialisation du canvas
 	canvas = document.createElement('canvas');
 	// GUIcanvas = document.createElement('canvas');
