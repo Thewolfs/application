@@ -167,9 +167,10 @@ Labo_Menu.prototype.textInput = function() {
 
 Labo_Menu.prototype.textInputWord = function() {
 	Destroy.objet(this.word_searched);
-	this.word_searched = new Word(this.word_searched_value);
+	this.word_searched = new Word(this.word_searched_value, null, null, null, null, null, this.input_text.getHeight());
 	this.word_searched.setZoom(getMinScale(this.word_searched.getHeight(), 0.9*this.input_text.getHeight(), this.word_searched.getWidth(), 0.8*this.input_text.getWidth()));
-	this.word_searched.setCenterXY(W/2, this.input_text.getY()+this.input_text.getHeight()/2);
+	this.word_searched.setCenterXY(W/2,15 + this.input_text.getHeight()/2);
+	console.log(this.input_text.getHeight())
 	this.word_searched.display();
 };
 

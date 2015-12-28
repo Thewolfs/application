@@ -48,7 +48,7 @@ function inArray(array, p_val) {
 Labo.generateRecherche = function(word_searched, police) {
 	Destroy.all();
 	recherche = new Recherche();
-	recherche.addCentralWord(new Word(word_searched));
+	recherche.addCentralWord(new Word(word_searched, null, null, null, null, null, 18.7 * W/100));
 
 	setTimeout(function(){
 		// var p = Db.wordPossibilities(word_searched); // bdd interne (REMOVED TEMP)

@@ -84,7 +84,7 @@ Recherche.prototype.scrollDown = function() { if(!this.inAnimation) { this.inAni
 	var id_word = this.getValidId(this.mot_act + this.nb_side);
 	var p = this.possibilities[id_word];
 	
-	this.words.push(new Word(p.getValue(), null, p.getPolice(), p.getCode()));
+	this.words.push(new Word(p.getValue(), null, p.getPolice(), p.getCode(), null, null, 18.7 * W/100));
 	this.words[this.nb_max-1].setAlpha(this.coords_word[this.nb_max-1].alpha);
 	this.words[this.nb_max-1].display();
 	
@@ -100,7 +100,7 @@ Recherche.prototype.scrollUp = function() { if(!this.inAnimation) { this.inAnima
 	var id_word = this.getValidId(this.mot_act - this.nb_side);
 	var p = this.possibilities[id_word];
 	
-	this.words.unshift(new Word(p.getValue(), null, p.getPolice(), p.getCode()));
+	this.words.unshift(new Word(p.getValue(), null, p.getPolice(), p.getCode(), null, null, 18.7 * W/100));
 	this.words[0].setAlpha(this.coords_word[0].alpha);
 	this.words[0].display();
 	
@@ -163,7 +163,7 @@ Recherche.prototype.generate = function(mot_act) {
 	for (var i = mot_act - this.nb_side; i <= mot_act + this.nb_side; i++) {
 		var ind = this.getValidId(i);
 		var p = this.possibilities[ind];
-		this.words[j] = new Word(p.getValue(), null, p.getPolice(), p.getCode());
+		this.words[j] = new Word(p.getValue(), null, p.getPolice(), p.getCode(), null, null, 18.7 * W/100);
 		this.words[j].setAlpha(this.coords_word[j].alpha);
 		this.words[j].setZoom(this.coords_word[j].zoom);
 		this.words[j].setCenterXY(this.coords_word[j].x, this.coords_word[j].y);
@@ -189,7 +189,7 @@ Recherche.prototype.generate = function(mot_act) {
 		cancelPointer();
 	});
 
-	this.central_word = new Word(this.central_word_value);
+	this.central_word = new Word(this.central_word_value, null, null, null, null, null, 18.7*W/100);
 	this.central_word.setZoom(2);
 	this.central_word.setCenterXY(this.coords_central_word.x, this.coords_central_word.y);
 }
