@@ -157,7 +157,7 @@ Editeur.multilignes.textInputTitle = function(callback_success) {
 
 function ButtonPlus(line_id, addAtEnd) {
 	this.line_id = line_id;
-	this.word = new Word(Editeur.multilignes.word_add);
+	this.word = new Word(Editeur.multilignes.word_add, null, null, null, null, null, 256);
 	this.addAtBegin = !addAtEnd;
 }
 
