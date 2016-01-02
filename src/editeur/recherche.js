@@ -118,10 +118,10 @@ RechercheEditeur.scrollDown = function() { if(!this.inAnimation) { this.inAnimat
 	var id_word = this.getValidId(this.mot_act + this.nb_side);
 	var p = this.possibilities[id_word];
 	
-	this.words.push(new Word(p.getValue(), p.getNextValue(), p.getPolice(), p.getCode(), false));
+	this.words.push(new Word(p.getValue(), p.getNextValue(), p.getPolice(), p.getCode(), false, null, 18.7 * W/100));
 	this.words[this.nb_max-1].setAlpha(this.coords_word[this.nb_max-1].alpha);
 	this.words[this.nb_max-1].display();
-	this.words_next.push(new Word(p.getNextValue(), p.getNextValue(), p.getPolice(), p.getCode(), false));
+	this.words_next.push(new Word(p.getNextValue(), p.getNextValue(), p.getPolice(), p.getCode(), false, null, 18.7 * W/100));
 	this.words_next[this.nb_max-1].setAlpha(this.coords_word_next[this.nb_max-1].alpha);
 	this.words_next[this.nb_max-1].display();
 	
@@ -140,10 +140,10 @@ RechercheEditeur.scrollUp = function() { if(!this.inAnimation) { this.inAnimatio
 	var id_word = this.getValidId(this.mot_act - this.nb_side);
 	var p = this.possibilities[id_word];
 	
-	this.words.unshift(new Word(p.getValue(), p.getNextValue(), p.getPolice(), p.getCode(), false));
+	this.words.unshift(new Word(p.getValue(), p.getNextValue(), p.getPolice(), p.getCode(), false, null, 18.7 * W/100));
 	this.words[0].setAlpha(this.coords_word[0].alpha);
 	this.words[0].display();
-	this.words_next.unshift(new Word(p.getNextValue(), p.getNextValue(), p.getPolice(), p.getCode(), false));
+	this.words_next.unshift(new Word(p.getNextValue(), p.getNextValue(), p.getPolice(), p.getCode(), false, null, 18.7 * W/100));
 	this.words_next[0].setAlpha(this.coords_word_next[0].alpha);
 	this.words_next[0].display();
 
@@ -210,13 +210,13 @@ RechercheEditeur.generate = function(mot_act) {
 	for (i = this.mot_act - this.nb_side, j = 0; i <= this.mot_act + this.nb_side; i++, j++) {
 		var ind = this.getValidId(i);
 		var p = this.possibilities[ind];
-		this.words[j] = new Word(p.getValue(), p.getNextValue(), p.getPolice(), p.getCode(), false);
+		this.words[j] = new Word(p.getValue(), p.getNextValue(), p.getPolice(), p.getCode(), false, null, 18.7 * W/100);
 		this.words[j].setAlpha(this.coords_word[j].alpha);
 		this.words[j].setZoom(this.coords_word[j].zoom);
 		this.words[j].setCenterY(this.coords_word[j].y);
 		this.words[j].setX(this.coords_word[j].x);
 
-		this.words_next[j] = new Word(p.getNextValue(), p.getNextValue(), p.getPolice(), p.getCode(), false);
+		this.words_next[j] = new Word(p.getNextValue(), p.getNextValue(), p.getPolice(), p.getCode(), false, null, 18.7 * W/100);
 		this.words_next[j].setAlpha(this.coords_word_next[j].alpha);
 		this.words_next[j].setZoom(this.coords_word_next[j].zoom);
 		this.words_next[j].setCenterY(this.coords_word_next[j].y);
@@ -255,7 +255,7 @@ RechercheEditeur.generate = function(mot_act) {
 		cancelPointer();
 	});
 
-	this.central_word = new Word(this.words[this.nb_side].getValue());
+	this.central_word = new Word(this.words[this.nb_side].getValue(), null, null, null, null, null, 18.7 * W/100);
 	this.central_word.setZoom(2);
 	this.central_word.setNextValue(this.words[this.nb_side].getNextValue());
 	this.central_word.setPolice(this.words[this.nb_side].getPolice());
@@ -265,7 +265,7 @@ RechercheEditeur.generate = function(mot_act) {
 
 RechercheEditeur.updateCentralWord = function() {
 	Destroy.objet(this.central_word);
-	this.central_word = new Word(this.words[this.nb_side].getValue());
+	this.central_word = new Word(this.words[this.nb_side].getValue(), null, null, null, null, null, 18.7 * W/100);
 	this.central_word.setZoom(2);
 	this.central_word.setNextValue(this.words[this.nb_side].getNextValue());
 	this.central_word.setPolice(this.words[this.nb_side].getPolice());
@@ -277,7 +277,7 @@ RechercheEditeur.updateCentralWord = function() {
 	var zoom_h = H*0.2;
 	var zoom_w = W*0.3;
 	var offset_display = 30;
-	this.word_left = new Word(this.central_word.getValue(), this.central_word.getValue(), this.central_word.getPolice(), this.central_word.getCode(), false);
+	this.word_left = new Word(this.central_word.getValue(), this.central_word.getValue(), this.central_word.getPolice(), this.central_word.getCode(), false, null, 18.7 * W/100);
 	var new_zoom = getScaleXY(this.word_left.getWidth(), this.word_left.getHeight(), zoom_w, zoom_h);
 	this.word_left.setZoom(Math.min(new_zoom.x, new_zoom.y));
 	this.word_left.setX(W/2 - this.word_left.getWidth() - offset_display);
@@ -285,7 +285,7 @@ RechercheEditeur.updateCentralWord = function() {
 	this.word_left.generate();
 	this.word_left.display();
 
-	this.word_right = new Word(this.central_word.getNextValue(), this.central_word.getNextValue(), this.central_word.getPolice(), this.central_word.getCode(), false);
+	this.word_right = new Word(this.central_word.getNextValue(), this.central_word.getNextValue(), this.central_word.getPolice(), this.central_word.getCode(), false, null, 18.7 * W/100);
 	new_zoom = getScaleXY(this.word_right.getWidth(), this.word_right.getHeight(), zoom_w, zoom_h);
 	this.word_right.setZoom(Math.min(new_zoom.x, new_zoom.y));
 	this.word_right.setX(W/2 + offset_display);
