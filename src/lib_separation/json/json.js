@@ -5,7 +5,7 @@
 var JsonHandler = {};
 
 JsonHandler.wordFromJson = function(json) {
-	var word = new Word(json.value, json.next_value, json.police, json.code);
+	var word = new Word(json.value, json.next_value, json.police, json.code, null, null, 18.7 * W/100);
 	return word;
 };
 
