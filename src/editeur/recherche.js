@@ -96,6 +96,10 @@ RechercheEditeur.start = function(fct) {
 
 	this.generate();
 	this.display();
+	
+	if(Tutoriel_navigateur.currentState == "chooseWordType") {
+		canvas.dispatchEvent(Tutoriel_navigateur.event);
+	}
 };
 
 RechercheEditeur.resetWords = function() {

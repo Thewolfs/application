@@ -8,6 +8,9 @@ Word.prototype.addGesture = function() {
 		//sound_police_end(word.getPolice());
 		word.setAnimation(dir);
 		word.animate(dir);
+		if(Tutoriel_navigateur.currentState == "geste") {
+			canvas.dispatchEvent(Tutoriel_navigateur.event);
+		}
 	}
 	function onChange(dir, value) {
 		word.setAnimationOnChange(dir);

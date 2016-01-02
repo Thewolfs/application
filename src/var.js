@@ -20,7 +20,7 @@ var Tween = createjs.Tween;
 var Ease = createjs.Ease;
 
 var margin = W/60;
-var size_icon = Math.max(W/15,H/10);
+var size_icon = W/15;
 
 var can_reload = true;
 

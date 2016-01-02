@@ -111,6 +111,9 @@ Labo.scrollUp = function() {
 		else
 			ask_to_scroll_up++;
 	}
+	if(Tutoriel_navigateur.currentState == "choixMot") {
+		canvas.dispatchEvent(Tutoriel_navigateur.event);
+	}
 };
 Labo.scrollDown = function() {
 	if(!recherche.inTransform) {
@@ -118,6 +121,9 @@ Labo.scrollDown = function() {
 			recherche.scrollDown();
 		else
 			ask_to_scroll_down++;
+	}
+	if(Tutoriel_navigateur.currentState == "choixMot") {
+		canvas.dispatchEvent(Tutoriel_navigateur.event);
 	}
 };
 Labo.scrollFinish = function() {

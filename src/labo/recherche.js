@@ -179,8 +179,12 @@ Recherche.prototype.generate = function(mot_act) {
 	
 	this.word_try.setZoom(0.6);
 	this.word_try.setCenterXY(this.coords_word_try.x, this.coords_word_try.y);
-	this.word_try.onTap(function() { cancelPointer(); Labo.transform(); });
+	//this.word_try.onTap(function() { cancelPointer(); Labo.transform(); });
 
+	Event.onTap('word_try', this.word_try, function() {
+		cancelPointer(); 
+		Labo.transform(); 
+	}, true);
 		
 	Event.onHover('word_try', this.word_try, function (event) {
 		pointer();
@@ -286,6 +290,10 @@ Recherche.prototype.transform = function() { if(!this.inTransform) { this.inTran
 	createjs.Tween.get(this.central_word.getNode())
 		.to({'x': this.central_word.getX(),'y': this.central_word.getY(),}, 500)
 		.call(function(r){return function(){ r.central_word.addGesture();}}(this));
+	
+	if(Tutoriel_navigateur.currentState == "transformation") {
+		canvas.dispatchEvent(Tutoriel_navigateur.event);
+	}
 }}
 
 Recherche.prototype.transformFinish = function() {

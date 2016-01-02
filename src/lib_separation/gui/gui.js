@@ -20,6 +20,9 @@ Gui.prototype.Editeur_displayAll = function() {
 	this.menuButton();
 	this.Editeur_multilignes_save();
 	this.Editeur_multilignes_erase();
+	if(Tutoriel_navigateur.currentState == "editeur" || Tutoriel_navigateur.currentState == "chooseWord") {
+		canvas.dispatchEvent(Tutoriel_navigateur.event);
+	}
 };
 Gui.prototype.Editeur_returnMain = function() {
 	this.backButton(function() { Editeur.start(); } );

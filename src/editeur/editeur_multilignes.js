@@ -162,10 +162,10 @@ function ButtonPlus(line_id, addAtEnd) {
 }
 
 ButtonPlus.prototype.generate = function () {
-	this.word.onTap(function () {
+	Event.onTap('button_plus' + randRange(0,100), this.word, function () {
 		cancelPointer();
 		this.onTap();
-	}.bind(this));
+	}.bind(this), true);
 	
 	Event.onHover('button_plus' + randRange(0,100), this.word, function (event) {
 		pointer();
@@ -192,16 +192,16 @@ ButtonPlus.prototype.onTap = function () {
 	this.word_classic.setCenterXY(W/2,2*H/3);
 	this.word_active.display();
 	this.word_classic.display();
-	this.word_active.onTap(function () {
+	Event.onTap('word_active', this.word_active, function () {
 		cancelPointer();
 		RechercheEditeur.start(function (new_word) {
 			Editeur.multilignes.addWordToLine(this.line_id, new_word, this.addAtBegin);
 			Editeur.start();
-		}.bind(this));
+		}.bind(this), true);
 	}.bind(this));
 	this.word_classic.onTap(function () {
 		this.textInputWord(function (text) {
-			Editeur.multilignes.addWordToLine(this.line_id, new Word(removeAccent(text)), this.addAtBegin);
+			Editeur.multilignes.addWordToLine(this.line_id, new Word(removeAccent(text), null, null, null, null, null, 18.7 * W/100), this.addAtBegin);
 			Editeur.start();
 		}.bind(this));
 	}.bind(this));
@@ -219,6 +219,10 @@ ButtonPlus.prototype.onTap = function () {
 	function(event) {
 		cancelPointer();
 	});
+	
+	if(Tutoriel_navigateur.currentState == "addMot") {
+		canvas.dispatchEvent(Tutoriel_navigateur.event);
+	}
 };
 
 ButtonPlus.prototype.textInputWord = function(callback_success) {

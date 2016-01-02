@@ -27,7 +27,7 @@ Event.hover = function(event) {
 		if(obj === undefined) alert('undefined : ' + i); else
 		// On regarde si le curseur est dans le cadre
 		if((obj.y1 <= coords.y) && (coords.y <= obj.y2) &&
-			(obj.x1 <= coords.x) && (coords.x <= obj.x2) && (!Tutoriel_navigateur.state || Tutoriel_navigateur.state == i)) {
+			(obj.x1 <= coords.x) && (coords.x <= obj.x2) && (!Tutoriel_navigateur.state || Tutoriel_navigateur.state == i || i.match(new RegExp(Tutoriel_navigateur.state)))) {
 			obj.onEvent(event);
 			this.triggered = i;
 		}
