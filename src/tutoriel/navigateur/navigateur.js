@@ -2,7 +2,18 @@ var Tutoriel_navigateur = {};
 
 Tutoriel_navigateur.state = null;
 
-Tutoriel_navigateur.listState = ['menu', 'inputWord', 'choixMot', 'transformation', 'geste', 'editeur', 'addMot', 'chooseWordType', 'chooseWord', 'endTuto'];
+Tutoriel_navigateur.listState = [
+	'menu', 
+	'inputWord', 
+	'choixMot', 
+	'transformation', 
+	'geste', 
+	'editeur', 
+	'addMot', 
+	'chooseWordType', 
+	'chooseWord', 
+	'endTuto',
+	];
 Tutoriel_navigateur.currentState = "";
 
 Tutoriel_navigateur.ellipse = {};
@@ -36,8 +47,29 @@ Tutoriel_navigateur.changeText = function (text, top, left, align) {
 	Tutoriel_navigateur.textBox.setAttribute("text-anchor", align)
 }
 
+Tutoriel_navigateur.show = function () {
+	Tutoriel_navigateur.tutoLayer.style.display = 'block';
+	
+	Tutoriel_navigateur.tutoLayer.style.opacity = parseFloat(Tutoriel_navigateur.tutoLayer.style.opacity) + 0.1
+	if(Tutoriel_navigateur.tutoLayer.style.opacity < 1) {
+		setTimeout(Tutoriel_navigateur.show, 15);
+	}
+}
+
+Tutoriel_navigateur.hide = function () {
+	Tutoriel_navigateur.tutoLayer.style.opacity = parseFloat(Tutoriel_navigateur.tutoLayer.style.opacity) - 0.1
+	if(Tutoriel_navigateur.tutoLayer.style.opacity > 0) {
+		setTimeout(Tutoriel_navigateur.hide, 10);
+	}
+	else {
+		Tutoriel_navigateur.tutoLayer.style.display = 'none'
+	}
+	
+}
+
 Tutoriel_navigateur.start = function () {	
-	Tutoriel_navigateur.tutoLayer.style.display = "block";
+	Tutoriel_navigateur.tutoLayer.style.opacity = 0;
+	Tutoriel_navigateur.show();
 	Tutoriel_navigateur.tutoLayer.children[1].addEventListener("click", function (e) {
 		e.preventDefault();
 		Tutoriel_navigateur.cancel();
@@ -54,7 +86,7 @@ Tutoriel_navigateur.start = function () {
 };
 
 Tutoriel_navigateur.cancel = function () {	
-	Tutoriel_navigateur.tutoLayer.style.display = "none";
+	Tutoriel_navigateur.hide();
 	
 	Hoverbox.toggle = true;
 	
@@ -70,7 +102,6 @@ Tutoriel_navigateur.next = function () {
 	else {
 		Tutoriel_navigateur.currentState = Tutoriel_navigateur.listState[Tutoriel_navigateur.listState.indexOf(Tutoriel_navigateur.currentState) + 1];
 	}
-	console.log(Tutoriel_navigateur.currentState);
 	window["Tutoriel_navigateur"][Tutoriel_navigateur.currentState]();
 }
 
@@ -87,7 +118,7 @@ Tutoriel_navigateur.menu = function () {
 Tutoriel_navigateur.inputWord = function () {
 	Tutoriel_navigateur.state = 'word_valid';		
 	
-	Tutoriel_navigateur.tutoLayer.style.display = "none";
+	Tutoriel_navigateur.hide();
 }
 
 Tutoriel_navigateur.choixMot = function () {
@@ -112,7 +143,7 @@ Tutoriel_navigateur.choixMot = function () {
 	
 	Tutoriel_navigateur.state = "labo_button";
 	
-	Tutoriel_navigateur.tutoLayer.style.display = "block";
+	Tutoriel_navigateur.show();
 	
 	Tutoriel_navigateur.changeText("<tspan>Choississez un mot à</tspan><tspan x='200' dy='62'>combiner avec le précédent</tspan>", 200, 200, "left");
 	
@@ -176,11 +207,11 @@ Tutoriel_navigateur.chooseWordType = function () {
 Tutoriel_navigateur.chooseWord = function () {
 	Tutoriel_navigateur.state = null;
 	
-	Tutoriel_navigateur.tutoLayer.style.display = "none";
+	Tutoriel_navigateur.hide();
 }
 
 Tutoriel_navigateur.endTuto = function () {
-	Tutoriel_navigateur.tutoLayer.style.display = "block";
+	Tutoriel_navigateur.show();
 	Tutoriel_navigateur.changeEllipse(0, 0, 0, 0);
 	
 	Tutoriel_navigateur.state = 'nothing'
