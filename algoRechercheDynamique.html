@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Dynamic search test</title>
+		<meta charset="utf-8"/>
+	</head>
+	<body>
+		<div id="output">
+			
+		</div>
+		<input id="input"/>
+		<script>
+			(function () {
+				var fixArray = ['test', 'abcd', 'coucou', 'blabla', 'car', 'François', 'mouche'];
+				var input = document.getElementById("input");
+				var output = document.getElementById("output");
+				
+				input.addEventListener('input', function () {
+					var dynamicArray = fixArray.slice(0);
+					var nRemoved = 0;
+					console.log(dynamicArray);
+					var regex = new RegExp(input.value);
+					console.log(regex);
+					for(i=0; i < fixArray.length; i++) {
+						if(!fixArray[i].match(regex)) {
+							dynamicArray.splice(i-nRemoved, 1);
+							nRemoved++;
+							console.log(i);
+						}
+					}
+					console.log(dynamicArray);
+					output.innerText = dynamicArray;
+				});
+			})();
+		</script>
+	</body>
+</html>
