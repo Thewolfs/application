@@ -92,7 +92,7 @@ Tutoriel_navigateur.cancel = function () {
 	
 	Tutoriel_navigateur.state = null;
 	
-	Tutoriel_navigateur.currentState = Tutoriel_navigateur.listState[0];
+	Tutoriel_navigateur.currentState = "";
 }
 
 Tutoriel_navigateur.next = function () {
