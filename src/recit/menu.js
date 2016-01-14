@@ -22,7 +22,7 @@ function Recit_MenuConstruct(r) {
 	var w = W - 200;
 	var offsetX = 120;
 	
-	r.h_vignette = Math.ceil((H-(r.nb_h+1)*margin)/r.nb_h);
+	r.h_vignette = Math.ceil((w-(r.nb_w+1)*margin)/r.nb_w);
 	// r.nb_w = Math.floor(w / r.h_vignette);
 	r.w_vignette = Math.ceil((w-(r.nb_w+1)*margin)/r.nb_w);
 
@@ -79,7 +79,7 @@ Recit_Menu.prototype.generate = function() {
 
 				
 				// Affichage des titres
-				this.titles[i][j] = new Word(this.titles_value[k]);
+				this.titles[i][j] = new Word(this.titles_value[k], null, null, null, null, null , 22.7 * W/100);
 				this.titles[i][j].setZoom(0.6);
 				if(this.titles[i][j].getWidth() > this.w_vignette - margin) {
 					this.titles[i][j].setZoom(1);
@@ -92,9 +92,9 @@ Recit_Menu.prototype.generate = function() {
 				this.vignettes[i][j].display();
 				this.titles[i][j].display();
 				var name = this.titles_value[k];
-				Event.onTap('vignettes_'+k, this.titles[i][j], function(name) { cancelPointer(); return function() { Recit.openStory(name); }}(name), true);
+				Event.onTap('vignettes_'+k, this.vignettes[i][j], function(name) { cancelPointer(); return function() { Recit.openStory(name); }}(name), true);
 				
-				Event.onHover('vignettes_'+k, this.titles[i][j], function (event) {
+				Event.onHover('vignettes_'+k, this.vignettes[i][j], function (event) {
 					pointer();
 				},
 				function(event) {
