@@ -158,7 +158,6 @@ Recherche.prototype.getValidId = function(i) {
 
 Recherche.prototype.update = function () {
 		this.resetWords();
-		console.log(this.possibilities == this.allPossibilities);
 		var j = 0;
 		for (var i = this.mot_act - this.nb_side; i <= this.mot_act + this.nb_side; i++) {
 			var ind = this.getValidId(i);
@@ -200,7 +199,6 @@ Recherche.prototype.generate = function(mot_act) {
 		var dynamicArray = this.allPossibilities.slice(0);
 		var nRemoved = 0;
 		var regex = new RegExp(this.input.value);
-		console.log(regex);
 		for(var i=0; i < this.allPossibilities.length; i++) {
 			if(!this.allPossibilities[i].value.match(regex)) {
 				dynamicArray.splice(i-nRemoved, 1);
@@ -210,11 +208,31 @@ Recherche.prototype.generate = function(mot_act) {
 				}
 			}
 		}
-		this.possibilities = dynamicArray;
-		this.update();
-		for(var i = 0; i < this.words.length; i++) {
-			this.words[i].display();
-		}
+        if(dynamicArray.length > 0) {
+           this.possibilities = dynamicArray;
+            this.update();
+            for(var i = 0; i < this.words.length; i++) {
+                this.words[i].display();
+            } 
+        }
+        else {
+           var callback = function () {
+                        this.input.value = "";
+                        this.possibilities = this.allPossibilities;
+                        this.update();
+						for(var i = 0; i < this.words.length; i++) {
+							this.words[i].display();
+						}
+                    }.bind(this);
+            Inputbox.alert({
+                message: "Aucune combinaison ne comporte cette suite de caractères",
+                confirmText: "Ok"
+            },
+            {
+                success: callback,
+                cancel: callback
+            });
+        }
 	}.bind(this));
 	
 	Event.onTap('word_try', this.word_try, function() {
