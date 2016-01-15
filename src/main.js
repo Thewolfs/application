@@ -9,6 +9,10 @@
 var App = App || {};
 
 App.init = function() {
+    if(Object.prototype.toString.call(window.HTMLElement).indexOf('Constructor') > 0 || !!document.documentMode)
+    {
+        document.location.href = "forbidden.html";
+    }
 	//Fix du gitan pour le centrage
 	var gitan = new createjs.Text("gitan", "256px demihauth", "#fff");
 	gitan.getBounds();
