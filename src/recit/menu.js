@@ -92,9 +92,9 @@ Recit_Menu.prototype.generate = function() {
 				this.vignettes[i][j].display();
 				this.titles[i][j].display();
 				var name = this.titles_value[k];
-				Event.onTap('vignettes_'+k, this.vignettes[i][j], function(name) { cancelPointer(); return function() { Recit.openStory(name); }}(name), true);
+				Event.onTap('vignettes_'+k, this.titles[i][j], function(name) { cancelPointer(); return function() { Recit.openStory(name); }}(name), true);
 				
-				Event.onHover('vignettes_'+k, this.vignettes[i][j], function (event) {
+				Event.onHover('vignettes_'+k, this.titles[i][j], function (event) {
 					pointer();
 				},
 				function(event) {
