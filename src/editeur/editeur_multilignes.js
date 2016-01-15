@@ -119,6 +119,7 @@ Editeur.multilignes.save = function () {
 	this.textInputTitle(function (text) {
 		this.story.name = removeAccent(text);
 		MyStorage.addStory(this.story.name, this.getJSON());
+		this.erase();
 		Recit.start();
 	}.bind(this));
 }.bind(Editeur.multilignes);
