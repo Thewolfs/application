@@ -39,7 +39,7 @@ Line.prototype.getHeight = function() {
 Line.prototype.add = function(word) {
 	if(word.value !== ' ' && this.words.length > 0)
 		this.addSpace();
-	if(this.getWidth() + word.getWidth() < W) {
+	if(this.getWidth() + word.getWidth() <= new Word("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA", null,null,null,null,null, 18.7*W/100).getWidth()) {
 		this.words.push(word);
 		return true;
 	}
@@ -51,7 +51,7 @@ Line.prototype.add = function(word) {
 Line.prototype.addAtBegin = function(word) {
 	if(word.value !== ' ' && this.words.length > 0)
 		this.addSpaceAtBegin();
-	if(this.getWidth() + word.getWidth() < W) {
+	if(this.getWidth() + word.getWidth() <= new Word("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA", null,null,null,null,null, 18.7*W/100).getWidth()) {
 		this.words.unshift(word);
 		return true;
 	}
