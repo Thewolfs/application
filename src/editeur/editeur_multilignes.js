@@ -18,6 +18,10 @@ Editeur.multilignes.init = function () {
 	var i;
 	this.loadDraft();
 	this.button_plus = [];
+	var nbWordDisplay = new Word("Nombre de caractère maximum : 35", null, 6, null, null, null, 14.5 * W/100);
+	nbWordDisplay.setY(5);
+	nbWordDisplay.setCenterX(W/2);
+	nbWordDisplay.display();
 }.bind(Editeur.multilignes);
 
 Editeur.multilignes.generate = function () {
