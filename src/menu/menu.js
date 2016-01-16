@@ -17,7 +17,7 @@ Menu.start = function() {
 	
 	Menu.recit();
 	Menu.labo();
-	Menu.aide();
+	//Menu.aide();
 	Menu.mentions_legales();
 	Menu.contacts();
 	Menu.editeur();
