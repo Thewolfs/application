@@ -5,6 +5,7 @@ function Recit_Menu(titles_value) {
 	this.vignettes = new Array();
 	this.titles = new Array();
 	this.erase = new Array();
+    this.share = new Array();
 	this.titles_value = titles_value;
 	this.nb_w = 5;
 	this.nb_h = 3;
@@ -63,6 +64,7 @@ Recit_Menu.prototype.generate = function() {
 		this.vignettes[i] = new Array();
 		this.erase[i] = new Array();
 		this.titles[i] = new Array();
+        this.share[i] = new Array();
 		
 		for(var j = 0; j < this.nb_w; j++) {
 			if(k < this.titles_value.length) {
@@ -113,7 +115,33 @@ Recit_Menu.prototype.generate = function() {
 						this.coords_titles_h[i] - this.h_vignette/2 + this.size_erase/2 + margin/2 
 					);
 					this.erase[i][j].display();
-					Event.onTap('erase_'+k, this.erase[i][j], function(name) { return function() { MyStorage.removeStory(name); Recit.start(); }}(name), true);
+					Event.onTap('erase_'+k, this.erase[i][j], function(name) { cancelPointer(); return function() { MyStorage.removeStory(name); Recit.start(); }}(name), true);
+                    Event.onHover('erase_'+k, this.erase[i][j], function (event) {
+					   pointer();
+				    },
+                    function(event) {
+                        cancelPointer();
+                    });
+                    
+                    //Affichage des boutons de partage
+                    this.share[i][j] = new Image(res('share'));
+					this.share[i][j].setScaleXY(
+						getScale(this.share[i][j].h, this.size_erase),
+						getScale(this.share[i][j].w, this.size_erase)
+					);
+					this.share[i][j].setCenterXY(
+						this.coords_titles_w[j] + this.w_vignette/2 - this.size_erase/2 - margin/2,
+						this.coords_titles_h[i] + this.h_vignette/4 //+ this.size_erase/4 + margin/2 
+					);
+					this.share[i][j].display();
+					Event.onTap('share_'+k, this.share[i][j], function(name) { cancelPointer(); return function() { Recit.uploadStory(name)}}(name), true);
+                    Event.onHover('share_'+k, this.share[i][j], function (event) {
+					   pointer();
+                    },
+                    function(event) {
+                        cancelPointer();
+                    });
+                    
 				}
 				// Ev�nements
 			}

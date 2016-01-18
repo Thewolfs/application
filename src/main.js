@@ -97,6 +97,8 @@ App.start = function() {
 	{
 		Menu.start();
 	}
+    else if(url[0] == "load" && url[1].indexOf("true") !== -1)
+        Recit.loadStory();
 	else {
 		Intro.start();
 	}
