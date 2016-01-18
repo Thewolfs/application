@@ -50,6 +50,13 @@ MyStorage.addStory = function(story_name, story_json) {
 	return name;
 };
 
+//permet d'update une story avec un nouveau contenu
+MyStorage.updateStory = function(name,json){
+    json = JSON.stringify(json);
+    MyStorage.removeStory(name);
+    MyStorage.addStory(name,json);
+}
+
 //Renvoit un objet story
 MyStorage.getStory = function(name) {
 	return JsonHandler.storyFromJson(JSON.parse(localStorage.getItem("story_"+language+"_"+name)));
