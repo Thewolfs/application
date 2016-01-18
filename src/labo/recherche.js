@@ -248,7 +248,7 @@ Recherche.prototype.generate = function(mot_act) {
 		cancelPointer();
 	});
 	
-	Event.onTap('arrow_back', gui.arrow_back, function () { if(this.input.parentNode) {this.input.parentNode.removeChild(input);} Labo.start();}, false);
+	Event.onTap('arrow_back', gui.arrow_back, function () { if(this.input.parentNode) {this.input.parentNode.removeChild(this.input);} Labo.start();}, false);
 }
 
 Recherche.prototype.transform = function() { if(!this.inTransform) { this.inTransform = true;
