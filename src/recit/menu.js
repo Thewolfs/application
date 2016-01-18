@@ -129,6 +129,10 @@ Recit_Menu.prototype.generate = function() {
 			msg = "There are too many stories saved, you may want to delete some so other may appear";
 		Inputbox.alert({ message : msg, confirmText: "OK" });
 	}
+	
+	if(Tutoriel_navigateur.currentState == "title") {
+		canvas.dispatchEvent(Tutoriel_navigateur.event);
+	}
 }
 
 /* Text input */

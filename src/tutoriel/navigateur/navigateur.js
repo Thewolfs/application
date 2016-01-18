@@ -12,6 +12,8 @@ Tutoriel_navigateur.listState = [
 	'addMot', 
 	'chooseWordType', 
 	'chooseWord', 
+	'firstPoeme',
+	'title',
 	'endTuto',
 	];
 Tutoriel_navigateur.currentState = "";
@@ -157,7 +159,7 @@ Tutoriel_navigateur.transformation = function () {
 	
 	Tutoriel_navigateur.changeText("<tspan>Puis cliquez sur</tspan><tspan x='800' dy='62'>\"Transformer\"</tspan>", 650, 800, "left")
 	
-	Tutoriel_navigateur.changeEllipse(480, 810, recherche.word_try.getWidth()*1920/(2*W) + 10, recherche.word_try.getWidth()*1920/(2*W) + 10);
+	Tutoriel_navigateur.changeEllipse(480, 810, recherche.word_try.getWidth()*1920/(2*W) + 10, recherche.word_try.getWidth()*1080/(2*H) + 10);
 	
 	Tutoriel_navigateur.ellipseArrow1.parentNode.removeChild(Tutoriel_navigateur.ellipseArrow1);
 	Tutoriel_navigateur.ellipseArrow2.parentNode.removeChild(Tutoriel_navigateur.ellipseArrow2);
@@ -169,7 +171,7 @@ Tutoriel_navigateur.geste = function () {
 	Tutoriel_navigateur.state = "nothing";
 	
 	Tutoriel_navigateur.changeText("<tspan>Passez votre curseur sur votre mot</tspan><tspan x='1000' dy='62'>pour voir la transformation s'opérer</tspan>", 150, 1000,"left");
-	Tutoriel_navigateur.changeEllipse(960, 500, recherche.central_word.getWidth()*1920/(2*W) + 20, recherche.central_word.getWidth()*1920/(2*W) + 20)
+	Tutoriel_navigateur.changeEllipse(960, 500, recherche.central_word.getWidth()*1920/(2*W) + 20, recherche.central_word.getWidth()*1080/(2*H) + 20)
 	Tutoriel_navigateur.changeArrow("m 0,0");
 }
 
@@ -180,14 +182,14 @@ Tutoriel_navigateur.editeur = function () {
 		Tutoriel_navigateur.changeArrow("m 820,1000 c -7.70649,-1.45119 -15.87459,-6.15475 -22.91579,-13.19596 -6.47083,-6.47082 -6.98726,-8.87186 -2.33252,-10.84448 4.29961,-1.82213 11.46888,-9.37014 17.11639,-18.02064 6.26802,-9.60094 6.50916,-9.84818 8.22025,-8.4281 0.77735,0.64515 1.41336,1.62152 1.41336,2.16973 0,1.6173 -6.84178,12.38081 -11.74217,18.39654 l -4.61067,5.66008 6.42642,-0.72186 c 38.74166,-4.35176 87.00412,-30.34034 134.71477,-72.5418 7.6616,-6.7769 9.54435,-8.00336 10.75,-7.00276 2.79624,2.32067 2.62436,2.52613 -14.53835,17.37912 -47.61658,41.20844 -100.40622,67.32413 -138.5,68.51767 l -5,0.15665 4.5,3.95865 c 5.74129,5.05062 11.86711,7.93121 19.75,9.2872 4.89469,0.84197 6.25,1.45713 6.25,2.83681 0,2.87067 -2.98,3.62124 -9.50169,2.39315 z");
 		
 		Tutoriel_navigateur.changeText("Rendez vous à présent dans l'éditeur !", 875, 900, "left");
-		Tutoriel_navigateur.changeEllipse(640, 1048 - recherche.start_edit.getHeight()*1920/(2*W), recherche.start_edit.getWidth()*1920/(2*W) + 20, recherche.start_edit.getWidth()*1920/(2*W) + 20)
+		Tutoriel_navigateur.changeEllipse(640, recherche.start_edit.getCenterY()*1080/H, recherche.start_edit.getWidth()*1920/(2*W) + 20, recherche.start_edit.getWidth()*1080/(2*H) + 20)
 	}, 3500);
 }
 
 Tutoriel_navigateur.addMot = function () {
 	Tutoriel_navigateur.state = "button_plus";
 	
-	Tutoriel_navigateur.changeEllipse(960, 230, 150, 150);
+	Tutoriel_navigateur.changeEllipse(960, (H-margin-size_icon)* 1080/(4*H), 75 * 1920/W, 75*1080/H);
 	
 	Tutoriel_navigateur.changeArrow("m 680,440 c -0.93981,-2.44912 15.59509,-27.13745 31.20414,-46.59102 4.19241,-5.225 15.04756,-16.9494 24.12256,-26.05422 25.32162,-25.40484 45.63191,-39.35667 69.95617,-48.05531 l 6.45618,-2.3088 -6.45618,-3.02155 c -5.71059,-2.67261 -7.55574,-3.02953 -15.9777,-3.09062 -10.0267,-0.0727 -12.23309,-0.64239 -11.35462,-2.93165 1.51545,-3.94921 13.6228,-4.59533 23.43397,-1.25057 7.30143,2.48916 17.87403,8.47053 18.70807,10.58396 0.31034,0.78641 -0.99638,2.70566 -3.06385,4.5 -4.25348,3.69158 -8.66878,12.20096 -11.7415,22.62876 -1.21549,4.125 -2.78568,8.11575 -3.4893,8.86832 -1.7008,1.81914 -3.47124,0.59688 -3.47124,-2.39644 0,-2.95296 4.08971,-15.6844 6.92015,-21.54275 1.14392,-2.36764 2.07985,-4.4387 2.07985,-4.60237 0,-0.57723 -10.05123,3.6739 -17.20881,7.2784 -26.58057,13.38575 -57.44627,41.75643 -84.19393,77.38813 -5.5765,7.42869 -12.80621,17.66921 -16.06602,22.75671 -5.72101,8.92864 -8.57077,11.19533 -9.85794,7.84102 z");
 	
@@ -210,13 +212,27 @@ Tutoriel_navigateur.chooseWord = function () {
 	Tutoriel_navigateur.hide();
 }
 
+Tutoriel_navigateur.firstPoeme = function () {
+	Tutoriel_navigateur.show();
+	Tutoriel_navigateur.changeEllipse(1280, gui.editeur_multilignes_save.getCenterY()* 1080/H, gui.editeur_multilignes_save.getWidth() * 1920/(2*W) + 20 , gui.editeur_multilignes_save.getHeight() * 1080/(2*H) + 20);
+	
+	Tutoriel_navigateur.state = 'editeur_multilignes_save';
+	
+	Tutoriel_navigateur.changeText("<tspan>Bravo ! Vous avez découvert comment composer vos propres poèmes !</tspan><tspan x='960' dy='65'>Vous pouvez les sauvegarder en cliquant sur le bouton en bas</tspan>", 540, 960, "middle");
+}
+
+Tutoriel_navigateur.title = function () {
+	Tutoriel_navigateur.hide();
+}
+
 Tutoriel_navigateur.endTuto = function () {
 	Tutoriel_navigateur.show();
-	Tutoriel_navigateur.changeEllipse(0, 0, 0, 0);
 	
-	Tutoriel_navigateur.state = 'nothing'
+	Tutoriel_navigateur.changeText("<tspan>C'est dans le salon que vous retrouverez vos poèmes.</tspan><tspan x='960' dy='65'>Il suffit de cliquer sur le titre pour l'ouvrir.</tspan><tspan x='960' dy='65'>C'est ici que le tutoriel se termine.</tspan>", 540, 960, "middle");
 	
-	Tutoriel_navigateur.changeText("<tspan>Bravo ! Vous avez découvert comment vous pouvez composer vos propres poèmes !</tspan><tspan x='960' dy='62'>Vous pouvez les sauvegarder en cliquant sur le bouton en bas</tspan><tspan x='960' dy='62'>Ils seront ensuite accessibles dans le salon</tspan>", 540, 960, "middle");
+	Tutoriel_navigateur.changeEllipse(0,0,0,0);
+	
+	Tutoriel_navigateur.changeArrow("m 0,0");
 }
 
 scriptLoaded('src/tutoriel/navigateur/navigateur.js');

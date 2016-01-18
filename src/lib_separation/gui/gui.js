@@ -258,7 +258,7 @@ Gui.prototype.Editeur_multilignes_save = function() {
 	this.editeur_multilignes_save.setCenterXY(2*W/3, H-this.margin-size_icon/2);
 	this.editeur_multilignes_save.display();
 	
-	this.editeur_multilignes_save.onTap(Editeur.multilignes.save);
+	Event.onTap('editeur_multilignes_save', this.editeur_multilignes_save, Editeur.multilignes.save, true);
 	
 	Event.onHover('editeur_multilignes_save', this.editeur_multilignes_save, function (event) {
 		pointer();

@@ -120,6 +120,9 @@ Editeur.multilignes.addWordToLine = function (line_id, word, addAtBegin) {
 }.bind(Editeur.multilignes);
 
 Editeur.multilignes.save = function () {
+	if(Tutoriel_navigateur.currentState == "firstPoeme") {
+		canvas.dispatchEvent(Tutoriel_navigateur.event);
+	}
 	this.textInputTitle(function (text) {
 		this.story.name = removeAccent(text);
 		MyStorage.addStory(this.story.name, this.getJSON());
