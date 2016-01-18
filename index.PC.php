@@ -41,7 +41,7 @@
 		
 		<script type="text/javascript">
 			var loaded_scripts = 0;
-			var n_scripts = 67;
+			var n_scripts = 69;
 			function scriptLoaded(script_path) {
 				loaded_scripts++;
 				console.debug(loaded_scripts + '/' + n_scripts + " : " + script_path);
@@ -52,6 +52,7 @@
 		<script src="src/lib/createjs-2015.05.21.min.js"></script>
 		<script src="src/lib/cocoon.min.js"></script>
 		<script src="src/lib/xml-for-cocoonjs.js"></script>
+        <script src="src/lib/jquery-2.2.0.min.js"></script>
 		
 		<!-- Main files -->
 		<script type="text/javascript" src="src/functions.js"></script>

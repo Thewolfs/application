@@ -90,3 +90,5 @@ dbRequest.update = function(id,field,val){
             }
         });
 }
+
+scriptLoaded('src/lib_separation/dbRequest.js');
