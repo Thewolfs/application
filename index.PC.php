@@ -41,7 +41,7 @@
 		
 		<script type="text/javascript">
 			var loaded_scripts = 0;
-			var n_scripts = 68;
+			var n_scripts = 67;
 			function scriptLoaded(script_path) {
 				loaded_scripts++;
 				console.debug(loaded_scripts + '/' + n_scripts + " : " + script_path);
