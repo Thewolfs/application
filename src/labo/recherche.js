@@ -192,6 +192,7 @@ Recherche.prototype.generate = function(mot_act) {
 	
 	document.body.appendChild(this.input);
 	this.input.setAttribute('class', "inputLabo");
+    this.input.setAttribute('id',"inputLabo");
 	this.input.style.left = W/4 - this.input.offsetWidth/2 + "px";
 	this.input.style.top = H*3/5 - this.input.offsetHeight/2 + "px";
 	
@@ -236,7 +237,8 @@ Recherche.prototype.generate = function(mot_act) {
 	}.bind(this));
 	
 	Event.onTap('word_try', this.word_try, function() {
-		this.input.parentNode.removeChild(this.input);
+        document.getElementById('inputLabo').remove();
+		//this.input.parentNode.removeChild(this.input);
 		cancelPointer(); 
 		Labo.transform(); 
 	}.bind(this), true);
