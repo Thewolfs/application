@@ -79,7 +79,7 @@ Recit.uploadStory = function(name){
     
     if(typeof(this.parsedStory.url) == 'undefined'){
         
-        this.json = "'" + this.story + "'";
+        this.json = "'" + this.story.replace("'"," ") + "'";
         dbRequest.insert(name +"$temp$",this.json);
         var id = dbRequest.get("name",name + "$temp$");
         this.url = "http://localhost/application%20-%20Copie/index.PC.php?load=true&id=" +id;
