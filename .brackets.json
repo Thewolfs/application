@@ -1,0 +1,8 @@
+{
+    "jscodehints.detectedExclusions": [
+        "C:/wamp/www/application/test_combinaisons.js",
+        "C:/wamp/www/application/src/var.js",
+        "C:/wamp/www/application/src/rooter.js",
+        "C:/wamp/www/application/src/main.js"
+    ]
+}

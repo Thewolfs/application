@@ -48,6 +48,52 @@ Recit.openStory = function(story_name) {
 	story.display();
 }
 
+Recit.loadStory = function() {
+    
+	this.url = window.location.search;
+    this.load = this.url.slice(this.url.indexOf("load=")+5);
+    this.id = this.url.slice(this.url.indexOf("id=")+3);
+    this.myStory = "";
+    this.json = "";
+
+    if(this.load.indexOf("true") !== -1){
+        this.json = dbRequest.get("id",this.id);
+        //json = json.slice(1,json.length - 1);
+       
+        myStory = JsonHandler.storyFromJson(JSON.parse(this.json));
+        //console.log(myStory);
+        setTimeout(MyStorage.addStory(myStory.name, this.json),100);
+        setTimeout(Recit.openStory(myStory.name),100);       
+    }
+}
+
+//permet d'uploader un poeme sur la BDD et de créer un lien de partage
+//on récupère la story dans le local storage
+//on la transforme en Objet. Si la story a déjà été partagée, on renvoie l'URL associée
+//sinon on push sur la BDD, on récupère l'id généré, puis on créé le lien de partage
+
+Recit.uploadStory = function(name){
+    
+    this.story = localStorage.getItem("story_" + language + "_" + name);
+    this.parsedStory = JSON.parse(this.story);
+    
+    if(typeof(this.parsedStory.url) == 'undefined'){
+        
+        this.json = "'" + this.story + "'";
+        dbRequest.insert(name +"$temp$",this.json);
+        var id = dbRequest.get("name",name + "$temp$");
+        this.url = "http://localhost/application%20-%20Copie/index.PC.php?load=true&id=" +id;
+        dbRequest.update(id,"nom",name);
+        this.parsedStory.url = this.url;
+        MyStorage.updateStory(name,this.parsedStory);
+    }
+    else{
+        this.url = this.parsedStory.url;
+    }
+    Inputbox.prompt({ message: "URL de partage:", confirmText: 'ok', cancelText: 'fermer', type: 'texte'});
+    $('#inputboxinput').val(this.url).select();
+}
+
 /*
         Détermination de la taille de la police en fonction de la hauteur du canvas
 */
