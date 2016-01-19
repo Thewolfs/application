@@ -4,11 +4,11 @@
     error_reporting(E_ALL);
 
     //IDENTIFICATION
-    $hostname ="localhost";
+    $hostname ="sql4.freesqldatabase.com";
     $port="3306";
-    $username ="root";
-    $password="";
-    $dbname="separation";
+    $username ="sql4103547";
+    $password="jrPp2SzFYG";
+    $dbname="sql4103547";
 
     //CREATE CONNECTION
     $connect= mysqli_connect($hostname, $username, $password, $dbname);

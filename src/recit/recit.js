@@ -79,10 +79,13 @@ Recit.uploadStory = function(name){
     
     if(typeof(this.parsedStory.url) == 'undefined'){
         
-        this.json = "'" + this.story.replace("'"," ") + "'";
+        this.json = "'" + this.story.replace(/'/g," ") + "'";
         dbRequest.insert(name +"$temp$",this.json);
         var id = dbRequest.get("name",name + "$temp$");
-        this.url = "http://localhost/application%20-%20Copie/index.PC.php?load=true&id=" +id;
+        if(window.location.search !== "")
+            this.url = window.location.href.slice(0,window.location.href.indexOf(window.location.search)) + "?load=true&id=" +id;
+        else 
+            this.url = window.location.href  + "?load=true&id=" +id;
         dbRequest.update(id,"nom",name);
         this.parsedStory.url = this.url;
         MyStorage.updateStory(name,this.parsedStory);
