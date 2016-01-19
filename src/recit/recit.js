@@ -77,21 +77,23 @@ Recit.uploadStory = function(name){
     this.story = localStorage.getItem("story_" + language + "_" + name);
     this.parsedStory = JSON.parse(this.story);
     
-    if(typeof(this.parsedStory.url) == 'undefined'){
+    if(window.location.search !== "")
+        this.url = window.location.href.slice(0,window.location.href.indexOf(window.location.search)) + "?load=true&id=";
+    else 
+        this.url = window.location.href  + "?load=true&id=";
+    
+    if(typeof(this.parsedStory.id) == 'undefined'){
         
         this.json = "'" + this.story.replace(/'/g," ") + "'";
         dbRequest.insert(name +"$temp$",this.json);
         var id = dbRequest.get("name",name + "$temp$");
-        if(window.location.search !== "")
-            this.url = window.location.href.slice(0,window.location.href.indexOf(window.location.search)) + "?load=true&id=" +id;
-        else 
-            this.url = window.location.href  + "?load=true&id=" +id;
+        this.url += id;
         dbRequest.update(id,"nom",name);
-        this.parsedStory.url = this.url;
+        this.parsedStory.id = id;
         MyStorage.updateStory(name,this.parsedStory);
     }
     else{
-        this.url = this.parsedStory.url;
+        this.url += this.parsedStory.id;
     }
     Inputbox.prompt({ message: "URL de partage:", confirmText: 'ok', cancelText: 'fermer', type: 'texte'});
     $('#inputboxinput').val(this.url).select();
