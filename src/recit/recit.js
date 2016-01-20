@@ -95,7 +95,7 @@ Recit.uploadStory = function(name){
     else{
         this.url += this.parsedStory.id;
     }
-    Inputbox.prompt({ message: "URL de partage:", confirmText: 'ok', cancelText: 'fermer', type: 'texte'});
+    Inputbox.prompt({ message: "URL de partage à copier:", confirmText: 'ok', /*cancelText: 'fermer',*/ type: 'texte'});
     $('#inputboxinput').val(this.url).select();
 }
 

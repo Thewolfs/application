@@ -41,14 +41,21 @@ Inputbox.prompt = function (options, callbacks) {
 	//Ajout du texte custom
 	title.textContent = options.message;
 	confirm.textContent = options.confirmText;
-	cancel.textContent = options.cancelText;
+    if(options.cancelText !== undefined){
+        cancel.textContent = options.cancelText;
+        cancel.style.display = 'inline-block';
+    }
+    else{
+        cancel.style.display = 'none';
+    }
+	
 	
 	input.type = options.type;
 	
 	input.style.display = 'inline-block';
 	title.style.display = 'block';
 	confirm.style.display = 'inline-block';
-	cancel.style.display = 'inline-block';
+	
 		
 	//Binding des évènements
 	inputbox.addEventListener("click", function (event){
