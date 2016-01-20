@@ -4,6 +4,12 @@
         "C:/wamp/www/application/src/var.js",
         "C:/wamp/www/application/src/rooter.js",
         "C:/wamp/www/application/src/main.js",
-        "C:/wamp/www/application/src/tutoriel/navigateur/text.js"
+        "C:/wamp/www/application/src/tutoriel/navigateur/text.js",
+        "C:/wamp/www/application/src/functions.js",
+        "C:/wamp/www/application/src/tutoriel/tutoriel.js",
+        "C:/wamp/www/application/src/lib_separation/event/keydown.js",
+        "C:/wamp/www/application/src/tutoriel/navigateur/navigateur.js",
+        "C:/wamp/www/application/src/recit/story.js",
+        "C:/wamp/www/application/src/recit/recit.js"
     ]
 }

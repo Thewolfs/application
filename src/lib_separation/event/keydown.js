@@ -6,6 +6,11 @@ Event.keydown = function (e) {
 			else if (e.keyCode == '40')
 				Labo.scrollDown();
 			break;
+        case Editeur: 
+            if (e.keyCode == '38')
+				Editeur.scrollUp();
+			else if (e.keyCode == '40')
+				Editeur.scrollDown();
 		default: 
 			return null;
 	}

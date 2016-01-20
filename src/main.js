@@ -93,7 +93,7 @@ App.start = function() {
 	// sound_manager.play("ambiant");
 	
 	var url = window.location.search.replace("?", "").split("=");
-	if(url[0] == "intro" && url[1] == "skip")
+	if(localStorage.getItem("skipIntro") == "true")
 	{
 		Menu.start();
 	}
@@ -101,6 +101,7 @@ App.start = function() {
         Recit.loadStory();
 	else {
 		Intro.start();
+        localStorage.setItem("skipIntro",true);
 	}
 };
 
