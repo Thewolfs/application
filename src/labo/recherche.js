@@ -190,54 +190,54 @@ Recherche.prototype.generate = function(mot_act) {
 	this.central_word.setZoom(2);
 	this.central_word.setCenterXY(this.coords_central_word.x, this.coords_central_word.y);
 	
-	document.body.appendChild(this.input);
-	this.input.setAttribute('class', "inputLabo");
-    this.input.setAttribute('id',"inputLabo");
-	this.input.style.left = W/4 - this.input.offsetWidth/2 + "px";
-	this.input.style.top = H*3/5 - this.input.offsetHeight/2 + "px";
-	
-	this.input.addEventListener('input', function () {
-		var dynamicArray = this.allPossibilities.slice(0);
-		var nRemoved = 0;
-		var regex = new RegExp(this.input.value);
-		for(var i=0; i < this.allPossibilities.length; i++) {
-			if(!this.allPossibilities[i].value.match(regex)) {
-				dynamicArray.splice(i-nRemoved, 1);
-				nRemoved++;
-				if(i <= this.mot_act) {
-					this.mot_act--;
-				}
-			}
-		}
-        if(dynamicArray.length > 0) {
-           this.possibilities = dynamicArray;
-            this.update();
-            for(var i = 0; i < this.words.length; i++) {
-                this.words[i].display();
-            } 
-        }
-        else {
-           var callback = function () {
-                        this.input.value = "";
-                        this.possibilities = this.allPossibilities;
-                        this.update();
-						for(var i = 0; i < this.words.length; i++) {
-							this.words[i].display();
-						}
-                    }.bind(this);
-            Inputbox.alert({
-                message: "Aucune combinaison ne comporte cette suite de caractères",
-                confirmText: "Ok"
-            },
-            {
-                success: callback,
-                cancel: callback
-            });
-        }
-	}.bind(this));
+	// document.body.appendChild(this.input);
+	// this.input.setAttribute('class', "inputLabo");
+    // this.input.setAttribute('id',"inputLabo");
+	// this.input.style.left = W/4 - this.input.offsetWidth/2 + "px";
+	// this.input.style.top = H*3/5 - this.input.offsetHeight/2 + "px";
+	// 
+	// this.input.addEventListener('input', function () {
+	// 	var dynamicArray = this.allPossibilities.slice(0);
+	// 	var nRemoved = 0;
+	// 	var regex = new RegExp(this.input.value);
+	// 	for(var i=0; i < this.allPossibilities.length; i++) {
+	// 		if(!this.allPossibilities[i].value.match(regex)) {
+	// 			dynamicArray.splice(i-nRemoved, 1);
+	// 			nRemoved++;
+	// 			if(i <= this.mot_act) {
+	// 				this.mot_act--;
+	// 			}
+	// 		}
+	// 	}
+    //     if(dynamicArray.length > 0) {
+    //        this.possibilities = dynamicArray;
+    //         this.update();
+    //         for(var i = 0; i < this.words.length; i++) {
+    //             this.words[i].display();
+    //         } 
+    //     }
+    //     else {
+    //        var callback = function () {
+    //                     this.input.value = "";
+    //                     this.possibilities = this.allPossibilities;
+    //                     this.update();
+	// 					for(var i = 0; i < this.words.length; i++) {
+	// 						this.words[i].display();
+	// 					}
+    //                 }.bind(this);
+    //         Inputbox.alert({
+    //             message: "Aucune combinaison ne comporte cette suite de caractères",
+    //             confirmText: "Ok"
+    //         },
+    //         {
+    //             success: callback,
+    //             cancel: callback
+    //         });
+    //     }
+	// }.bind(this));
 	
 	Event.onTap('word_try', this.word_try, function() {
-        document.getElementById('inputLabo').remove();
+        // document.getElementById('inputLabo').remove();
 		//this.input.parentNode.removeChild(this.input);
 		cancelPointer(); 
 		Labo.transform(); 
@@ -250,7 +250,7 @@ Recherche.prototype.generate = function(mot_act) {
 		cancelPointer();
 	});
 	
-	Event.onTap('arrow_back', gui.arrow_back, function () { if(this.input.parentNode) {this.input.parentNode.removeChild(this.input);} Labo.start();}.bind(this), false);
+	// Event.onTap('arrow_back', gui.arrow_back, function () { if(this.input.parentNode) {this.input.parentNode.removeChild(this.input);} Labo.start();}.bind(this), false);
 }
 
 Recherche.prototype.transform = function() { if(!this.inTransform) { this.inTransform = true;

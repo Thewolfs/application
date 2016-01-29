@@ -12,6 +12,7 @@ module.exports = function(grunt) {
                     '../src/lib/createjs-2014.12.12.min.js',
                     '../src/lib/cocoon.min.js',
                     '../src/lib/xml-for-cocoonjs.js',
+                    '../src/lib/jquery-2.2.0.min.js',
                     
                     // Main files 
                     '../src/functions.js',
@@ -45,8 +46,13 @@ module.exports = function(grunt) {
                         'res/db/local_db.js',
                         // StoriesDb 
                         'res/story/stories.js',
+                        //Tutoriel
+                        '../src/tutoriel/tutoriel.js',
+                        '../src/tutoriel/navigateur/navigateur.js',
                         
                         // lib_separation 
+                            //Requetes
+                            '../src/lib_separation/requetes/dbRequest.js',
                             // Logo 
                             '../src/lib_separation/logo/logo.js',
                             // Codes 
@@ -60,6 +66,7 @@ module.exports = function(grunt) {
                             '../src/lib_separation/word_constructor/coupable_entier.js',
                             '../src/lib_separation/word_constructor/centrale.js',
                             '../src/lib_separation/word_constructor/ombre.js',
+                            '../src/lib_separation/word_constructor/icons.js',
                             '../src/lib_separation/word_constructor/spritesheets.js',
                             '../src/lib_separation/word_constructor/letter.js',
                             '../src/lib_separation/word_constructor/word_letters.js',
@@ -95,6 +102,7 @@ module.exports = function(grunt) {
                             '../src/lib_separation/gui/gui.js',
                             '../src/lib_separation/gui/inputbox.js',
                             '../src/lib_separation/gui/hoverbox.js',
+                            '../src/lib_separation/gui/parameterbox.js',
                             // Json 
                             '../src/lib_separation/json/json.js',
                             // STorage 
