@@ -37,7 +37,7 @@ Line.prototype.getHeight = function() {
 	@return (true/false) : Si la largeur du mot est trop grande, on retourne false, sinon true.
 */
 Line.prototype.add = function(word) {
-	if(word.value !== ' ' && this.words.length > 0)
+	if(word.value !== '   ' && this.words.length > 0)
 		this.addSpace();
 	if(this.getWidth() + word.getWidth() <= new Word("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA", null,null,null,null,null, 18.7*W/100).getWidth()) {
 		this.words.push(word);
@@ -49,7 +49,7 @@ Line.prototype.add = function(word) {
 	}
 };
 Line.prototype.addAtBegin = function(word) {
-	if(word.value !== ' ' && this.words.length > 0)
+	if(word.value !== '   ' && this.words.length > 0)
 		this.addSpaceAtBegin();
 	if(this.getWidth() + word.getWidth() <= new Word("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA", null,null,null,null,null, 18.7*W/100).getWidth()) {
 		this.words.unshift(word);
@@ -65,10 +65,10 @@ Line.prototype.addAtBegin = function(word) {
 	Ajoute un espace à la ligne
 */
 Line.prototype.addSpace = function() {
-	this.add(new Word(' '));
+	this.add(new Word('   ', null,null,null,null,null, 18.7*W/100));
 };
 Line.prototype.addSpaceAtBegin = function() {
-	this.addAtBegin(new Word(' '));
+	this.addAtBegin(new Word('   ', null,null,null,null,null, 18.7*W/100));
 };
 
 /*

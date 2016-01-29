@@ -79,7 +79,7 @@ Editeur.multilignes.getJSON = function () {
 	for(i = 0; i < json.pages[0].lines.length; i++) {
 		line = json.pages[0].lines[i];
 		for(j = 0; j < line.words.length; j++) {
-			if(line.words[j].value === " " || line.words[j].value === this.word_add) {
+			if(line.words[j].value === "   " || line.words[j].value === this.word_add) {
 				line.words.splice(j, 1);
 				j--;
 			}
@@ -115,10 +115,28 @@ Editeur.multilignes.addWordToLine = function (line_id, word, addAtBegin) {
 	this.loadDraft();
 	if(line_id < this.page.lines.length) {
 		if(!addAtBegin) {
-			this.page.lines[line_id].add(word);
+			var array = word.getValue().split(" ");
+			if(array.length > 1) {
+				array.forEach(function(element) {
+					this.page.lines[line_id].add(new Word(element));
+					console.log(element);
+				}, this);
+			}
+			else {
+				this.page.lines[line_id].add(word);
+			}
 		}
 		else {
-			this.page.lines[line_id].addAtBegin(word);
+			var array = word.getValue().split(" ").reverse();
+			if(array.length > 1) {
+				array.forEach(function(element) {
+					this.page.lines[line_id].addAtBegin(new Word(element));
+					console.log(element);
+				}, this);
+			}
+			else {
+				this.page.lines[line_id].addAtBegin(word);
+			}
 		}
 	}
 	this.saveDraft();
