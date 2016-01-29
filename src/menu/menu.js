@@ -59,7 +59,7 @@ Menu.recit = function() {
 	
 	function hover(event) {
 		pointer();
-		Hoverbox.display(event, null, "C'est ici que vous retrouverez vos créations et des exemples de poèmes");
+		Hoverbox.display(event, null, Hoverbox.text[language].recit);
 	}
 	
 	function cancelHover() {
@@ -96,7 +96,7 @@ Menu.labo = function() {
 	
 	function hover(event) {
 		pointer();
-		Hoverbox.display(event, null, "Le labo permet de découvrir la poésie à 2 mi-mots et de créer ses propres combinaisons");
+		Hoverbox.display(event, null, Hoverbox.text[language].labo);
 	}
 	
 	function cancelHover() {
@@ -131,7 +131,7 @@ Menu.editeur = function() {
 	
 	function hover(event) {
 		pointer();
-		Hoverbox.display(event, null, "L'éditeur permet de créer ses propres poèmes à 2 mi-mots et de les sauvegarder pour les redécouvrir par la suite");
+		Hoverbox.display(event, null, Hoverbox.text[language].editeur);
 	}
 	
 	function cancelHover() {

@@ -7,6 +7,9 @@ Parameterbox.start = function(logo) {
 	var toggleInfo = document.getElementById("toggleInfo");
 	var toggleTuto = document.getElementById("toggleTuto");
 	
+	toggleInfo.textContent = Parameterbox.text[language].hideInfo;
+	toggleTuto.textContent = Parameterbox.text[language].tuto;
+	
 	parameter.style.width = W/6 + "px";
 	parameter.style.height = H/12 + "px";
 	parameter.style.left = (margin + logo.getWidth()/4) + "px";
@@ -18,11 +21,11 @@ Parameterbox.start = function(logo) {
 		Parameterbox.hide();
 		if(Hoverbox.toggle) {
 			Hoverbox.toggle = false;
-			toggleInfo.textContent = "Activer les infobulles";
+			toggleInfo.textContent = Parameterbox.text[language].showInfo;
 		}
 		else {
 			Hoverbox.toggle = true;
-			toggleInfo.textContent = "Désactiver les infobulles";
+			toggleInfo.textContent = Parameterbox.text[language].hideInfo;
 		}
 	});
 	

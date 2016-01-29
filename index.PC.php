@@ -60,6 +60,7 @@
 		<script type="text/javascript" src="src/rooter.js"></script>
 		<script type="text/javascript" src="src/main.js"></script>
 		
+		
 			<!-- Intro -->
 			<script type="text/javascript" src="src/intro/intro.js"></script>
 			<!-- Menu -->
@@ -89,7 +90,6 @@
 			<!--Tutoriel -->
 			<script type="text/javascript" src="src/tutoriel/tutoriel.js"></script>
 			<script type="text/javascript" src="src/tutoriel/navigateur/navigateur.js"></script>
-			<script type="text/javascript" src="src/tutoriel/navigateur/text.js"></script>
 			<!-- lib_separation -->
 				<!-- Logo -->
 				<script type="text/javascript" src="src/lib_separation/logo/logo.js"></script>
@@ -145,6 +145,8 @@
 				<script type="text/javascript" src="src/lib_separation/json/json.js"></script>
 				<!-- STorage -->
 				<script type="text/javascript" src="src/lib_separation/storage/storage.js"></script>
+		<!--Text-->
+		<script type="text/javascript" src="src/text.js"></script>
 	<style>
 		* { margin:0; padding: 0; }
 		body { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; }
