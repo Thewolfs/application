@@ -154,4 +154,34 @@ function removeAccent(text) {
 	return text;
 }
 
+function swap(array, idx1, idx2) {
+    var tmp = array[idx1];
+    array[idx1] = array[idx2];
+    array[idx2] = tmp;
+}
+
+function quickSort(array, getValue, begin, end) {
+     var left = begin-1;
+     var right = end+1;
+ 
+     var pivot = getValue(array[begin]);
+ 
+     if (begin >= end) {
+         return;
+     }
+ 
+     while(1) {
+         do right--; while(getValue(array[right]) > pivot);
+         do left++; while(getValue(array[left]) < pivot);
+ 
+         if(left < right) {
+              swap(array, left, right);
+         }
+         else break;
+     }
+ 
+     quickSort(array, getValue, begin, right);
+     quickSort(array, getValue, right+1, end);
+}
+
 scriptLoaded('src/functions.js');

@@ -146,6 +146,12 @@ Recherche.prototype.getCentralWord = function() {
 }
 
 Recherche.prototype.setPossibilities = function(data) {
+	var getPossibilityValue = function(Possibility) {
+    	return Possibility.getValue();;
+	}
+	
+	quickSort(data, getPossibilityValue, 0, data.length-1);
+
 	this.allPossibilities = data;
 }
 
