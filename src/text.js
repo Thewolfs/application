@@ -12,8 +12,8 @@ Tutoriel_navigateur.text.fr.choixMot = {
 };
 
 Tutoriel_navigateur.text.en.choixMot = { 
-    line1: "Choose a word to combine",
-    line2: "with the first one"
+    line1: "Choose a word to",
+    line2: "combine with the first one"
 };
 
 Tutoriel_navigateur.text.fr.transformation = { 
@@ -32,18 +32,18 @@ Tutoriel_navigateur.text.fr.geste = {
 };
 
 Tutoriel_navigateur.text.en.geste = {
-    line1: "Hover the word with your cursor",
+    line1: "Roll over the word with your cursor",
     line2: "to see the transformation"
 };
 
 Tutoriel_navigateur.text.fr.editeur = "Rendez vous à présent dans l'éditeur !";
 
-Tutoriel_navigateur.text.en.editeur = "Now go into the editor mode";
+Tutoriel_navigateur.text.en.editeur = "Now go into editor mode";
 
 
 Tutoriel_navigateur.text.fr.addMot = "Cliquez ici pour ajouter un mot !";
 
-Tutoriel_navigateur.text.en.addMot = "Click here to add a word !";
+Tutoriel_navigateur.text.en.addMot = "Click here to add a word!";
 
 
 Tutoriel_navigateur.text.fr.chooseWordType = "Cliquez ici pour ajouter un mot pouvant se transformer !";
@@ -57,8 +57,8 @@ Tutoriel_navigateur.text.fr.firstPoeme = {
 };
 
 Tutoriel_navigateur.text.en.firstPoeme = {
-    line1: "Awesome ! You have just found out how to build your own poemes.",
-    line2: "You can save it by clicking the button below"
+    line1: "Great! You have just found how to build your own poem.",
+    line2: "You can save it by clicking on the button below."
 };
 
 Tutoriel_navigateur.text.fr.endTuto = {
@@ -68,14 +68,14 @@ Tutoriel_navigateur.text.fr.endTuto = {
 };
 
 Tutoriel_navigateur.text.en.endTuto = {
-    line1: "You can find your poeme in the salon after you saved them.",
+    line1: "You can find your poem in the salon after you saved it.",
     line2: "You just have to click on the title to open it.",
-    line3: "The tutoriel ends here."
+    line3: "The tutorial ends here."
 };
 
 Tutoriel_navigateur.text.fr.quitTutoButton = "Quitter le tutoriel";
 
-Tutoriel_navigateur.text.en.quitTutoButton = "Quit";
+Tutoriel_navigateur.text.en.quitTutoButton = "Quit the tutorial";
 
 Hoverbox.text = {};
 Hoverbox.text.fr = {};
@@ -87,7 +87,7 @@ Hoverbox.text.en.recit = "This is where you will find some samples and your crea
 
 Hoverbox.text.fr.editeur = "L'éditeur permet de créer ses propres poèmes à 2 mi-mots et de les sauvegarder pour les redécouvrir par la suite";
 
-Hoverbox.text.en.editeur = "The editor allows you to create your own poemes and to save them";
+Hoverbox.text.en.editeur = "The editor allows you to create your own poems and to save them";
 
 Hoverbox.text.fr.labo = "Le labo permet de découvrir la poésie à 2 mi-mots et de créer ses propres combinaisons";
 
