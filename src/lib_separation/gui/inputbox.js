@@ -32,6 +32,20 @@ Inputbox.hide = function() {
 					callbacks = {success: function, cancel: function} <- argument optionel
 */
 Inputbox.prompt = function (options, callbacks) {
+	if(appOnDevice_real()) {
+		Cocoon.Dialog.prompt({
+			message : options.message,
+			type : Cocoon.Dialog.keyboardType.TEXT,
+			confirmText : options.confirmText,
+			cancelText : options.cancelText
+		},
+		{
+			success: callbacks.success,
+			cancel: callbacks.cancel
+		});
+		
+		return;
+	}
 	//Création des éléments nécessaires
 	var input = document.getElementsByTagName('input')[0];
 	var title = document.getElementById('message');
@@ -101,6 +115,11 @@ Inputbox.prompt = function (options, callbacks) {
 					callbacks = { success: function, cancel: function } <- argument optionel
 */
 Inputbox.alert = function (options, callbacks) {
+	if(appOnDevice_real()) {
+		alert(options.message);
+		callbacks.success()
+		return;
+	}
 	//Création des éléments nécessaires
 	var input = document.getElementsByTagName('input')[0];
 	var title = document.getElementById('message');
@@ -159,6 +178,23 @@ Inputbox.alert = function (options, callbacks) {
 */
 
 Inputbox.confirm = function (options, callbacks) {
+	if(appOnDevice_real()) {
+		Cocoon.Dialog.confirm({
+			message : options.message,
+			type : Cocoon.Dialog.keyboardType.TEXT,
+			confirmText : options.confirmText,
+			cancelText : options.cancelText
+		},function(accepted){
+			if(accepted){
+				callbacks.success();
+			}else{
+				callbacks.cancel();
+			}
+		});
+		
+		return;
+	}
+	
 	//Création des éléments nécessaires
 	var input = document.getElementsByTagName('input')[0];
 	var title = document.getElementById('message');
