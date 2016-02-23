@@ -281,7 +281,7 @@ Recherche.prototype.transform = function() { if(!this.inTransform) { this.inTran
 	if (language == 'fr')
 		this.start_edit = new Word('Editeur', null, 6, null, null, null, 13.7 * W/100);
 	else
-		this.start_edit = new Word('Story', null, 6, null, null, null, 13.7 * W/100);
+		this.start_edit = new Word('Editor', null, 6, null, null, null, 13.7 * W/100);
 	this.start_edit.setCenterX(W/3);
 	this.start_edit.setY(H-margin-this.start_edit.getHeight());
 	this.start_edit.setAlpha(0);
