@@ -11,7 +11,7 @@ Event.events = {
 	touchend : (appOnDevice_real() ? 'touchend' : 'mouseleave'),
 	dbltap : (appOnDevice_real() ? 'dblclick' : 'dblclick'),
 	hover : (appOnDevice_real() ? '' : 'mousemove'),
-	scroll : (appOnDevice_real() ? 'touchmove' : (isFirefox)? 'DOMMouseScroll' : 'mousewheel'),
+	scroll : (appOnDevice_real() ? ''/*'touchmove'*/ : (isFirefox)? 'DOMMouseScroll' : 'mousewheel'),
 	keydown : (appOnDevice_real() ? '': 'keydown')
 	}
 

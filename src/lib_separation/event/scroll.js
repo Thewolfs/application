@@ -10,23 +10,23 @@ Event.scroll = function (e) {
 	{
 		if(appOnDevice_real() == false)
 		{
-				var delta = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)));
-				switch(delta)
-				{
-					case 1:
-                        if(state == Labo)
-				            Labo.scrollUp();
-                        else if(state == Editeur)
-                            Editeur.scrollUp();
-						break; 
-					case -1: 
-						if(state == Labo)
-				            Labo.scrollDown();
-                        else if(state == Editeur)
-                            Editeur.scrollDown();
-				}
+			var delta = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)));
+			switch(delta)
+			{
+				case 1:
+                    if(state == Labo)
+			            Labo.scrollUp();
+                    else if(state == Editeur)
+                        Editeur.scrollUp();
+					break; 
+				case -1: 
+					if(state == Labo)
+			            Labo.scrollDown();
+                    else if(state == Editeur)
+                        Editeur.scrollDown();
 			}
-		else
+		}
+		/*else
 		{
 			console.log(e);
 			var currentY = e.touches[0].clientY;
@@ -44,7 +44,7 @@ Event.scroll = function (e) {
             }
 		    lastY = currentY;
 		    
-		}
+		}*/
 		last_time = new Date();
 	}
 };
