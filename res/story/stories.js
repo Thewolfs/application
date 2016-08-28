@@ -9,6 +9,10 @@ StoriesDb.fr_stories = [
 StoriesDb.en_stories = [
 	'{"isStatic":true, "name":"Separation", "type":"one_page", "pages":[{"lines":[{"words":[{"value":"THIS", "zoom":1}, {"value":"SEPARATION", "next_value":"PERCEPTION", "police":0, "code":"AAAAAATIAII", "zoom":1}]}, {"words":[{"value":"which crept"}]}, {"words":[{"value":"in the"}, {"value":"shading", "next_value":"slicing", "police":3}, {"value":" of words"}]}, {"words":[{"value":"SHREDS", "next_value":"CHASES", "police":2, "code":"hack_sale", "zoom":1}, {"value":"ME", "police":2}]}]}]}',
 	'{"isStatic":true, "name":"Translation", "type":"one_page", "pages":[{"lines":[{"words":[{"value":"Translation", "zoom":1}]}, {"words":[{"value":"english", "next_value":"french", "police":0, "code":"CAAIIAII", "zoom":2}]}, {"words":[{"value":" "}]}]}]}',
+	'{"isStatic":true, "pages":[{"lines":[{"words":[{"value":"digital","police":1,"next_value":"abyssal","code":"oagaaoi"},{"value":"literature","police":1,"next_value":"liberators","code":"iiaaioaaia"}]},{"words":[]},{"words":[]}]}],"type":"one_page","name":"ELO Victoria"}',
+	'{"isStatic":true, "pages":[{"lines":[{"words":[]},{"words":[{"value":"alliance","police":0,"next_value":"DIVORCE","code":"AIIIAAAC"}]},{"words":[]}]}],"type":"one_page","name":"Another separation"}',
+	'{"isStatic":true","pages":[{"lines":[{"words":[]},{"words":[{"value":"butterfly","police":1,"next_value":"bullshit","code":"aaiiaiiii"}]},{"words":[]}]}],"type":"one_page","name":"Composite"}',
+	'{"isStatic":true", pages":[{"lines":[{"words":[]},{"words":[{"value":"green","police":0,"next_value":"peace","code":"ooooo"}]},{"words":[]}]}],"type":"one_page","name":"Fusion"}'
 	];
 
 scriptLoaded('res/story/stories.js');
